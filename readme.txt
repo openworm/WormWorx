@@ -1,1 +1,1 @@
-WormSim: a simulation of the C. elegans nematode worm.
+C. elegans simulator.
