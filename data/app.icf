@@ -1,0 +1,22 @@
+[S3E]
+MemSize=32000000
+SysTraceToFile=1
+
+[GX]
+DataCacheSize=640000
+NumTPages=20
+
+[GxFont]
+CacheTextureMaxSize=512
+
+# Uncomment this section to use full-screen anti-aliasing.
+[GL]
+#EGL_SAMPLE_BUFFERS=1
+#EGL_SAMPLES=4      # Use super-sampling if available. Change to 2 for cheaper multi-sampling
+
+[TRACE]
+# Uncomment this to get more GX SysTrace.
+#GX_VERBOSE=1
+
+[Util]
+MemMgrMaxAllocWarning=0

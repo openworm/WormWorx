@@ -1,2 +1,0 @@
-# WormSim
-C. elegans simulator

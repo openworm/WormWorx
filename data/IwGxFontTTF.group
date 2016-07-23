@@ -1,0 +1,18 @@
+CIwResGroup
+{
+	name FontTTF
+
+	CIwGxFont
+	{
+		name "Anonymous_6"
+                ttf ".\Anonymous.ttf"
+		ttfPointSize 6
+	}
+
+	CIwGxFont
+	{
+		name "Anonymous_12"
+                ttf ".\Anonymous.ttf"
+		ttfPointSize 12
+	}
+}

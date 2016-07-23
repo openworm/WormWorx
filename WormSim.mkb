@@ -1,0 +1,82 @@
+#!/usr/bin/env mkb
+
+options
+{
+}
+
+includepath
+{
+    .
+    source/sundials-2.3.0/include
+    source/sundials-2.3.0/src
+    source/sundials-2.3.0/src/ida
+}
+
+files
+{
+    (source)
+    WormSim.cpp
+    AppMain.cpp
+
+    (source/sundials-2.3.0/src/ida)
+    ida_dense.c 
+    ida_spgmr.c
+    ida_sptfqmr.c
+    ida.c
+    ida_bbdpre.c
+    ida_io.c
+    ida_spils.c
+    ida_band.c
+    ida_ic.c
+    ida_spbcgs.c
+
+    (source/sundials-2.3.0/src/nvec_ser)
+    fnvector_serial.c
+    nvector_serial.c
+
+    (source/sundials-2.3.0/src/sundials)
+    sundials_band.c
+    sundials_iterative.c
+    sundials_nvector.c
+    sundials_spbcgs.c
+    sundials_sptfqmr.c
+    sundials_dense.c
+    sundials_math.c
+    sundials_smalldense.c
+    sundials_spgmr.c
+}
+
+defines
+{
+    # Define for TTF rendering support.
+    # Must be before iwgxfont subproject is first included.
+    IW_GXFONT_TTF
+}
+
+subprojects
+{
+    iw2d
+    iwgxfont
+}
+
+deployments
+{
+    assets=default
+    icon=icons
+    symbian7-uid=0x10700001
+    symbian8-uid=0x10800001
+    brew-clsid=0x10900001
+}
+
+assets
+{
+    [default]
+    (data)
+    Anonymous.ttf
+    splashscreen.jpg
+}
+
+#### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
+
+#Hub deployment options, please do not add anything below this line
+
