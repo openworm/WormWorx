@@ -1,1 +1,1 @@
-C. elegans simulator.
+C. elegans simulator app using Marmalade.
