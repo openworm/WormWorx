@@ -82,6 +82,58 @@ CIwSVec2 *AllocClientScreenRectangle()
 }
 
 
+int TestSoftkey(int pointerx, int pointery)
+{
+   int width  = (int)IwGxGetScreenWidth();
+   int height = (int)IwGxGetScreenHeight();
+
+   if (width < height)
+   {
+      width *= 0.1;
+      height = width;
+   }
+   else
+   {
+      height *= 0.1;
+      width   = height;
+   }
+
+   int x = 0;
+   int y = 0;
+   for (int pos = 0; pos < 4; pos++)
+   {
+      switch (pos)
+      {
+      case S3E_DEVICE_SOFTKEY_BOTTOM_LEFT:
+         y = IwGxGetScreenHeight() - height;
+         x = 0;
+         break;
+
+      case S3E_DEVICE_SOFTKEY_BOTTOM_RIGHT:
+         y = IwGxGetScreenHeight() - height;
+         x = IwGxGetScreenWidth() - width;
+         break;
+
+      case S3E_DEVICE_SOFTKEY_TOP_RIGHT:
+         y = 0;
+         x = IwGxGetScreenWidth() - width;
+         break;
+
+      case S3E_DEVICE_SOFTKEY_TOP_LEFT:
+         x = 0;
+         y = 0;
+         break;
+      }
+
+      if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
+      {
+         return(pos);
+      }
+   }
+   return(-1);
+}
+
+
 void RenderSoftkey(const char *text, s3eDeviceSoftKeyPosition pos, void (*handler)())
 {
    int width  = (int)IwGxGetScreenWidth();

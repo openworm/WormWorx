@@ -51,6 +51,7 @@ void DeleteButtons();
 void RenderButtons();
 void RemoveButton(const char *text);
 int32 CheckButton(const char *text);
+int TestSoftkey(int pointerx, int pointery);
 void RenderSoftkeys();
 
 // Allocate (and configure) a vertex stream for rendering a 'fullscreen' backdrop that

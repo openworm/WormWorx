@@ -145,8 +145,11 @@ typedef enum
 } RunState;
 RunState runState;
 
-// Drawing.
-realtype SCALE       = 500000.0;
+// Touch and rendering.
+realtype scale;
+realtype x_off;
+realtype y_off;
+int32    m_x[2], m_y[2];
 CIwFVec2 verts[(NBAR) * 2];
 
 // Font.
@@ -168,9 +171,112 @@ void SetFont()
 }
 
 
+// Surface change.
 void SurfaceChangedCallback()
 {
    SetFont();
+}
+
+
+// Callback function to handle pressing/releasing the screen or a mouse button.
+int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
+{
+   if (pEvent->m_Button == S3E_POINTER_BUTTON_SELECT)
+   {
+      if (pEvent->m_Pressed)
+      {
+         if (TestSoftkey(pEvent->m_x, pEvent->m_y) == -1)
+         {
+            m_x[0] = pEvent->m_x;
+            m_y[0] = pEvent->m_y;
+         }
+         else
+         {
+            m_x[0] = m_y[0] = -1;
+         }
+      }
+      else
+      {
+         m_x[0] = m_y[0] = -1;
+      }
+   }
+   return(0);
+}
+
+
+// Callback function to handle drags on the touchscreen/mouse movements.
+int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
+{
+   if (m_x[0] != -1)
+   {
+      x_off += pEvent->m_x - m_x[0];
+      y_off += pEvent->m_y - m_y[0];
+      m_x[0] = pEvent->m_x;
+      m_y[0] = pEvent->m_y;
+   }
+   return(0);
+}
+
+
+// Callback function to handle pressing and releasing on a multi-touch screen.
+int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
+{
+   int t = pEvent->m_TouchID;
+
+   if ((t == 0) || (t == 1))
+   {
+      if (pEvent->m_Pressed)
+      {
+         if (TestSoftkey(pEvent->m_x, pEvent->m_y) == -1)
+         {
+            m_x[t] = pEvent->m_x;
+            m_y[t] = pEvent->m_y;
+         }
+         else
+         {
+            m_x[t] = m_y[t] = -1;
+         }
+      }
+      else
+      {
+         m_x[t] = m_y[t] = -1;
+      }
+   }
+   return(0);
+}
+
+
+// Callback function to handle dragging events on a multi-touch screen.
+int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *pUserData)
+{
+   int t1 = pEvent->m_TouchID;
+
+   if ((t1 == 0) || (t1 == 1))
+   {
+      int t2 = (t1 + 1) % 2;
+      if (m_x[t1] != -1)
+      {
+         if (m_x[t2] == -1)
+         {
+            x_off += pEvent->m_x - m_x[t1];
+            y_off += pEvent->m_y - m_y[t1];
+         }
+         else
+         {
+            realtype d0 = sqrt(pow((realtype)m_x[t1] - (realtype)m_x[t2], 2) +
+                               pow((realtype)m_y[t1] - (realtype)m_y[t2], 2));
+            realtype d1 = sqrt(pow((realtype)pEvent->m_x - (realtype)m_x[t2], 2) +
+                               pow((realtype)pEvent->m_y - (realtype)m_y[t2], 2));
+            if (d0 > 0)
+            {
+               scale *= (d1 / d0);
+            }
+         }
+         m_x[t1] = pEvent->m_x;
+         m_y[t1] = pEvent->m_y;
+      }
+   }
+   return(0);
 }
 
 
@@ -376,6 +482,15 @@ void AppInit()
    Iw2DInit();
    IwGxFontInit();
    SetFont();
+   //s3ePointerRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback, NULL);
+   //s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
+   s3ePointerRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback, NULL);
+   s3ePointerRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback, NULL);
+   scale  = 0.25;
+   x_off  = (realtype)IwGxGetScreenWidth() / 2.0;
+   y_off  = (realtype)IwGxGetScreenHeight() / 2.0;
+   m_x[0] = m_y[0] = -1;
+   m_x[1] = m_y[1] = -1;
 
    // Initialize simulation.
    SimInit();
@@ -419,6 +534,10 @@ void AppShutDown()
    Iw2DTerminate();
    IwResManagerTerminate();
    IwGxUnRegister(IW_GX_SCREENSIZE, SurfaceChangedCallback);
+   //s3ePointerUnRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback);
+   //s3ePointerUnRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback);
+   s3ePointerUnRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback);
+   s3ePointerUnRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback);
 }
 
 
@@ -536,18 +655,16 @@ void AppRender()
 
    // Draw worm.
    realtype *yval = NV_DATA_S(yy);
-   realtype xoff  = (realtype)IwGxGetScreenWidth() / 2.0;
-   realtype yoff  = (realtype)IwGxGetScreenHeight() / 2.0;
-   SCALE = (realtype)IwGxGetScreenWidth() * 0.25 / 0.001;
-   int nb2 = (NBAR) * 2;
+   realtype s     = (realtype)IwGxGetScreenWidth() * scale / 0.001;
+   int      nb2   = (NBAR) * 2;
    for (int i = 0; i < NBAR; ++i)
    {
       realtype dX = R[i] * cos(yval[i * 3 + 2]);
       realtype dY = R[i] * sin(yval[i * 3 + 2]);
-      verts[i].x             = ((yval[i * 3] + dX) * SCALE) + xoff;
-      verts[i].y             = ((yval[i * 3 + 1] + dY) * SCALE) + yoff;
-      verts[(nb2 - 1) - i].x = ((yval[i * 3] - dX) * SCALE) + xoff;
-      verts[(nb2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * SCALE) + yoff;
+      verts[i].x             = ((yval[i * 3] + dX) * s) + x_off;
+      verts[i].y             = ((yval[i * 3 + 1] + dY) * s) + y_off;
+      verts[(nb2 - 1) - i].x = ((yval[i * 3] - dX) * s) + x_off;
+      verts[(nb2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * s) + y_off;
    }
    Iw2DFillPolygon(verts, nb2);
 
@@ -560,7 +677,7 @@ void AppRender()
 /*
  * *--------------------------------------------------------------------
  * Model Functions
- ***--------------------------------------------------------------------
+ ****--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -977,7 +1094,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ***--------------------------------------------------------------------
+ ****--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
