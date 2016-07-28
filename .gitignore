@@ -2,4 +2,5 @@ build_wormsim_*/
 data-ram/
 deployments/logs/
 deployments/*/intermediate_files/
+deployments/*/generated_images/
 project_WormSim/
