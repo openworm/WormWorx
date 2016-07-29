@@ -486,10 +486,16 @@ void AppInit()
    Iw2DInit();
    IwGxFontInit();
    SetFont();
-   //s3ePointerRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback, NULL);
-   //s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
-   s3ePointerRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback, NULL);
-   s3ePointerRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback, NULL);
+   if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
+   {
+	   s3ePointerRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback, NULL);
+	   s3ePointerRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback, NULL);
+   }
+   else {
+	   s3ePointerRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback, NULL);
+	   s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
+   }
+
    scale  = 0.25;
    x_off  = (realtype)IwGxGetScreenWidth() / 2.0;
    y_off  = (realtype)IwGxGetScreenHeight() / 2.0;
@@ -538,10 +544,15 @@ void AppShutDown()
    Iw2DTerminate();
    IwResManagerTerminate();
    IwGxUnRegister(IW_GX_SCREENSIZE, SurfaceChangedCallback);
-   //s3ePointerUnRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback);
-   //s3ePointerUnRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback);
-   s3ePointerUnRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback);
-   s3ePointerUnRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback);
+   if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
+   {
+	   s3ePointerUnRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback);
+	   s3ePointerUnRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback);
+   }
+   else {
+	   s3ePointerUnRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback);
+	   s3ePointerUnRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback);
+   }
 }
 
 
@@ -673,7 +684,11 @@ void AppRender()
    Iw2DFillPolygon(verts, nb2);
    if (m_x[0] != -1) Iw2DDrawLine(CIwFVec2(0, 0), CIwFVec2(IwGxGetScreenWidth(),IwGxGetScreenHeight()));  // flibber
    if (m_x[1] != -1) Iw2DDrawLine(CIwFVec2(IwGxGetScreenWidth(), 0), CIwFVec2(0, IwGxGetScreenHeight()));  // flibber
-   if (txx != -1) Iw2DDrawLine(CIwFVec2(IwGxGetScreenWidth() / 2, IwGxGetScreenHeight() / 2), CIwFVec2(IwGxGetScreenWidth() / 2, IwGxGetScreenHeight() / 2));  // flibber
+   if (txx != -1) Iw2DDrawLine(CIwFVec2(IwGxGetScreenWidth() / 2, 0), CIwFVec2(IwGxGetScreenWidth() / 2, IwGxGetScreenHeight()));  // flibber
+   if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
+   {
+	   Iw2DDrawLine(CIwFVec2(0, IwGxGetScreenHeight() / 2), CIwFVec2(IwGxGetScreenWidth(), IwGxGetScreenHeight() / 2));  // flibber
+   }
 
    // Flush and swap.
    IwGxFlush();

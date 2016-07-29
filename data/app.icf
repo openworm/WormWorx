@@ -1,6 +1,7 @@
 [S3E]
 MemSize=32000000
 SysTraceToFile=1
+AndroidPointMultiEnable = 1
 
 [GX]
 DataCacheSize=640000
