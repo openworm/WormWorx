@@ -221,10 +221,7 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
 // Callback function to handle pressing and releasing on a multi-touch screen.
 int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
 {
-	//char buf[50]; // flibber
    int t = pEvent->m_TouchID;
-   //sprintf(buf, "t=%d,mx0=%d, mx1=%d", t, m_x[0], m_x[1]);  // flibber
-	   //s3eDebugPrint(0, 10, buf, 1);  // flibber
 
    if ((t == 0) || (t == 1))
    {
@@ -248,7 +245,7 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
    return(0);
 }
 
-int txx = -1; // flibber
+
 // Callback function to handle dragging events on a multi-touch screen.
 int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *pUserData)
 {
@@ -279,7 +276,6 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
          m_y[t1] = pEvent->m_y;
       }
    }
-   else txx = t1; // flibber
    return(0);
 }
 
@@ -488,12 +484,13 @@ void AppInit()
    SetFont();
    if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
    {
-	   s3ePointerRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback, NULL);
-	   s3ePointerRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback, NULL);
+      s3ePointerRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback, NULL);
+      s3ePointerRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback, NULL);
    }
-   else {
-	   s3ePointerRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback, NULL);
-	   s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
+   else
+   {
+      s3ePointerRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback, NULL);
+      s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
    }
 
    scale  = 0.25;
@@ -546,12 +543,13 @@ void AppShutDown()
    IwGxUnRegister(IW_GX_SCREENSIZE, SurfaceChangedCallback);
    if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
    {
-	   s3ePointerUnRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback);
-	   s3ePointerUnRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback);
+      s3ePointerUnRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback);
+      s3ePointerUnRegister(S3E_POINTER_TOUCH_MOTION_EVENT, (s3eCallback)PointerTouchMotionEventCallback);
    }
-   else {
-	   s3ePointerUnRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback);
-	   s3ePointerUnRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback);
+   else
+   {
+      s3ePointerUnRegister(S3E_POINTER_BUTTON_EVENT, (s3eCallback)PointerButtonEventCallback);
+      s3ePointerUnRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback);
    }
 }
 
@@ -682,13 +680,6 @@ void AppRender()
       verts[(nb2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * s) + y_off;
    }
    Iw2DFillPolygon(verts, nb2);
-   if (m_x[0] != -1) Iw2DDrawLine(CIwFVec2(0, 0), CIwFVec2(IwGxGetScreenWidth(),IwGxGetScreenHeight()));  // flibber
-   if (m_x[1] != -1) Iw2DDrawLine(CIwFVec2(IwGxGetScreenWidth(), 0), CIwFVec2(0, IwGxGetScreenHeight()));  // flibber
-   if (txx != -1) Iw2DDrawLine(CIwFVec2(IwGxGetScreenWidth() / 2, 0), CIwFVec2(IwGxGetScreenWidth() / 2, IwGxGetScreenHeight()));  // flibber
-   if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
-   {
-	   Iw2DDrawLine(CIwFVec2(0, IwGxGetScreenHeight() / 2), CIwFVec2(IwGxGetScreenWidth(), IwGxGetScreenHeight() / 2));  // flibber
-   }
 
    // Flush and swap.
    IwGxFlush();
@@ -699,7 +690,7 @@ void AppRender()
 /*
  * *--------------------------------------------------------------------
  * Model Functions
- ****--------------------------------------------------------------------
+ *****--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1116,7 +1107,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ****--------------------------------------------------------------------
+ *****--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
