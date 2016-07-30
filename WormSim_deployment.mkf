@@ -1,0 +1,10 @@
+#Deployment options edited by the Hub
+#Please do not edit manually as this file is rewritten by the Hub
+
+deployments
+{
+    #platforms osx win32
+    splashscreen = "data/splashscreen.jpg"
+    splashscreen-use-all = "1"
+
+}

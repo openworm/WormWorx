@@ -137,6 +137,15 @@ int      iout, retval, retvalr;
 uint64 updateTimer;
 void SimUpdate();
 
+// Application functions.
+void AppInit();
+void AppCheckQuit();
+void AppShutDown();
+void AppRun();
+int AppRunState();
+bool AppUpdate();
+void AppRender();
+
 typedef enum
 {
    START = 0,
@@ -181,11 +190,13 @@ void SurfaceChangedCallback()
 // Callback function to handle pressing/releasing the screen or a mouse button.
 int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
 {
+   int key;
+
    if (pEvent->m_Button == S3E_POINTER_BUTTON_SELECT)
    {
       if (pEvent->m_Pressed)
       {
-         if (TestSoftkey(pEvent->m_x, pEvent->m_y) == -1)
+         if ((key = TestSoftkey(pEvent->m_x, pEvent->m_y)) == -1)
          {
             m_x[0] = pEvent->m_x;
             m_y[0] = pEvent->m_y;
@@ -193,6 +204,16 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
          else
          {
             m_x[0] = m_y[0] = -1;
+            switch (key)
+            {
+            case RUN_KEY:
+               AppRun();
+               break;
+
+            case QUIT_KEY:
+               AppCheckQuit();
+               break;
+            }
          }
       }
       else
@@ -221,13 +242,14 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
 // Callback function to handle pressing and releasing on a multi-touch screen.
 int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
 {
+   int key;
    int t = pEvent->m_TouchID;
 
    if ((t == 0) || (t == 1))
    {
       if (pEvent->m_Pressed)
       {
-         if (TestSoftkey(pEvent->m_x, pEvent->m_y) == -1)
+         if ((key = TestSoftkey(pEvent->m_x, pEvent->m_y)) == -1)
          {
             m_x[t] = pEvent->m_x;
             m_y[t] = pEvent->m_y;
@@ -235,6 +257,16 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
          else
          {
             m_x[t] = m_y[t] = -1;
+            switch (key)
+            {
+            case RUN_KEY:
+               AppRun();
+               break;
+
+            case QUIT_KEY:
+               AppCheckQuit();
+               break;
+            }
          }
       }
       else
@@ -690,7 +722,7 @@ void AppRender()
 /*
  * *--------------------------------------------------------------------
  * Model Functions
- *****--------------------------------------------------------------------
+ ******--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1107,7 +1139,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- *****--------------------------------------------------------------------
+ ******--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {

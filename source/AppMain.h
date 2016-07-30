@@ -7,6 +7,12 @@
 #include "s3ePointer.h"
 #include "s3eKeyboard.h"
 
+typedef enum SoftKeyCodes
+{
+   RUN_KEY  = S3E_DEVICE_SOFTKEY_BOTTOM_LEFT,
+   QUIT_KEY = S3E_DEVICE_SOFTKEY_BOTTOM_RIGHT
+} SoftKeyCodes;
+
 typedef enum CursorKeyCodes
 {
    EXCURSOR_NONE = 0,

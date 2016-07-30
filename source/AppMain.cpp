@@ -181,16 +181,16 @@ void RenderSoftkey(const char *text, s3eDeviceSoftKeyPosition pos, void (*handle
    CIwColour *cols = IW_GX_ALLOC(CIwColour, 4);
    memset(cols, 50, sizeof(CIwColour) * 4);
 
-   if (s3ePointerGetState(S3E_POINTER_BUTTON_SELECT) & S3E_POINTER_STATE_DOWN)
-   {
-      int pointerx = s3ePointerGetX();
-      int pointery = s3ePointerGetY();
-      if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
-      {
-         memset(cols, 15, sizeof(CIwColour) * 4);
-         handler();
-      }
-   }
+   //if (s3ePointerGetState(S3E_POINTER_BUTTON_SELECT) & S3E_POINTER_STATE_DOWN)
+   //{
+   //   int pointerx = s3ePointerGetX();
+   //   int pointery = s3ePointerGetY();
+   //   if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
+   //   {
+   //      memset(cols, 15, sizeof(CIwColour) * 4);
+   //      handler();
+   //   }
+   //}
 
    // Draw button area
    CIwSVec2 XY(x, y - 2), dXY(width, height);
@@ -203,19 +203,62 @@ void RenderSoftkey(const char *text, s3eDeviceSoftKeyPosition pos, void (*handle
    //IwGxPrintString(x + 10, y + 10, text, false);
    if (strcmp(text, "Quit") == 0)
    {
-      Iw2DDrawLine(CIwFVec2(XY.x + 5, XY.y + 5), CIwFVec2(XY.x + width - 5, XY.y + height - 5));
-      Iw2DDrawLine(CIwFVec2(XY.x + 5, XY.y + height - 5), CIwFVec2(XY.x + width - 5, XY.y + 5));
+      //Iw2DDrawLine(CIwFVec2(XY.x + 5, XY.y + 5), CIwFVec2(XY.x + width - 5, XY.y + height - 5));
+      //Iw2DDrawLine(CIwFVec2(XY.x + 5, XY.y + height - 5), CIwFVec2(XY.x + width - 5, XY.y + 5));
+      int      x1 = XY.x + 5;
+      int      y1 = XY.y + 5;
+      int      x2 = XY.x + width - 5;
+      int      y2 = XY.y + height - 5;
+      CIwFVec2 verts[4];
+      verts[0] = CIwFVec2(x1 - 2, y1 + 2);
+      verts[1] = CIwFVec2(x1 + 2, y1 - 2);
+      verts[2] = CIwFVec2(x2 + 2, y2 - 2);
+      verts[3] = CIwFVec2(x2 - 2, y2 + 2);
+      Iw2DFillPolygon(verts, 4);
+      x1       = XY.x + 5;
+      y1       = XY.y + height - 5;
+      x2       = XY.x + width - 5;
+      y2       = XY.y + 5;
+      verts[0] = CIwFVec2(x1 + 2, y1 + 2);
+      verts[1] = CIwFVec2(x1 - 2, y1 - 2);
+      verts[2] = CIwFVec2(x2 - 2, y2 - 2);
+      verts[3] = CIwFVec2(x2 + 2, y2 + 2);
+      Iw2DFillPolygon(verts, 4);
    }
    else if (strcmp(text, "Pause") == 0)
    {
-      Iw2DDrawLine(CIwFVec2(XY.x + (width / 3), XY.y + 5), CIwFVec2(XY.x + (width / 3), XY.y + height - 5));
-      Iw2DDrawLine(CIwFVec2(XY.x + (2 * width / 3), XY.y + 5), CIwFVec2(XY.x + (2 * width / 3), XY.y + height - 5));
+      //Iw2DDrawLine(CIwFVec2(XY.x + (width / 3), XY.y + 5), CIwFVec2(XY.x + (width / 3), XY.y + height - 5));
+      //Iw2DDrawLine(CIwFVec2(XY.x + (2 * width / 3), XY.y + 5), CIwFVec2(XY.x + (2 * width / 3), XY.y + height - 5));
+      int      x1 = XY.x + (width / 3);
+      int      y1 = XY.y + 5;
+      int      x2 = x1;
+      int      y2 = XY.y + height - 5;
+      CIwFVec2 verts[4];
+      verts[0] = CIwFVec2(x1 - 2, y1);
+      verts[1] = CIwFVec2(x1 + 2, y1);
+      verts[2] = CIwFVec2(x1 + 2, y2);
+      verts[3] = CIwFVec2(x1 - 2, y2);
+      Iw2DFillPolygon(verts, 4);
+      x1       = XY.x + (2 * width / 3);
+      y1       = XY.y + 5;
+      x2       = x1;
+      y2       = XY.y + height - 5;
+      verts[0] = CIwFVec2(x1 - 2, y1);
+      verts[1] = CIwFVec2(x1 + 2, y1);
+      verts[2] = CIwFVec2(x1 + 2, y2);
+      verts[3] = CIwFVec2(x1 - 2, y2);
+      Iw2DFillPolygon(verts, 4);
    }
    else if ((strcmp(text, "Start") == 0) || (strcmp(text, "Reset") == 0))
    {
-      Iw2DDrawLine(CIwFVec2(XY.x + (width / 4), XY.y + 5), CIwFVec2(XY.x + (width / 4), XY.y + height - 5));
-      Iw2DDrawLine(CIwFVec2(XY.x + (width / 4), XY.y + 5), CIwFVec2(XY.x + (3 * width / 4), XY.y + (height / 2)));
-      Iw2DDrawLine(CIwFVec2(XY.x + (width / 4), XY.y + height - 5), CIwFVec2(XY.x + (3 * width / 4), XY.y + (height / 2)));
+      //Iw2DDrawLine(CIwFVec2(XY.x + (width / 4), XY.y + 5), CIwFVec2(XY.x + (width / 4), XY.y + height - 5));
+      //Iw2DDrawLine(CIwFVec2(XY.x + (width / 4), XY.y + 5), CIwFVec2(XY.x + (3 * width / 4), XY.y + (height / 2)));
+      //Iw2DDrawLine(CIwFVec2(XY.x + (width / 4), XY.y + height - 5), CIwFVec2(XY.x + (3 * width / 4), XY.y + (height / 2)));
+      CIwFVec2 verts[3];
+      verts[0] = CIwFVec2(XY.x + (width / 4), XY.y + 5);
+      verts[1] = CIwFVec2(XY.x + (3 * width / 4), XY.y + (height / 2));
+      verts[2] = CIwFVec2(XY.x + (width / 4), XY.y + height - 5);
+      Iw2DFillPolygon(verts, 3);
    }
 }
 
@@ -224,8 +267,8 @@ void RenderSoftkeys()
 {
    if (g_EnableQuit && g_DrawQuit)
    {
-      int back = s3eDeviceGetInt(S3E_DEVICE_BACK_SOFTKEY_POSITION);
-      RenderSoftkey("Quit", (s3eDeviceSoftKeyPosition)back, AppCheckQuit);
+      int quit = s3eDeviceGetInt(S3E_DEVICE_BACK_SOFTKEY_POSITION);
+      RenderSoftkey("Quit", (s3eDeviceSoftKeyPosition)quit, AppCheckQuit);
    }
    int run = s3eDeviceGetInt(S3E_DEVICE_ADVANCE_SOFTKEY_POSITION);
    switch (AppRunState())
