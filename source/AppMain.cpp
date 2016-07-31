@@ -181,16 +181,16 @@ void RenderSoftkey(const char *text, s3eDeviceSoftKeyPosition pos, void (*handle
    CIwColour *cols = IW_GX_ALLOC(CIwColour, 4);
    memset(cols, 50, sizeof(CIwColour) * 4);
 
-   //if (s3ePointerGetState(S3E_POINTER_BUTTON_SELECT) & S3E_POINTER_STATE_DOWN)
-   //{
-   //   int pointerx = s3ePointerGetX();
-   //   int pointery = s3ePointerGetY();
-   //   if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
-   //   {
-   //      memset(cols, 15, sizeof(CIwColour) * 4);
-   //      handler();
-   //   }
-   //}
+   if (s3ePointerGetState(S3E_POINTER_BUTTON_SELECT) & S3E_POINTER_STATE_DOWN)
+   {
+      int pointerx = s3ePointerGetX();
+      int pointery = s3ePointerGetY();
+      if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
+      {
+         memset(cols, 15, sizeof(CIwColour) * 4);
+         //handler();
+      }
+   }
 
    // Draw button area
    CIwSVec2 XY(x, y - 2), dXY(width, height);
