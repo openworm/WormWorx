@@ -15,7 +15,7 @@ includepath
 files
 {
     (source)
-    WormSim.cpp
+    WormWrks.cpp
     AppMain.cpp
 
     (source/sundials-2.3.0/src/ida)

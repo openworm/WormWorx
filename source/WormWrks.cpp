@@ -1,5 +1,5 @@
 /*
- * WormSim: a simulation of the C. elegans nematode worm.
+ * WormWrks: a simulation of the C. elegans nematode worm.
  *
  * Copyright (c) 2016 Tom Portegys (portegys@openworm.com). All rights reserved.
  *

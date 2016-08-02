@@ -1,6 +1,6 @@
-build_wormsim_*/
+build_wormwrks_*/
 data-ram/
 deployments/logs/
 deployments/*/intermediate_files/
 deployments/*/generated_images/
-project_WormSim/
+project_WormWrks/
