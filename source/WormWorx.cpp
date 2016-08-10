@@ -143,6 +143,8 @@ void AppCheckQuit();
 void AppShutDown();
 void AppRun();
 int AppRunState();
+void AppSkin();
+bool AppSkinState();
 bool AppUpdate();
 void AppRender();
 
@@ -155,11 +157,18 @@ typedef enum
 RunState runState;
 
 // Touch and rendering.
+#define SCALE    0.5
 realtype scale;
 realtype x_off;
 realtype y_off;
 int32    m_x[2], m_y[2];
 CIwFVec2 verts[(NBAR) * 2];
+
+// Skin/muscles.
+CIw2DImage *scalpel;
+bool       skinState;
+#define MUSCLE_WIDTH_SCALE    0.25
+realtype muscleWidthScale;
 
 // Font.
 CIwGxFont *font      = NULL;
@@ -213,6 +222,10 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
             case QUIT_KEY:
                AppCheckQuit();
                break;
+
+            case SKIN_KEY:
+               AppSkin();
+               break;
             }
          }
       }
@@ -265,6 +278,10 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
 
             case QUIT_KEY:
                AppCheckQuit();
+               break;
+
+            case SKIN_KEY:
+               AppSkin();
                break;
             }
          }
@@ -512,6 +529,8 @@ void AppInit()
    IwGxRegister(IW_GX_SCREENSIZE, SurfaceChangedCallback);
    IwResManagerInit();
    Iw2DInit();
+   scalpel   = Iw2DCreateImage("scalpel.png");
+   skinState = true;
    IwGxFontInit();
    SetFont();
    if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
@@ -525,11 +544,12 @@ void AppInit()
       s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
    }
 
-   scale  = 0.25;
-   x_off  = (realtype)IwGxGetScreenWidth() / 2.0;
-   y_off  = (realtype)IwGxGetScreenHeight() / 2.0;
-   m_x[0] = m_y[0] = -1;
-   m_x[1] = m_y[1] = -1;
+   scale            = SCALE;
+   muscleWidthScale = MUSCLE_WIDTH_SCALE;
+   x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
+   y_off            = (realtype)IwGxGetScreenHeight() / 2.0;
+   m_x[0]           = m_y[0] = -1;
+   m_x[1]           = m_y[1] = -1;
 
    // Initialize simulation.
    SimInit();
@@ -565,6 +585,7 @@ void AppShutDown()
    SimTerminate();
 
    // Terminate.
+   delete scalpel;
    if (font != NULL)
    {
       IwGxFontDestroyTTFont(font);
@@ -618,6 +639,18 @@ void AppRun()
 int AppRunState()
 {
    return(runState);
+}
+
+
+void AppSkin()
+{
+   skinState = !skinState;
+}
+
+
+bool AppSkinState()
+{
+   return(skinState);
 }
 
 
@@ -701,17 +734,72 @@ void AppRender()
    // Draw worm.
    realtype *yval = NV_DATA_S(yy);
    realtype s     = (realtype)IwGxGetScreenWidth() * scale / 0.001;
-   int      nb2   = (NBAR) * 2;
+   int      n2    = (NBAR) * 2;
    for (int i = 0; i < NBAR; ++i)
    {
       realtype dX = R[i] * cos(yval[i * 3 + 2]);
       realtype dY = R[i] * sin(yval[i * 3 + 2]);
-      verts[i].x             = ((yval[i * 3] + dX) * s) + x_off;
-      verts[i].y             = ((yval[i * 3 + 1] + dY) * s) + y_off;
-      verts[(nb2 - 1) - i].x = ((yval[i * 3] - dX) * s) + x_off;
-      verts[(nb2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * s) + y_off;
+      verts[i].x            = ((yval[i * 3] + dX) * s) + x_off;
+      verts[i].y            = ((yval[i * 3 + 1] + dY) * s) + y_off;
+      verts[(n2 - 1) - i].x = ((yval[i * 3] - dX) * s) + x_off;
+      verts[(n2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * s) + y_off;
    }
-   Iw2DFillPolygon(verts, nb2);
+   if (skinState)
+   {
+      // Draw skin.
+      Iw2DFillPolygon(verts, n2);
+   }
+   else
+   {
+      // Draw muscles.
+      CIwFVec2  center;
+      CIwFMat2D rot;
+      realtype  l = L_seg * 4.0 * s / 2.0;
+      for (int i = 0; i < NSEG; i += 4)
+      {
+         for (int n = 0, j = i; n < 2; n++, j += NBAR)
+         {
+            int      k     = j + 4;
+            realtype x     = verts[j].x - verts[k].x;
+            realtype y     = verts[j].y - verts[k].y;
+            realtype angle = 0.0;
+            if (x == 0.0)
+            {
+               if (y < 0.0)
+               {
+                  angle = M_PI;
+               }
+            }
+            else
+            {
+               angle = atan(y / x);
+               if (x > 0.0)
+               {
+                  if (y > 0.0)
+                  {
+                     angle += M_PI;
+                  }
+               }
+               else
+               {
+                  if (y < 0.0)
+                  {
+                     angle += M_PI;
+                  }
+               }
+            }
+            realtype mx = (verts[j].x + verts[k].x) / 2.0;
+            realtype my = (verts[j].y + verts[k].y) / 2.0;
+            realtype h  = sqrt(pow(verts[j].x - verts[k].x, 2.0) + pow(verts[j].y - verts[k].y, 2.0)) / 2.0;
+            realtype v  = l * muscleWidthScale * (l / h);
+            center = CIwFVec2(mx, my);
+            rot.SetRot(angle, center);
+            Iw2DSetTransformMatrix(rot);
+            Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(h, v), 0, M_PI * 2.0, 0);
+         }
+      }
+      Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
+   }
 
    // Flush and swap.
    IwGxFlush();
@@ -722,7 +810,7 @@ void AppRender()
 /*
  * *--------------------------------------------------------------------
  * Model Functions
- ******--------------------------------------------------------------------
+ *********--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1139,7 +1227,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ******--------------------------------------------------------------------
+ *********--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {

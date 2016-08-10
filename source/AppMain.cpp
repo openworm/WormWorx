@@ -33,6 +33,11 @@ void AppRender();
 bool AppUpdate();
 void AppRun();
 int AppRunState();
+void AppSkin();
+bool AppSkinState();
+
+// Skin.
+extern CIw2DImage *scalpel;
 
 // Font.
 extern CIwGxFont *font;
@@ -181,14 +186,26 @@ void RenderSoftkey(const char *text, s3eDeviceSoftKeyPosition pos, void (*handle
    CIwColour *cols = IW_GX_ALLOC(CIwColour, 4);
    memset(cols, 50, sizeof(CIwColour) * 4);
 
-   if (s3ePointerGetState(S3E_POINTER_BUTTON_SELECT) & S3E_POINTER_STATE_DOWN)
+   if (pos == S3E_DEVICE_SOFTKEY_TOP_LEFT)
    {
-      int pointerx = s3ePointerGetX();
-      int pointery = s3ePointerGetY();
-      if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
+      if (!AppSkinState())
       {
          memset(cols, 15, sizeof(CIwColour) * 4);
-         //handler();
+      }
+   }
+   else
+   {
+      if (s3ePointerGetState(S3E_POINTER_BUTTON_SELECT) & S3E_POINTER_STATE_DOWN)
+      {
+         int pointerx = s3ePointerGetX();
+         int pointery = s3ePointerGetY();
+         if ((pointerx >= x) && (pointerx <= x + width) && (pointery >= y) && (pointery <= y + height))
+         {
+            if ((pos != S3E_DEVICE_SOFTKEY_TOP_LEFT) || AppSkinState())
+            {
+               memset(cols, 15, sizeof(CIwColour) * 4);
+            }
+         }
       }
    }
 
@@ -260,6 +277,16 @@ void RenderSoftkey(const char *text, s3eDeviceSoftKeyPosition pos, void (*handle
       verts[2] = CIwFVec2(XY.x + (width / 4), XY.y + height - 5);
       Iw2DFillPolygon(verts, 3);
    }
+   else if (strcmp(text, "Skin") == 0)
+   {
+      CIwFVec2 p;
+      p.x = (float)XY.x;
+      p.y = (float)XY.y;
+      CIwFVec2 s;
+      s.x = (float)width;
+      s.y = (float)height;
+      Iw2DDrawImage(scalpel, p, s);
+   }
 }
 
 
@@ -285,6 +312,7 @@ void RenderSoftkeys()
       RenderSoftkey("Reset", (s3eDeviceSoftKeyPosition)run, AppRun);
       break;
    }
+   RenderSoftkey("Skin", S3E_DEVICE_SOFTKEY_TOP_LEFT, AppSkin);
 }
 
 
