@@ -172,6 +172,17 @@ CIwFVec2 verts[(NBAR) * 2];
 // Surface change.
 void SurfaceChangedCallback()
 {
+   scale            = SCALE;
+   scale2           = 1.0;
+   muscleWidthScale = MUSCLE_WIDTH_SCALE;
+   x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
+   y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
+   x_off2           = 0;
+   y_off2           = ((realtype)IwGxGetScreenHeight() / 2.0) + 1;
+   m_x[0]           = m_y[0] = -1;
+   m_x[1]           = m_y[1] = -1;
+   m_x2[0]          = m_y2[0] = -1;
+   m_x2[1]          = m_y2[1] = -1;
 }
 
 
@@ -877,7 +888,7 @@ void AppRender()
       Iw2DSetColour(0xff000000);
       Iw2DDrawLine(CIwFVec2(0, h2), CIwFVec2(w, h2));
       Iw2DSetColour(0xffffffff);
-      Iw2DDrawImage(SegmentImage, CIwFVec2(x_off2, y_off2), CIwFVec2((w / 3) * scale2, (h2 - 2) * scale2));
+      Iw2DDrawImage(SegmentImage, CIwFVec2(x_off2, y_off2), CIwFVec2((h2 - 2) * .5 * scale2, (h2 - 2) * scale2));
    }
 
    // Render keys.
@@ -892,7 +903,7 @@ void AppRender()
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- **********--------------------------------------------------------------------
+ ***********--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1309,7 +1320,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- **********--------------------------------------------------------------------
+ ***********--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {

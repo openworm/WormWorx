@@ -102,16 +102,18 @@ void RenderKey(int key, CIwMaterial *fadeMat, CIwColour *cols_light, CIwColour *
    }
 
    // Draw key.
-   Iw2DSetColour(0xffffffff);
-   Iw2DFillRect(CIwFVec2(x, y), CIwFVec2(width, height));
    switch (key)
    {
    case QUIT_KEY:
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillRect(CIwFVec2(x, y), CIwFVec2(width, height));
       IwGxDrawRectScreenSpace(&XY, &dXY, cols);
       Iw2DDrawImage(QuitImage, p, s);
       break;
 
    case RUN_KEY:
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillRect(CIwFVec2(x, y), CIwFVec2(width, height));
       if (AppGetRunState())
       {
          IwGxDrawRectScreenSpace(&XY, &dXY, cols);
