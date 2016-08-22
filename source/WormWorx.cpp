@@ -34,8 +34,7 @@
 #include "IwGx.h"
 #include "IwResManager.h"
 #include "Iw2D.h"
-#include "IwGxFont.h"
-#include "AppMain.h"
+#include "WormWorx.h"
 #include <math.h>
 #include <cstdlib>
 #include <vector>
@@ -137,17 +136,11 @@ int      iout, retval, retvalr;
 uint64 updateTimer;
 void SimUpdate();
 
-// Application functions.
-void AppInit();
-void AppCheckQuit();
-void AppShutDown();
-void AppRun();
-int AppRunState();
-void AppSkin();
-bool AppSkinState();
-bool AppUpdate();
-void AppRender();
+CIw2DImage *QuitImage;
 
+// Start/pause.
+CIw2DImage *StartImage;
+CIw2DImage *PauseImage;
 typedef enum
 {
    START = 0,
@@ -156,43 +149,29 @@ typedef enum
 } RunState;
 RunState runState;
 
-// Touch and rendering.
-#define SCALE    0.5
-realtype scale;
-realtype x_off;
-realtype y_off;
-int32    m_x[2], m_y[2];
-CIwFVec2 verts[(NBAR) * 2];
-
 // Skin/muscles.
-CIw2DImage *scalpel;
+CIw2DImage *ScalpelImage;
 bool       skinState;
 #define MUSCLE_WIDTH_SCALE    0.25
 realtype muscleWidthScale;
 
-// Font.
-CIwGxFont *font      = NULL;
-int       fontHeight = 15;
+// Connectome.
+CIw2DImage *LightImage;
+CIw2DImage *SegmentImage;
+bool       connectomeState;
 
-// Set font to match dimensions.
-void SetFont()
-{
-   if (font != NULL)
-   {
-      IwGxFontDestroyTTFont(font);
-   }
-   int pixels = (int)((float)IwGxGetScreenWidth() * 0.025);
-   int points = (int)((float)pixels * 0.45f);
-   font       = IwGxFontCreateTTFont("Anonymous.ttf", points);
-   fontHeight = font->GetHeight();
-   IwGxFontSetFont(font);
-}
-
+// Touch and rendering.
+#define SCALE    0.5
+realtype scale, scale2;
+realtype x_off, y_off;
+realtype x_off2, y_off2;
+int32    m_x[2], m_y[2];
+int32    m_x2[2], m_y2[2];
+CIwFVec2 verts[(NBAR) * 2];
 
 // Surface change.
 void SurfaceChangedCallback()
 {
-   SetFont();
 }
 
 
@@ -203,35 +182,54 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
 
    if (pEvent->m_Button == S3E_POINTER_BUTTON_SELECT)
    {
+      int mx = pEvent->m_x;
+      int my = pEvent->m_y;
+      int h2 = (int)IwGxGetScreenHeight() / 2;
       if (pEvent->m_Pressed)
       {
-         if ((key = TestSoftkey(pEvent->m_x, pEvent->m_y)) == -1)
+         if ((key = TestKey(mx, my)) == -1)
          {
-            m_x[0] = pEvent->m_x;
-            m_y[0] = pEvent->m_y;
+            if (!connectomeState || (my < h2))
+            {
+               m_x[0]  = mx;
+               m_y[0]  = my;
+               m_x2[0] = m_y2[0] = -1;
+            }
+            else
+            {
+               m_x[0]  = m_y[0] = -1;
+               m_x2[0] = mx;
+               m_y2[0] = my;
+            }
          }
          else
          {
-            m_x[0] = m_y[0] = -1;
+            m_x[0]  = m_y[0] = -1;
+            m_x2[0] = m_y2[0] = -1;
             switch (key)
             {
-            case RUN_KEY:
-               AppRun();
+            case QUIT_KEY:
+               s3eDeviceRequestQuit();
                break;
 
-            case QUIT_KEY:
-               AppCheckQuit();
+            case RUN_KEY:
+               AppSetRunState();
                break;
 
             case SKIN_KEY:
-               AppSkin();
+               AppSetSkinState();
+               break;
+
+            case CONNECTOME_KEY:
+               AppSetConnectomeState();
                break;
             }
          }
       }
       else
       {
-         m_x[0] = m_y[0] = -1;
+         m_x[0]  = m_y[0] = -1;
+         m_x2[0] = m_y2[0] = -1;
       }
    }
    return(0);
@@ -241,12 +239,33 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
 // Callback function to handle drags on the touchscreen/mouse movements.
 int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
 {
-   if (m_x[0] != -1)
+   int mx = pEvent->m_x;
+   int my = pEvent->m_y;
+   int h2 = (int)IwGxGetScreenHeight() / 2;
+
+   if (!connectomeState || (my < h2))
    {
-      x_off += pEvent->m_x - m_x[0];
-      y_off += pEvent->m_y - m_y[0];
-      m_x[0] = pEvent->m_x;
-      m_y[0] = pEvent->m_y;
+      if (m_x[0] != -1)
+      {
+         x_off += mx - m_x[0];
+         y_off += my - m_y[0];
+         m_x[0] = mx;
+         m_y[0] = my;
+      }
+   }
+   else
+   {
+      if (m_x2[0] != -1)
+      {
+         x_off2 += mx - m_x2[0];
+         y_off2 += my - m_y2[0];
+         if (y_off2 <= h2)
+         {
+            y_off2 = h2 + 1;
+         }
+         m_x2[0] = mx;
+         m_y2[0] = my;
+      }
    }
    return(0);
 }
@@ -262,33 +281,56 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
    {
       if (pEvent->m_Pressed)
       {
-         if ((key = TestSoftkey(pEvent->m_x, pEvent->m_y)) == -1)
+         int mx = pEvent->m_x;
+         int my = pEvent->m_y;
+         int h2 = (int)IwGxGetScreenHeight() / 2;
+         if ((key = TestKey(mx, my)) == -1)
          {
-            m_x[t] = pEvent->m_x;
-            m_y[t] = pEvent->m_y;
+            if (!connectomeState || (my < h2))
+            {
+               m_x[t]  = mx;
+               m_y[t]  = my;
+               m_x2[0] = m_y2[0] = -1;
+               m_x2[1] = m_y2[1] = -1;
+            }
+            else
+            {
+               m_x[0]  = m_y[0] = -1;
+               m_x[1]  = m_y[1] = -1;
+               m_x2[t] = mx;
+               m_y2[t] = my;
+            }
          }
          else
          {
-            m_x[t] = m_y[t] = -1;
+            m_x[0]  = m_y[0] = -1;
+            m_x[0]  = m_y[0] = -1;
+            m_x2[0] = m_y2[0] = -1;
+            m_x2[0] = m_y2[0] = -1;
             switch (key)
             {
-            case RUN_KEY:
-               AppRun();
+            case QUIT_KEY:
+               s3eDeviceRequestQuit();
                break;
 
-            case QUIT_KEY:
-               AppCheckQuit();
+            case RUN_KEY:
+               AppSetRunState();
                break;
 
             case SKIN_KEY:
-               AppSkin();
+               AppSetSkinState();
+               break;
+
+            case CONNECTOME_KEY:
+               AppSetConnectomeState();
                break;
             }
          }
       }
       else
       {
-         m_x[t] = m_y[t] = -1;
+         m_x[t]  = m_y[t] = -1;
+         m_x2[t] = m_y2[t] = -1;
       }
    }
    return(0);
@@ -303,26 +345,60 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
    if ((t1 == 0) || (t1 == 1))
    {
       int t2 = (t1 + 1) % 2;
+      int mx = pEvent->m_x;
+      int my = pEvent->m_y;
+      int h2 = (int)IwGxGetScreenHeight() / 2;
       if (m_x[t1] != -1)
       {
-         if (m_x[t2] == -1)
+         if (!connectomeState || (my < h2))
          {
-            x_off += pEvent->m_x - m_x[t1];
-            y_off += pEvent->m_y - m_y[t1];
-         }
-         else
-         {
-            realtype d0 = sqrt(pow((realtype)m_x[t1] - (realtype)m_x[t2], 2) +
-                               pow((realtype)m_y[t1] - (realtype)m_y[t2], 2));
-            realtype d1 = sqrt(pow((realtype)pEvent->m_x - (realtype)m_x[t2], 2) +
-                               pow((realtype)pEvent->m_y - (realtype)m_y[t2], 2));
-            if (d0 > 0)
+            if (m_x[t2] == -1)
             {
-               scale *= (d1 / d0);
+               x_off += mx - m_x[t1];
+               y_off += my - m_y[t1];
             }
+            else
+            {
+               realtype d0 = sqrt(pow((realtype)m_x[t1] - (realtype)m_x[t2], 2) +
+                                  pow((realtype)m_y[t1] - (realtype)m_y[t2], 2));
+               realtype d1 = sqrt(pow((realtype)mx - (realtype)m_x[t2], 2) +
+                                  pow((realtype)my - (realtype)m_y[t2], 2));
+               if (d0 > 0)
+               {
+                  scale *= (d1 / d0);
+               }
+            }
+            m_x[t1] = mx;
+            m_y[t1] = my;
          }
-         m_x[t1] = pEvent->m_x;
-         m_y[t1] = pEvent->m_y;
+      }
+      else if (m_x2[t1] != -1)
+      {
+         if (connectomeState && (my > h2))
+         {
+            if (m_x2[t2] == -1)
+            {
+               x_off2 += mx - m_x2[t1];
+               y_off2 += my - m_y2[t1];
+               if (y_off2 <= h2)
+               {
+                  y_off2 = h2 + 1;
+               }
+            }
+            else
+            {
+               realtype d0 = sqrt(pow((realtype)m_x2[t1] - (realtype)m_x2[t2], 2) +
+                                  pow((realtype)m_y2[t1] - (realtype)m_y2[t2], 2));
+               realtype d1 = sqrt(pow((realtype)mx - (realtype)m_x2[t2], 2) +
+                                  pow((realtype)my - (realtype)m_y2[t2], 2));
+               if (d0 > 0)
+               {
+                  scale2 *= (d1 / d0);
+               }
+            }
+            m_x2[t1] = mx;
+            m_y2[t1] = my;
+         }
       }
    }
    return(0);
@@ -331,17 +407,24 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
 
 void SimInit()
 {
+   QuitImage       = Iw2DCreateImage("quit.png");
+   StartImage      = Iw2DCreateImage("start.png");
+   PauseImage      = Iw2DCreateImage("pause.png");
+   ScalpelImage    = Iw2DCreateImage("scalpel.png");
+   LightImage      = Iw2DCreateImage("light.png");
+   SegmentImage    = Iw2DCreateImage("segment.png");
+   runState        = START;
+   skinState       = true;
+   connectomeState = false;
+
    mem  = NULL;
    yy   = yp = avtol = NULL;
    yval = ypval = atval = NULL;
 
    // Allocate N-vectors (Copied from Sundials examples)
-   yy = N_VNew_Serial(NEQ);
-   //if (check_flag((void *)yy, "N_VNew_Serial", 0)) return(1);
-   yp = N_VNew_Serial(NEQ);
-   //if (check_flag((void *)yp, "N_VNew_Serial", 0)) return(1);
+   yy    = N_VNew_Serial(NEQ);
+   yp    = N_VNew_Serial(NEQ);
    avtol = N_VNew_Serial(NEQ);
-   //if (check_flag((void *)avtol, "N_VNew_Serial", 0)) return(1);
 
    // Create and initialize  y, y', and absolute tolerance vectors (Copied from Sundials examples)
    yval  = NV_DATA_S(yy);
@@ -498,17 +581,14 @@ void SimInit()
 
    // Call IDACreate and IDAMalloc to initialize IDA memory (Copied from Sundials examples)
    mem = IDACreate();
-   //if (check_flag((void *)mem, "IDACreate", 0)) return(1);
 
    retval = IDAMalloc(mem, resrob, t0, yy, yp, IDA_SV, rtol, avtol);
-   //if (check_flag(&retval, "IDAMalloc", 1)) return(1);
 
    // Free avtol (Copied from Sundials examples)
    N_VDestroy_Serial(avtol);
 
    // Call IDADense and set up the linear solver (Copied from Sundials examples)
    retval = IDADense(mem, NEQ);
-   //if (check_flag(&retval, "IDADense", 1)) return(1);
 
    // Integrator inputs
    iout = 0;
@@ -517,9 +597,6 @@ void SimInit()
    // Update.
    updateTimer = 0;
    SimUpdate();
-
-   // Run state.
-   runState = START;
 }
 
 
@@ -529,10 +606,6 @@ void AppInit()
    IwGxRegister(IW_GX_SCREENSIZE, SurfaceChangedCallback);
    IwResManagerInit();
    Iw2DInit();
-   scalpel   = Iw2DCreateImage("scalpel.png");
-   skinState = true;
-   IwGxFontInit();
-   SetFont();
    if (s3ePointerGetInt(S3E_POINTER_MULTI_TOUCH_AVAILABLE))
    {
       s3ePointerRegister(S3E_POINTER_TOUCH_EVENT, (s3eCallback)PointerTouchEventCallback, NULL);
@@ -545,29 +618,24 @@ void AppInit()
    }
 
    scale            = SCALE;
+   scale2           = 1.0;
    muscleWidthScale = MUSCLE_WIDTH_SCALE;
    x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
-   y_off            = (realtype)IwGxGetScreenHeight() / 2.0;
+   y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
+   x_off2           = 0;
+   y_off2           = ((realtype)IwGxGetScreenHeight() / 2.0) + 1;
    m_x[0]           = m_y[0] = -1;
    m_x[1]           = m_y[1] = -1;
+   m_x2[0]          = m_y2[0] = -1;
+   m_x2[1]          = m_y2[1] = -1;
 
    // Initialize simulation.
    SimInit();
 }
 
 
-void AppCheckQuit()
-{
-   s3eDeviceRequestQuit();
-}
-
-
 void SimTerminate()
 {
-   // (Copied from Sundials examples)
-   //PrintFinalStats(mem);
-
-   // Free memory (Copied from Sundials examples)
    IDAFree(&mem);
    N_VDestroy_Serial(yy);
    N_VDestroy_Serial(yp);
@@ -576,6 +644,13 @@ void SimTerminate()
    {
       delete [] Objects[i];
    }
+
+   delete QuitImage;
+   delete StartImage;
+   delete PauseImage;
+   delete ScalpelImage;
+   delete LightImage;
+   delete SegmentImage;
 }
 
 
@@ -585,12 +660,6 @@ void AppShutDown()
    SimTerminate();
 
    // Terminate.
-   delete scalpel;
-   if (font != NULL)
-   {
-      IwGxFontDestroyTTFont(font);
-   }
-   IwGxFontTerminate();
    Iw2DTerminate();
    IwResManagerTerminate();
    IwGxUnRegister(IW_GX_SCREENSIZE, SurfaceChangedCallback);
@@ -607,7 +676,7 @@ void AppShutDown()
 }
 
 
-void AppRun()
+void AppSetRunState()
 {
    static uint64 timer = 0;
    uint64        t     = s3eTimerGetMs();
@@ -636,21 +705,33 @@ void AppRun()
 }
 
 
-int AppRunState()
+int AppGetRunState()
 {
    return(runState);
 }
 
 
-void AppSkin()
+void AppSetSkinState()
 {
    skinState = !skinState;
 }
 
 
-bool AppSkinState()
+bool AppGetSkinState()
 {
    return(skinState);
+}
+
+
+void AppSetConnectomeState()
+{
+   connectomeState = !connectomeState;
+}
+
+
+bool AppGetConnectomeState()
+{
+   return(connectomeState);
 }
 
 
@@ -690,9 +771,6 @@ void SimUpdate()
    //Call muscle model update function
    update_muscles(tout);
 
-   // Check integration went ok (Copied from Sundials examples)
-   //if (check_flag(&retval, "IDASolve", 1)) return(1);
-
    // Prepare to go to next step
    if (retval == IDA_SUCCESS)
    {
@@ -707,17 +785,6 @@ bool AppUpdate()
    // Update simulation.
    SimUpdate();
 
-   // Get keyboard input.
-   bool shift = false;
-   if ((s3eKeyboardGetState(s3eKeyLeftShift) & S3E_KEY_STATE_DOWN) ||
-       (s3eKeyboardGetState(s3eKeyRightShift) & S3E_KEY_STATE_DOWN))
-   {
-      shift = true;
-   }
-   switch (s3eKeyboardAnyKey())
-   {
-   }
-
    return(true);
 }
 
@@ -729,7 +796,6 @@ void AppRender()
    IwGxClear();
    IwGxLightingOn();
    Iw2DSetColour(0xff777777);
-   IwGxFontSetCol(0xff000000);
 
    // Draw worm.
    realtype *yval = NV_DATA_S(yy);
@@ -801,6 +867,22 @@ void AppRender()
       Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
    }
 
+   // Draw connectome?
+   if (connectomeState)
+   {
+      int w  = IwGxGetScreenWidth();
+      int h2 = IwGxGetScreenHeight() / 2;
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillRect(CIwFVec2(0, h2), CIwFVec2(w, h2));
+      Iw2DSetColour(0xff000000);
+      Iw2DDrawLine(CIwFVec2(0, h2), CIwFVec2(w, h2));
+      Iw2DSetColour(0xffffffff);
+      Iw2DDrawImage(SegmentImage, CIwFVec2(x_off2, y_off2), CIwFVec2((w / 3) * scale2, (h2 - 2) * scale2));
+   }
+
+   // Render keys.
+   RenderKeys();
+
    // Flush and swap.
    IwGxFlush();
    IwGxSwapBuffers();
@@ -808,9 +890,9 @@ void AppRender()
 
 
 /*
- * *--------------------------------------------------------------------
+ * **--------------------------------------------------------------------
  * Model Functions
- *********--------------------------------------------------------------------
+ **********--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1227,7 +1309,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- *********--------------------------------------------------------------------
+ **********--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
@@ -1268,88 +1350,3 @@ double randn(double mu, double sigma)
       return(storedDeviate * sigma + mu);
    }
 }
-
-
-#ifdef NEVER
-
-// Print final integrator statistics (Copied from Sundials examples)
-static void PrintFinalStats(void *mem)
-{
-   int      retval;
-   long int nst, nni, nje, nre, nreLS, netf, ncfn, nge;
-
-   retval = IDAGetNumSteps(mem, &nst);
-   check_flag(&retval, "IDAGetNumSteps", 1);
-   retval = IDAGetNumResEvals(mem, &nre);
-   check_flag(&retval, "IDAGetNumResEvals", 1);
-   retval = IDADenseGetNumJacEvals(mem, &nje);
-   check_flag(&retval, "IDADenseGetNumJacEvals", 1);
-   retval = IDAGetNumNonlinSolvIters(mem, &nni);
-   check_flag(&retval, "IDAGetNumNonlinSolvIters", 1);
-   retval = IDAGetNumErrTestFails(mem, &netf);
-   check_flag(&retval, "IDAGetNumErrTestFails", 1);
-   retval = IDAGetNumNonlinSolvConvFails(mem, &ncfn);
-   check_flag(&retval, "IDAGetNumNonlinSolvConvFails", 1);
-   retval = IDADenseGetNumResEvals(mem, &nreLS);
-   check_flag(&retval, "IDADenseGetNumResEvals", 1);
-   retval = IDAGetNumGEvals(mem, &nge);
-   check_flag(&retval, "IDAGetNumGEvals", 1);
-
-   printf("\nFinal Run Statistics: \n\n");
-   printf("Number of steps                    = %ld\n", nst);
-   printf("Number of residual evaluations     = %ld\n", nre + nreLS);
-   printf("Number of Jacobian evaluations     = %ld\n", nje);
-   printf("Number of nonlinear iterations     = %ld\n", nni);
-   printf("Number of error test failures      = %ld\n", netf);
-   printf("Number of nonlinear conv. failures = %ld\n", ncfn);
-   printf("Number of root fn. evaluations     = %ld\n", nge);
-}
-
-
-/*
- * Check function return value... (Copied from Sundials examples)
- *   opt == 0 means SUNDIALS function allocates memory so check if
- *            returned NULL pointer
- *   opt == 1 means SUNDIALS function returns a flag so check if
- *            flag >= 0
- *   opt == 2 means function allocates memory so check if returned
- *            NULL pointer
- */
-static int check_flag(void *flagvalue, char *funcname, int opt)
-{
-   int *errflag;
-
-   /* Check if SUNDIALS function returned NULL pointer - no memory allocated */
-   if ((opt == 0) && (flagvalue == NULL))
-   {
-      fprintf(stderr,
-              "\nSUNDIALS_ERROR: %s() failed - returned NULL pointer\n\n",
-              funcname);
-      return(1);
-   }
-   else if (opt == 1)
-   {
-      /* Check if flag < 0 */
-      errflag = (int *)flagvalue;
-      if (*errflag < 0)
-      {
-         fprintf(stderr,
-                 "\nSUNDIALS_ERROR: %s() failed with flag = %d\n\n",
-                 funcname, *errflag);
-         return(1);
-      }
-   }
-   else if ((opt == 2) && (flagvalue == NULL))
-   {
-      /* Check if function returned NULL pointer - no memory allocated */
-      fprintf(stderr,
-              "\nMEMORY_ERROR: %s() failed - returned NULL pointer\n\n",
-              funcname);
-      return(1);
-   }
-
-   return(0);
-}
-
-
-#endif

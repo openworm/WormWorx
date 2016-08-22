@@ -74,7 +74,12 @@ assets
     (data)
     Anonymous.ttf
     splashscreen.jpg
-	scalpel.png
+    quit.png
+    start.png
+    pause.png
+    scalpel.png
+    light.png
+    segment.png
 }
 
 #### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
