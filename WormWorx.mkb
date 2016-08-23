@@ -77,9 +77,10 @@ assets
     quit.png
     start.png
     pause.png
+    restart.png
     scalpel.png
     light.png
-    segment.png
+    connectome.png
 }
 
 #### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####

@@ -7,6 +7,5 @@ deployments
     splashscreen = "data/splashscreen.jpg"
     splashscreen-use-all = "1"
     provider = "OpenWorm"
-    version = "0.0.3"
 
 }

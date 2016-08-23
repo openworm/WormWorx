@@ -6,9 +6,10 @@ AndroidPointMultiEnable = 1
 [GX]
 DataCacheSize=640000
 NumTPages=20
+VertCacheSize=4096
 
-[GxFont]
-CacheTextureMaxSize=512
+[2D]
+MaxBatch=10000
 
 # Uncomment this section to use full-screen anti-aliasing.
 [GL]

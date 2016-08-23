@@ -25,6 +25,14 @@ typedef enum CursorKeyCodes
    EXCURSOR_RIGHT
 } CursorKeyCodes;
 
+// Run states.
+typedef enum
+{
+   START   = 0,
+   RUN     = 1,
+   RESTART = 2
+} RunState;
+
 // App functions.
 void AppInit();
 void AppShutDown();
@@ -41,6 +49,7 @@ bool AppGetConnectomeState();
 extern CIw2DImage *QuitImage;
 extern CIw2DImage *StartImage;
 extern CIw2DImage *PauseImage;
+extern CIw2DImage *RestartImage;
 extern CIw2DImage *ScalpelImage;
 extern CIw2DImage *LightImage;
 

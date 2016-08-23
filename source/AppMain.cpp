@@ -114,15 +114,20 @@ void RenderKey(int key, CIwMaterial *fadeMat, CIwColour *cols_light, CIwColour *
    case RUN_KEY:
       Iw2DSetColour(0xffffffff);
       Iw2DFillRect(CIwFVec2(x, y), CIwFVec2(width, height));
-      if (AppGetRunState())
+      IwGxDrawRectScreenSpace(&XY, &dXY, cols);
+      switch (AppGetRunState())
       {
-         IwGxDrawRectScreenSpace(&XY, &dXY, cols);
-         Iw2DDrawImage(PauseImage, p, s);
-      }
-      else
-      {
-         IwGxDrawRectScreenSpace(&XY, &dXY, cols);
+      case START:
          Iw2DDrawImage(StartImage, p, s);
+         break;
+
+      case RUN:
+         Iw2DDrawImage(PauseImage, p, s);
+         break;
+
+      case RESTART:
+         Iw2DDrawImage(RestartImage, p, s);
+         break;
       }
       break;
 

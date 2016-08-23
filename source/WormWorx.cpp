@@ -141,13 +141,8 @@ CIw2DImage *QuitImage;
 // Start/pause.
 CIw2DImage *StartImage;
 CIw2DImage *PauseImage;
-typedef enum
-{
-   START = 0,
-   RUN   = 1,
-   RESET = 2
-} RunState;
-RunState runState;
+CIw2DImage *RestartImage;
+RunState   runState;
 
 // Skin/muscles.
 CIw2DImage *ScalpelImage;
@@ -157,11 +152,20 @@ realtype muscleWidthScale;
 
 // Connectome.
 CIw2DImage *LightImage;
-CIw2DImage *SegmentImage;
+CIw2DImage *ConnectomeImage;
 bool       connectomeState;
+int        currentSegment;
+void setCurrentSegment(int mx, int my);
+void getConnectomeGeometry(int& x, int& y, int& w, int& h);
+
+#define PARTITION    0.66
+#define XMIN         .368
+#define XMAX         .828
+#define YMIN         .34
+#define YMAX         .66
 
 // Touch and rendering.
-#define SCALE    0.5
+#define SCALE        0.5
 realtype scale, scale2;
 realtype x_off, y_off;
 realtype x_off2, y_off2;
@@ -169,8 +173,8 @@ int32    m_x[2], m_y[2];
 int32    m_x2[2], m_y2[2];
 CIwFVec2 verts[(NBAR) * 2];
 
-// Surface change.
-void SurfaceChangedCallback()
+// Reset.
+void reset()
 {
    scale            = SCALE;
    scale2           = 1.0;
@@ -178,11 +182,19 @@ void SurfaceChangedCallback()
    x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
    y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
    x_off2           = 0;
-   y_off2           = ((realtype)IwGxGetScreenHeight() / 2.0) + 1;
+   y_off2           = ((realtype)IwGxGetScreenHeight() * PARTITION) + 1;
    m_x[0]           = m_y[0] = -1;
    m_x[1]           = m_y[1] = -1;
    m_x2[0]          = m_y2[0] = -1;
    m_x2[1]          = m_y2[1] = -1;
+   currentSegment   = -1;
+}
+
+
+// Surface change.
+void SurfaceChangedCallback()
+{
+   reset();
 }
 
 
@@ -195,12 +207,12 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
    {
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
-      int h2 = (int)IwGxGetScreenHeight() / 2;
+      int h  = (int)IwGxGetScreenHeight() * PARTITION;
       if (pEvent->m_Pressed)
       {
          if ((key = TestKey(mx, my)) == -1)
          {
-            if (!connectomeState || (my < h2))
+            if (!connectomeState || (my < h))
             {
                m_x[0]  = mx;
                m_y[0]  = my;
@@ -211,6 +223,7 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
                m_x[0]  = m_y[0] = -1;
                m_x2[0] = mx;
                m_y2[0] = my;
+               setCurrentSegment(mx, my);
             }
          }
          else
@@ -252,9 +265,9 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
 {
    int mx = pEvent->m_x;
    int my = pEvent->m_y;
-   int h2 = (int)IwGxGetScreenHeight() / 2;
+   int h  = (int)IwGxGetScreenHeight() * PARTITION;
 
-   if (!connectomeState || (my < h2))
+   if (!connectomeState || (my < h))
    {
       if (m_x[0] != -1)
       {
@@ -270,9 +283,9 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
       {
          x_off2 += mx - m_x2[0];
          y_off2 += my - m_y2[0];
-         if (y_off2 <= h2)
+         if (y_off2 <= h)
          {
-            y_off2 = h2 + 1;
+            y_off2 = h + 1;
          }
          m_x2[0] = mx;
          m_y2[0] = my;
@@ -294,10 +307,10 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
       {
          int mx = pEvent->m_x;
          int my = pEvent->m_y;
-         int h2 = (int)IwGxGetScreenHeight() / 2;
+         int h  = (int)IwGxGetScreenHeight() * PARTITION;
          if ((key = TestKey(mx, my)) == -1)
          {
-            if (!connectomeState || (my < h2))
+            if (!connectomeState || (my < h))
             {
                m_x[t]  = mx;
                m_y[t]  = my;
@@ -310,6 +323,7 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
                m_x[1]  = m_y[1] = -1;
                m_x2[t] = mx;
                m_y2[t] = my;
+               setCurrentSegment(mx, my);
             }
          }
          else
@@ -358,10 +372,10 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
       int t2 = (t1 + 1) % 2;
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
-      int h2 = (int)IwGxGetScreenHeight() / 2;
+      int h  = (int)IwGxGetScreenHeight() * PARTITION;
       if (m_x[t1] != -1)
       {
-         if (!connectomeState || (my < h2))
+         if (!connectomeState || (my < h))
          {
             if (m_x[t2] == -1)
             {
@@ -385,15 +399,15 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
       }
       else if (m_x2[t1] != -1)
       {
-         if (connectomeState && (my > h2))
+         if (connectomeState && (my > h))
          {
             if (m_x2[t2] == -1)
             {
                x_off2 += mx - m_x2[t1];
                y_off2 += my - m_y2[t1];
-               if (y_off2 <= h2)
+               if (y_off2 <= h)
                {
-                  y_off2 = h2 + 1;
+                  y_off2 = h + 1;
                }
             }
             else
@@ -418,12 +432,15 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
 
 void SimInit()
 {
+   reset();
+
    QuitImage       = Iw2DCreateImage("quit.png");
    StartImage      = Iw2DCreateImage("start.png");
    PauseImage      = Iw2DCreateImage("pause.png");
+   RestartImage    = Iw2DCreateImage("restart.png");
    ScalpelImage    = Iw2DCreateImage("scalpel.png");
    LightImage      = Iw2DCreateImage("light.png");
-   SegmentImage    = Iw2DCreateImage("segment.png");
+   ConnectomeImage = Iw2DCreateImage("connectome.png");
    runState        = START;
    skinState       = true;
    connectomeState = false;
@@ -628,18 +645,6 @@ void AppInit()
       s3ePointerRegister(S3E_POINTER_MOTION_EVENT, (s3eCallback)PointerMotionEventCallback, NULL);
    }
 
-   scale            = SCALE;
-   scale2           = 1.0;
-   muscleWidthScale = MUSCLE_WIDTH_SCALE;
-   x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
-   y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
-   x_off2           = 0;
-   y_off2           = ((realtype)IwGxGetScreenHeight() / 2.0) + 1;
-   m_x[0]           = m_y[0] = -1;
-   m_x[1]           = m_y[1] = -1;
-   m_x2[0]          = m_y2[0] = -1;
-   m_x2[1]          = m_y2[1] = -1;
-
    // Initialize simulation.
    SimInit();
 }
@@ -659,9 +664,10 @@ void SimTerminate()
    delete QuitImage;
    delete StartImage;
    delete PauseImage;
+   delete RestartImage;
    delete ScalpelImage;
    delete LightImage;
-   delete SegmentImage;
+   delete ConnectomeImage;
 }
 
 
@@ -708,7 +714,7 @@ void AppSetRunState()
       runState = START;
       break;
 
-   case RESET:
+   case RESTART:
       SimTerminate();
       SimInit();
       break;
@@ -737,6 +743,10 @@ bool AppGetSkinState()
 void AppSetConnectomeState()
 {
    connectomeState = !connectomeState;
+   if (!connectomeState)
+   {
+      currentSegment = -1;
+   }
 }
 
 
@@ -757,7 +767,7 @@ void SimUpdate()
    // End once enough simulation time has passed
    if (tout > DURATION)
    {
-      runState = RESET;
+      runState = RESTART;
       return;
    }
 
@@ -881,14 +891,47 @@ void AppRender()
    // Draw connectome?
    if (connectomeState)
    {
+      if (currentSegment != -1)
+      {
+         int      j  = currentSegment * 4;
+         int      k  = j + 4;
+         realtype mx = (yval[j * 3] + yval[k * 3]) / 2.0;
+         mx = mx * s + x_off;
+         realtype my = (yval[j * 3 + 1] + yval[k * 3 + 1]) / 2.0;
+         my = my * s + y_off;
+         realtype r = ((R[j] + R[k]) / 2.0) * s * 2.0;
+         Iw2DSetColour(0x77ff7777);
+         Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      }
       int w  = IwGxGetScreenWidth();
-      int h2 = IwGxGetScreenHeight() / 2;
+      int h  = IwGxGetScreenHeight() * PARTITION;
+      int h2 = IwGxGetScreenHeight() * (1.0 - PARTITION);
       Iw2DSetColour(0xffffffff);
-      Iw2DFillRect(CIwFVec2(0, h2), CIwFVec2(w, h2));
+      Iw2DFillRect(CIwFVec2(0, h), CIwFVec2(w, h2));
       Iw2DSetColour(0xff000000);
-      Iw2DDrawLine(CIwFVec2(0, h2), CIwFVec2(w, h2));
+      Iw2DDrawLine(CIwFVec2(0, h), CIwFVec2(w, h));
       Iw2DSetColour(0xffffffff);
-      Iw2DDrawImage(SegmentImage, CIwFVec2(x_off2, y_off2), CIwFVec2((h2 - 2) * .5 * scale2, (h2 - 2) * scale2));
+      int x, y;
+      getConnectomeGeometry(x, y, w, h);
+      for (int i = 0; i < 12; i++)
+      {
+         Iw2DDrawImage(ConnectomeImage, CIwFVec2(x + (w * i), y), CIwFVec2(w, h));
+         Iw2DSetColour(0xff000000);
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMIN) - (h * .0125)), CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMAX) - (h * .0125)), CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMIN) - (h * .0125)), CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMIN) - (w * .075)), CIwFVec2(h * .025, w * .15));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMAX) - (h * .0125)), CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMAX) - (w * .075)), CIwFVec2(h * .025, w * .15));
+         Iw2DSetColour(0xffffffff);
+         Iw2DSetColour(0xffffffff);
+         if (currentSegment == i)
+         {
+            Iw2DSetColour(0xffff7777);
+            Iw2DDrawRect(CIwFVec2(x + (w * i), y), CIwFVec2(w - 1, h));
+            Iw2DSetColour(0xffffffff);
+         }
+      }
    }
 
    // Render keys.
@@ -900,10 +943,47 @@ void AppRender()
 }
 
 
+// Set current connectome segment.
+void setCurrentSegment(int mx, int my)
+{
+   int x, y, w, h;
+
+   getConnectomeGeometry(x, y, w, h);
+   for (int i = 0; i < 12; i++)
+   {
+      if ((mx >= x) && (mx < (x + w)) && (my >= y) && (my < (y + h)))
+      {
+         if ((currentSegment == -1) || (currentSegment != i))
+         {
+            currentSegment = i;
+         }
+         else
+         {
+            currentSegment = -1;
+         }
+         return;
+      }
+      x += w;
+   }
+   currentSegment = -1;
+}
+
+
+// Get connectome geometry.
+void getConnectomeGeometry(int& x, int& y, int& w, int& h)
+{
+   x = x_off2;
+   y = y_off2;
+   int h2 = IwGxGetScreenHeight() * (1.0 - PARTITION);
+   w = (h2 - 2) * 0.5 * scale2;
+   h = (h2 - 2) * scale2;
+}
+
+
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- ***********--------------------------------------------------------------------
+ ************--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1320,7 +1400,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ***********--------------------------------------------------------------------
+ ************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
