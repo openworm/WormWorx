@@ -151,6 +151,7 @@ void RenderKey(int key, CIwMaterial *fadeMat, CIwColour *cols_light, CIwColour *
    }
    Iw2DSetColour(0xff000000);
    Iw2DDrawRect(CIwFVec2(x, y - 2), CIwFVec2(width, height));
+   Iw2DDrawRect(CIwFVec2(x + 1, y - 1), CIwFVec2(width - 2, height - 2));
 }
 
 

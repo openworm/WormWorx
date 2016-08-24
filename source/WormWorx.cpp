@@ -108,6 +108,7 @@ realtype L_SR[NSEG][2];
 realtype I_SR[NSEG][2];
 
 // Neuron and muscle state variables
+int      State[12][2];
 realtype V_muscle[NSEG][2];
 realtype V_neuron[NSEG][2];
 
@@ -910,27 +911,64 @@ void AppRender()
       Iw2DFillRect(CIwFVec2(0, h), CIwFVec2(w, h2));
       Iw2DSetColour(0xff000000);
       Iw2DDrawLine(CIwFVec2(0, h), CIwFVec2(w, h));
+      Iw2DDrawLine(CIwFVec2(0, h - 1), CIwFVec2(w, h - 1));
       Iw2DSetColour(0xffffffff);
       int x, y;
       getConnectomeGeometry(x, y, w, h);
       for (int i = 0; i < 12; i++)
       {
          Iw2DDrawImage(ConnectomeImage, CIwFVec2(x + (w * i), y), CIwFVec2(w, h));
-         Iw2DSetColour(0xff000000);
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMIN) - (h * .0125)), CIwFVec2(w * .15, h * .025));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMAX) - (h * .0125)), CIwFVec2(w * .15, h * .025));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMIN) - (h * .0125)), CIwFVec2(w * .15, h * .025));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMIN) - (w * .075)), CIwFVec2(h * .025, w * .15));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMAX) - (h * .0125)), CIwFVec2(w * .15, h * .025));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMAX) - (w * .075)), CIwFVec2(h * .025, w * .15));
-         Iw2DSetColour(0xffffffff);
-         Iw2DSetColour(0xffffffff);
+         if (State[i][1] == 1)
+         {
+            Iw2DSetColour(0xff0000ff);
+         }
+         else
+         {
+            Iw2DSetColour(0xff000000);
+         }
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMIN) - (h * .0125)),
+                      CIwFVec2(w * .15, h * .025));
+         if (State[i][0] == 1)
+         {
+            Iw2DSetColour(0xff0000ff);
+         }
+         else
+         {
+            Iw2DSetColour(0xff000000);
+         }
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMAX) - (h * .0125)),
+                      CIwFVec2(w * .15, h * .025));
+         if (State[i][0] == 1)
+         {
+            Iw2DSetColour(0xff00ff00);
+         }
+         else
+         {
+            Iw2DSetColour(0xff000000);
+         }
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMIN) - (h * .0125)),
+                      CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMIN) - (w * .075)),
+                      CIwFVec2(h * .025, w * .15));
+         if (State[i][1] == 1)
+         {
+            Iw2DSetColour(0xff00ff00);
+         }
+         else
+         {
+            Iw2DSetColour(0xff000000);
+         }
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMAX) - (h * .0125)),
+                      CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMAX) - (w * .075)),
+                      CIwFVec2(h * .025, w * .15));
          if (currentSegment == i)
          {
             Iw2DSetColour(0xffff7777);
             Iw2DDrawRect(CIwFVec2(x + (w * i), y), CIwFVec2(w - 1, h));
-            Iw2DSetColour(0xffffffff);
+            Iw2DDrawRect(CIwFVec2(x + (w * i) + 1, y + 1), CIwFVec2(w - 3, h - 2));
          }
+         Iw2DSetColour(0xffffffff);
       }
    }
 
@@ -983,7 +1021,7 @@ void getConnectomeGeometry(int& x, int& y, int& w, int& h)
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- ************--------------------------------------------------------------------
+ **************--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1004,9 +1042,6 @@ void update_neurons(realtype timenow)
       NMJ_weight[i] = 0.7 * (1.0 - i * 0.6 / NSEG);     // Decreasing gradient in NMJ strength / muscle efficacy
    }
    NMJ_weight[0] /= 1.5;                                // Helps to prevent excessive bending of head
-
-   // Neural state variables
-   static int State[N_units][2];
 
    // If this is the first time update_neurons is called, initialize with all neurons on one side ON
    static bool initialized = false;
@@ -1400,7 +1435,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ************--------------------------------------------------------------------
+ **************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
