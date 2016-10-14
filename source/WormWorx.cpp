@@ -1,7 +1,7 @@
 /*
  * WormWorx: a simulation of the C. elegans nematode worm.
  *
- * Copyright (c) 2016 Tom Portegys (portegys@openworm.org). All rights reserved.
+ * Copyright (c) 2016-2017 Tom Portegys (portegys@openworm.org). All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -56,7 +56,7 @@
 #define NBAR            NSEG + 1
 #define NSEG_MINUS_1    NSEG - 1
 #define NEQ             3 * (NBAR)
-#define DELTAT          0.001
+#define DELTAT          0.1
 #define HALFPI          M_PI / 2.0
 
 // General body constants
@@ -137,6 +137,18 @@ int      iout, retval, retvalr;
 uint64 updateTimer;
 void SimUpdate();
 
+// Salty food.
+CIw2DImage *SaltyImage;
+#define NUM_SALTY    3
+realtype SaltyX[NUM_SALTY];
+realtype SaltyY[NUM_SALTY];
+realtype SaltyX_origin;
+realtype SaltyY_origin;
+realtype SaltyX_off;
+realtype SaltyY_off;
+int      CurrentSalty;
+
+// Quit.
 CIw2DImage *QuitImage;
 
 // Start/pause.
@@ -154,19 +166,20 @@ realtype muscleWidthScale;
 // Connectome.
 CIw2DImage *LightImage;
 CIw2DImage *ConnectomeImage;
+CIw2DImage *SteeringImage;
 bool       connectomeState;
 int        currentSegment;
 void setCurrentSegment(int mx, int my);
-void getConnectomeGeometry(int& x, int& y, int& w, int& h);
+void getMotorConnectomeGeometry(int& x, int& y, int& w, int& h);
 
-#define PARTITION    0.66
-#define XMIN         .368
-#define XMAX         .828
-#define YMIN         .34
-#define YMAX         .66
+#define MOTOR_PARTITION    0.66
+#define XMIN               .368
+#define XMAX               .828
+#define YMIN               .34
+#define YMAX               .66
 
 // Touch and rendering.
-#define SCALE        0.5
+#define SCALE              0.5
 realtype scale, scale2;
 realtype x_off, y_off;
 realtype x_off2, y_off2;
@@ -183,12 +196,22 @@ void reset()
    x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
    y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
    x_off2           = 0;
-   y_off2           = ((realtype)IwGxGetScreenHeight() * PARTITION) + 1;
+   y_off2           = ((realtype)IwGxGetScreenHeight() * MOTOR_PARTITION) + 1;
    m_x[0]           = m_y[0] = -1;
    m_x[1]           = m_y[1] = -1;
    m_x2[0]          = m_y2[0] = -1;
    m_x2[1]          = m_y2[1] = -1;
    currentSegment   = -1;
+   SaltyX[0]        = -(realtype)IwGxGetScreenWidth() / 5.0;
+   SaltyY[0]        = -(realtype)IwGxGetScreenHeight() / 7.0;
+   SaltyX[1]        = (realtype)IwGxGetScreenWidth() / 4.0;
+   SaltyY[1]        = (realtype)IwGxGetScreenHeight() / 2.0;
+   SaltyX[2]        = (realtype)IwGxGetScreenWidth() * .75;
+   SaltyY[2]        = -(realtype)IwGxGetScreenHeight() / 2.0;
+   SaltyX_origin    = x_off;
+   SaltyY_origin    = y_off;
+   SaltyX_off       = SaltyY_off = 0.0;
+   CurrentSalty     = 0;
 }
 
 
@@ -208,12 +231,11 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
    {
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
-      int h  = (int)IwGxGetScreenHeight() * PARTITION;
       if (pEvent->m_Pressed)
       {
          if ((key = TestKey(mx, my)) == -1)
          {
-            if (!connectomeState || (my < h))
+            if (!connectomeState)
             {
                m_x[0]  = mx;
                m_y[0]  = my;
@@ -266,16 +288,18 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
 {
    int mx = pEvent->m_x;
    int my = pEvent->m_y;
-   int h  = (int)IwGxGetScreenHeight() * PARTITION;
+   int h  = (int)IwGxGetScreenHeight() * MOTOR_PARTITION;
 
-   if (!connectomeState || (my < h))
+   if (!connectomeState)
    {
       if (m_x[0] != -1)
       {
-         x_off += mx - m_x[0];
-         y_off += my - m_y[0];
-         m_x[0] = mx;
-         m_y[0] = my;
+         x_off      += mx - m_x[0];
+         y_off      += my - m_y[0];
+         SaltyX_off += mx - m_x[0];
+         SaltyY_off += my - m_y[0];
+         m_x[0]      = mx;
+         m_y[0]      = my;
       }
    }
    else
@@ -308,10 +332,9 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
       {
          int mx = pEvent->m_x;
          int my = pEvent->m_y;
-         int h  = (int)IwGxGetScreenHeight() * PARTITION;
          if ((key = TestKey(mx, my)) == -1)
          {
-            if (!connectomeState || (my < h))
+            if (!connectomeState)
             {
                m_x[t]  = mx;
                m_y[t]  = my;
@@ -373,15 +396,17 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
       int t2 = (t1 + 1) % 2;
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
-      int h  = (int)IwGxGetScreenHeight() * PARTITION;
+      int h  = (int)IwGxGetScreenHeight() * MOTOR_PARTITION;
       if (m_x[t1] != -1)
       {
-         if (!connectomeState || (my < h))
+         if (!connectomeState)
          {
             if (m_x[t2] == -1)
             {
-               x_off += mx - m_x[t1];
-               y_off += my - m_y[t1];
+               x_off      += mx - m_x[t1];
+               y_off      += my - m_y[t1];
+               SaltyX_off += mx - m_x[t1];
+               SaltyY_off += my - m_y[t1];
             }
             else
             {
@@ -435,6 +460,7 @@ void SimInit()
 {
    reset();
 
+   SaltyImage      = Iw2DCreateImage("salty.png");
    QuitImage       = Iw2DCreateImage("quit.png");
    StartImage      = Iw2DCreateImage("start.png");
    PauseImage      = Iw2DCreateImage("pause.png");
@@ -442,6 +468,7 @@ void SimInit()
    ScalpelImage    = Iw2DCreateImage("scalpel.png");
    LightImage      = Iw2DCreateImage("light.png");
    ConnectomeImage = Iw2DCreateImage("connectome.png");
+   SteeringImage   = Iw2DCreateImage("steering0.png");
    runState        = START;
    skinState       = true;
    connectomeState = false;
@@ -662,6 +689,7 @@ void SimTerminate()
       delete [] Objects[i];
    }
 
+   delete SaltyImage;
    delete QuitImage;
    delete StartImage;
    delete PauseImage;
@@ -669,6 +697,7 @@ void SimTerminate()
    delete ScalpelImage;
    delete LightImage;
    delete ConnectomeImage;
+   delete SteeringImage;
 }
 
 
@@ -744,10 +773,6 @@ bool AppGetSkinState()
 void AppSetConnectomeState()
 {
    connectomeState = !connectomeState;
-   if (!connectomeState)
-   {
-      currentSegment = -1;
-   }
 }
 
 
@@ -817,81 +842,132 @@ void AppRender()
    IwGxSetColClear(0xff, 0xff, 0xff, 0xff);
    IwGxClear();
    IwGxLightingOn();
-   Iw2DSetColour(0xff777777);
 
-   // Draw worm.
-   realtype *yval = NV_DATA_S(yy);
-   realtype s     = (realtype)IwGxGetScreenWidth() * scale / 0.001;
-   int      n2    = (NBAR) * 2;
-   for (int i = 0; i < NBAR; ++i)
+   // Scaling.
+   realtype s = (realtype)IwGxGetScreenWidth() * scale / 0.001;
+
+   if (!connectomeState)
    {
-      realtype dX = R[i] * cos(yval[i * 3 + 2]);
-      realtype dY = R[i] * sin(yval[i * 3 + 2]);
-      verts[i].x            = ((yval[i * 3] + dX) * s) + x_off;
-      verts[i].y            = ((yval[i * 3 + 1] + dY) * s) + y_off;
-      verts[(n2 - 1) - i].x = ((yval[i * 3] - dX) * s) + x_off;
-      verts[(n2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * s) + y_off;
-   }
-   if (skinState)
-   {
-      // Draw skin.
-      Iw2DFillPolygon(verts, n2);
-   }
-   else
-   {
-      // Draw muscles.
-      CIwFVec2  center;
-      CIwFMat2D rot;
-      realtype  l = L_seg * 4.0 * s / 2.0;
-      for (int i = 0; i < NSEG; i += 4)
+      // Calculate worm vertices.
+      realtype *yval = NV_DATA_S(yy);
+      int      n2    = (NBAR) * 2;
+      for (int i = 0; i < NBAR; ++i)
       {
-         for (int n = 0, j = i; n < 2; n++, j += NBAR)
+         realtype dX = R[i] * cos(yval[i * 3 + 2]);
+         realtype dY = R[i] * sin(yval[i * 3 + 2]);
+         verts[i].x            = ((yval[i * 3] + dX) * s) + x_off;
+         verts[i].y            = ((yval[i * 3 + 1] + dY) * s) + y_off;
+         verts[(n2 - 1) - i].x = ((yval[i * 3] - dX) * s) + x_off;
+         verts[(n2 - 1) - i].y = ((yval[i * 3 + 1] - dY) * s) + y_off;
+      }
+
+      // Draw current salty food.
+      if (CurrentSalty != -1)
+      {
+         float w = IwGxGetScreenWidth();
+         float h = IwGxGetScreenHeight();
+         if (w < h)
          {
-            int      k     = j + 4;
-            realtype x     = verts[j].x - verts[k].x;
-            realtype y     = verts[j].y - verts[k].y;
-            realtype angle = 0.0;
-            if (x == 0.0)
+            w *= 0.1;
+            h  = w;
+         }
+         else
+         {
+            h *= 0.1;
+            w  = h;
+         }
+         CIwFVec2 d;
+         d.x = w * scale;
+         d.y = h * scale;
+         CIwFVec2 p;
+         p.x = (SaltyX[CurrentSalty] * scale) + SaltyX_origin + SaltyX_off - (d.x / 2.0);
+         p.y = (SaltyY[CurrentSalty] * scale) + SaltyY_origin + SaltyY_off - (d.y / 2.0);
+         unsigned long c;
+         switch (CurrentSalty)
+         {
+         case 0:
+            c = 0x00ff00ff;
+            break;
+
+         case 1:
+            c = 0x0000ff00;
+            break;
+
+         case 2:
+            c = 0x000000ff;
+            break;
+         }
+         float         cx = p.x + (d.x / 2.0);
+         float         cy = p.y + (d.y / 2.0);
+         float         r  = sqrt(pow((cx - verts[0].x), 2) + pow((cy - verts[0].y), 2));
+         unsigned long a  = 0xff / (1.0 + (r * .05));
+         c = c | (a << 24);
+         Iw2DSetColour(c);
+         Iw2DFillArc(CIwFVec2(cx, cy), CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+         Iw2DSetColour(0xffffffff);
+         Iw2DDrawImage(SaltyImage, p, d);
+      }
+
+      // Draw worm.
+      Iw2DSetColour(0xff777777);
+      if (skinState)
+      {
+         // Draw skin.
+         Iw2DFillPolygon(verts, n2);
+      }
+      else
+      {
+         // Draw muscles.
+         CIwFVec2  center;
+         CIwFMat2D rot;
+         realtype  l = L_seg * 4.0 * s / 2.0;
+         for (int i = 0; i < NSEG; i += 4)
+         {
+            for (int n = 0, j = i; n < 2; n++, j += NBAR)
             {
-               if (y < 0.0)
+               int      k     = j + 4;
+               realtype x     = verts[j].x - verts[k].x;
+               realtype y     = verts[j].y - verts[k].y;
+               realtype angle = 0.0;
+               if (x == 0.0)
                {
-                  angle = M_PI;
-               }
-            }
-            else
-            {
-               angle = atan(y / x);
-               if (x > 0.0)
-               {
-                  if (y > 0.0)
+                  if (y < 0.0)
                   {
-                     angle += M_PI;
+                     angle = M_PI;
                   }
                }
                else
                {
-                  if (y < 0.0)
+                  angle = atan(y / x);
+                  if (x > 0.0)
                   {
-                     angle += M_PI;
+                     if (y > 0.0)
+                     {
+                        angle += M_PI;
+                     }
+                  }
+                  else
+                  {
+                     if (y < 0.0)
+                     {
+                        angle += M_PI;
+                     }
                   }
                }
+               realtype mx = (verts[j].x + verts[k].x) / 2.0;
+               realtype my = (verts[j].y + verts[k].y) / 2.0;
+               realtype h  = sqrt(pow(verts[j].x - verts[k].x, 2.0) + pow(verts[j].y - verts[k].y, 2.0)) / 2.0;
+               realtype v  = l * muscleWidthScale * (l / h);
+               center = CIwFVec2(mx, my);
+               rot.SetRot(angle, center);
+               Iw2DSetTransformMatrix(rot);
+               Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(h, v), 0, M_PI * 2.0, 0);
             }
-            realtype mx = (verts[j].x + verts[k].x) / 2.0;
-            realtype my = (verts[j].y + verts[k].y) / 2.0;
-            realtype h  = sqrt(pow(verts[j].x - verts[k].x, 2.0) + pow(verts[j].y - verts[k].y, 2.0)) / 2.0;
-            realtype v  = l * muscleWidthScale * (l / h);
-            center = CIwFVec2(mx, my);
-            rot.SetRot(angle, center);
-            Iw2DSetTransformMatrix(rot);
-            Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(h, v), 0, M_PI * 2.0, 0);
          }
+         Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
       }
-      Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
-   }
 
-   // Draw connectome?
-   if (connectomeState)
-   {
+      // Highlight current segment.
       if (currentSegment != -1)
       {
          int      j  = currentSegment * 4;
@@ -904,19 +980,20 @@ void AppRender()
          Iw2DSetColour(0x77ff7777);
          Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       }
+   }
+   else
+   {
+      // Draw connectome.
       int w  = IwGxGetScreenWidth();
-      int h  = IwGxGetScreenHeight() * PARTITION;
-      int h2 = IwGxGetScreenHeight() * (1.0 - PARTITION);
+      int h  = IwGxGetScreenHeight() * MOTOR_PARTITION;
+      int h2 = IwGxGetScreenHeight() * (1.0 - MOTOR_PARTITION);
       Iw2DSetColour(0xffffffff);
       Iw2DFillRect(CIwFVec2(0, h), CIwFVec2(w, h2));
-      Iw2DSetColour(0xff000000);
-      Iw2DDrawLine(CIwFVec2(0, h), CIwFVec2(w, h));
-      Iw2DDrawLine(CIwFVec2(0, h - 1), CIwFVec2(w, h - 1));
-      Iw2DSetColour(0xffffffff);
       int x, y;
-      getConnectomeGeometry(x, y, w, h);
+      getMotorConnectomeGeometry(x, y, w, h);
       for (int i = 0; i < 12; i++)
       {
+         Iw2DSetColour(0xffffffff);
          Iw2DDrawImage(ConnectomeImage, CIwFVec2(x + (w * i), y), CIwFVec2(w, h));
          if (State[i][1] == 1)
          {
@@ -968,8 +1045,17 @@ void AppRender()
             Iw2DDrawRect(CIwFVec2(x + (w * i), y), CIwFVec2(w - 1, h));
             Iw2DDrawRect(CIwFVec2(x + (w * i) + 1, y + 1), CIwFVec2(w - 3, h - 2));
          }
-         Iw2DSetColour(0xffffffff);
       }
+      Iw2DSetColour(0xffffffff);
+      w = IwGxGetScreenWidth();
+      h = IwGxGetScreenHeight() * MOTOR_PARTITION;
+      float width  = (float)w * .75;
+      float height = (float)h * .75;
+      float xpos   = (float)w / 2.0;
+      xpos -= width / 2.0;
+      float ypos = (float)h / 2.0;
+      ypos -= height / 2.0;
+      Iw2DDrawImage(SteeringImage, CIwFVec2(xpos, ypos), CIwFVec2(width, height));
    }
 
    // Render keys.
@@ -986,7 +1072,7 @@ void setCurrentSegment(int mx, int my)
 {
    int x, y, w, h;
 
-   getConnectomeGeometry(x, y, w, h);
+   getMotorConnectomeGeometry(x, y, w, h);
    for (int i = 0; i < 12; i++)
    {
       if ((mx >= x) && (mx < (x + w)) && (my >= y) && (my < (y + h)))
@@ -1007,12 +1093,12 @@ void setCurrentSegment(int mx, int my)
 }
 
 
-// Get connectome geometry.
-void getConnectomeGeometry(int& x, int& y, int& w, int& h)
+// Get motor connectome geometry.
+void getMotorConnectomeGeometry(int& x, int& y, int& w, int& h)
 {
    x = x_off2;
    y = y_off2;
-   int h2 = IwGxGetScreenHeight() * (1.0 - PARTITION);
+   int h2 = IwGxGetScreenHeight() * (1.0 - MOTOR_PARTITION);
    w = (h2 - 2) * 0.5 * scale2;
    h = (h2 - 2) * scale2;
 }
@@ -1021,7 +1107,7 @@ void getConnectomeGeometry(int& x, int& y, int& w, int& h)
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- **************--------------------------------------------------------------------
+ ***************--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1043,13 +1129,13 @@ void update_neurons(realtype timenow)
    }
    NMJ_weight[0] /= 1.5;                                // Helps to prevent excessive bending of head
 
-   // If this is the first time update_neurons is called, initialize with all neurons on one side ON
+   // If this is the first time update_neurons is called, initialize all neurons
    static bool initialized = false;
    if (!initialized)
    {
       for (int i = 0; i < N_units; ++i)
       {
-         State[i][0] = 1;
+         State[i][0] = 0;
          State[i][1] = 0;
       }
       initialized = true;
@@ -1435,7 +1521,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- **************--------------------------------------------------------------------
+ ***************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
