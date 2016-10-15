@@ -4,7 +4,7 @@
 deployments
 {
     #platforms osx win32
-    splashscreen = "data/splashscreen.jpg"
+    splashscreen = "data"
     splashscreen-use-all = "1"
     provider = "OpenWorm"
 
