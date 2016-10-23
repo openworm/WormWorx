@@ -79,9 +79,10 @@ assets
     pause.png
     restart.png
     scalpel.png
-    light.png
-    connectome.png
-    steering0.png
+    touch.png
+    back.png
+    motors.png
+    steering.png
     salty.png
 }
 

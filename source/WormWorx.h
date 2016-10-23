@@ -51,7 +51,8 @@ extern CIw2DImage *StartImage;
 extern CIw2DImage *PauseImage;
 extern CIw2DImage *RestartImage;
 extern CIw2DImage *ScalpelImage;
-extern CIw2DImage *LightImage;
+extern CIw2DImage *TouchImage;
+extern CIw2DImage *BackImage;
 
 S3E_BEGIN_C_DECL
 

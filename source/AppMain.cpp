@@ -132,21 +132,29 @@ void RenderKey(int key, CIwMaterial *fadeMat, CIwColour *cols_light, CIwColour *
       break;
 
    case SKIN_KEY:
-      if (!AppGetSkinState())
+      if (AppGetSkinState())
       {
-         cols = cols_dark;
+         Iw2DSetColour(0xffffffff);
       }
-      IwGxDrawRectScreenSpace(&XY, &dXY, cols);
+      else
+      {
+         Iw2DSetColour(0xffaaaaaa);
+      }
+      Iw2DFillRect(CIwFVec2(x, y), CIwFVec2(width, height));
       Iw2DDrawImage(ScalpelImage, p, s);
       break;
 
    case CONNECTOME_KEY:
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillRect(CIwFVec2(x, y), CIwFVec2(width, height));
       if (AppGetConnectomeState())
       {
-         cols = cols_dark;
+         Iw2DDrawImage(BackImage, p, s);
       }
-      IwGxDrawRectScreenSpace(&XY, &dXY, cols);
-      Iw2DDrawImage(LightImage, p, s);
+      else
+      {
+         Iw2DDrawImage(TouchImage, p, s);
+      }
       break;
    }
    Iw2DSetColour(0xff000000);

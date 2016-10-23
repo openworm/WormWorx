@@ -4,7 +4,8 @@
 deployments
 {
     #platforms osx win32
-    splashscreen = "data"
+    s3e-compression = "gzip"
+    splashscreen = "data/splashscreen.jpg"
     splashscreen-use-all = "1"
     provider = "OpenWorm"
 

@@ -164,22 +164,41 @@ bool       skinState;
 realtype muscleWidthScale;
 
 // Connectome.
-CIw2DImage *LightImage;
-CIw2DImage *ConnectomeImage;
+#define XMIN    .38
+#define XMAX    .69
+#define YMIN    .16
+#define YMAX    .62
+CIw2DImage *TouchImage;
+CIw2DImage *BackImage;
+CIw2DImage *MotorsImage;
+//CIw2DImage *ASELimage;
+//CIw2DImage *ASERimage;
+//CIw2DImage *PlusImage;
+//CIw2DImage *MinusImage;
 CIw2DImage *SteeringImage;
+CIwFVec2   asel0;
+CIwFVec2   asel1;
+CIwFVec2   aser0;
+CIwFVec2   aser1;
+CIwFVec2   aiyl0;
+CIwFVec2   aiyr0;
+CIwFVec2   aiy;
+CIwFVec2   aizl0;
+CIwFVec2   aizl1;
+CIwFVec2   aizr0;
+CIwFVec2   aizr1;
+CIwFVec2   aiz;
 bool       connectomeState;
 int        currentSegment;
 void setCurrentSegment(int mx, int my);
-void getMotorConnectomeGeometry(int& x, int& y, int& w, int& h);
 
-#define MOTOR_PARTITION    0.66
-#define XMIN               .368
-#define XMAX               .828
-#define YMIN               .34
-#define YMAX               .66
+float MotorYPartition;
+void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h);
 
 // Touch and rendering.
-#define SCALE              0.5
+#define SCALE        0.5
+#define MIN_SCALE    .25
+#define MAX_SCALE    2
 realtype scale, scale2;
 realtype x_off, y_off;
 realtype x_off2, y_off2;
@@ -195,8 +214,8 @@ void reset()
    muscleWidthScale = MUSCLE_WIDTH_SCALE;
    x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
    y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
-   x_off2           = 0;
-   y_off2           = ((realtype)IwGxGetScreenHeight() * MOTOR_PARTITION) + 1;
+   x_off2           = 0.0;
+   y_off2           = 0.0;
    m_x[0]           = m_y[0] = -1;
    m_x[1]           = m_y[1] = -1;
    m_x2[0]          = m_y2[0] = -1;
@@ -288,7 +307,6 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
 {
    int mx = pEvent->m_x;
    int my = pEvent->m_y;
-   int h  = (int)IwGxGetScreenHeight() * MOTOR_PARTITION;
 
    if (!connectomeState)
    {
@@ -308,10 +326,6 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
       {
          x_off2 += mx - m_x2[0];
          y_off2 += my - m_y2[0];
-         if (y_off2 <= h)
-         {
-            y_off2 = h + 1;
-         }
          m_x2[0] = mx;
          m_y2[0] = my;
       }
@@ -396,7 +410,6 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
       int t2 = (t1 + 1) % 2;
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
-      int h  = (int)IwGxGetScreenHeight() * MOTOR_PARTITION;
       if (m_x[t1] != -1)
       {
          if (!connectomeState)
@@ -417,6 +430,14 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
                if (d0 > 0)
                {
                   scale *= (d1 / d0);
+                  if (scale < MIN_SCALE)
+                  {
+                     scale = MIN_SCALE;
+                  }
+                  else if (scale > MAX_SCALE)
+                  {
+                     scale = MAX_SCALE;
+                  }
                }
             }
             m_x[t1] = mx;
@@ -425,16 +446,12 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
       }
       else if (m_x2[t1] != -1)
       {
-         if (connectomeState && (my > h))
+         if (connectomeState)
          {
             if (m_x2[t2] == -1)
             {
                x_off2 += mx - m_x2[t1];
                y_off2 += my - m_y2[t1];
-               if (y_off2 <= h)
-               {
-                  y_off2 = h + 1;
-               }
             }
             else
             {
@@ -445,6 +462,14 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
                if (d0 > 0)
                {
                   scale2 *= (d1 / d0);
+                  if (scale2 < MIN_SCALE)
+                  {
+                     scale2 = MIN_SCALE;
+                  }
+                  else if (scale2 > MAX_SCALE)
+                  {
+                     scale2 = MAX_SCALE;
+                  }
                }
             }
             m_x2[t1] = mx;
@@ -460,15 +485,20 @@ void SimInit()
 {
    reset();
 
-   SaltyImage      = Iw2DCreateImage("salty.png");
-   QuitImage       = Iw2DCreateImage("quit.png");
-   StartImage      = Iw2DCreateImage("start.png");
-   PauseImage      = Iw2DCreateImage("pause.png");
-   RestartImage    = Iw2DCreateImage("restart.png");
-   ScalpelImage    = Iw2DCreateImage("scalpel.png");
-   LightImage      = Iw2DCreateImage("light.png");
-   ConnectomeImage = Iw2DCreateImage("connectome.png");
-   SteeringImage   = Iw2DCreateImage("steering0.png");
+   SaltyImage   = Iw2DCreateImage("salty.png");
+   QuitImage    = Iw2DCreateImage("quit.png");
+   StartImage   = Iw2DCreateImage("start.png");
+   PauseImage   = Iw2DCreateImage("pause.png");
+   RestartImage = Iw2DCreateImage("restart.png");
+   ScalpelImage = Iw2DCreateImage("scalpel.png");
+   TouchImage   = Iw2DCreateImage("touch.png");
+   BackImage    = Iw2DCreateImage("back.png");
+   MotorsImage  = Iw2DCreateImage("motors.png");
+   //ASELimage   = Iw2DCreateImage("ASEL.png");
+   //ASERimage = Iw2DCreateImage("ASER.png");
+   //PlusImage = Iw2DCreateImage("plus.png");
+   //MinusImage = Iw2DCreateImage("minus.png");
+   SteeringImage   = Iw2DCreateImage("steering.png");
    runState        = START;
    skinState       = true;
    connectomeState = false;
@@ -695,8 +725,13 @@ void SimTerminate()
    delete PauseImage;
    delete RestartImage;
    delete ScalpelImage;
-   delete LightImage;
-   delete ConnectomeImage;
+   delete TouchImage;
+   delete BackImage;
+   delete MotorsImage;
+   //delete ASELimage;
+   //delete ASERimage;
+   //delete PlusImage;
+   //delete MinusImage;
    delete SteeringImage;
 }
 
@@ -984,17 +1019,129 @@ void AppRender()
    else
    {
       // Draw connectome.
-      int w  = IwGxGetScreenWidth();
-      int h  = IwGxGetScreenHeight() * MOTOR_PARTITION;
-      int h2 = IwGxGetScreenHeight() * (1.0 - MOTOR_PARTITION);
+      float w = (float)IwGxGetScreenWidth();
+      float h = (float)IwGxGetScreenHeight();
       Iw2DSetColour(0xffffffff);
-      Iw2DFillRect(CIwFVec2(0, h), CIwFVec2(w, h2));
-      int x, y;
+      Iw2DFillRect(CIwFVec2(0.0, 0.0), CIwFVec2(w, h));
+      float w2 = w;
+      float h2 = h;
+      float r;
+      if (w < h)
+      {
+         w2 = w2 * .75;
+         h2 = w2;
+         r  = w2 * .03;
+      }
+      else
+      {
+         h2 = h2 * .75;
+         w2 = h2;
+         r  = h2 * .03;
+      }
+      w2 *= scale2;
+      h2 *= scale2;
+      r  *= scale2;
+      float x = (w / 2.0) - (w2 / 2.0) + x_off2;
+      float y = ((h * .75) / 2.0) - (h2 / 2.0) + y_off2;
+      Iw2DDrawImage(SteeringImage, CIwFVec2(x, y), CIwFVec2(w2, h2));
+      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .33), y + (h2 * .12)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .6), y + (h2 * .12)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+      Iw2DSetColour(0xff000000);
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.337 - .025)), y + (h2 * .17)), CIwFVec2(w2 * .06, h2 * .02));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .15)), CIwFVec2(h2 * .02, w2 * .06));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.599 + .04)), y + (h2 * .17)), CIwFVec2(w2 * .06, h2 * .02));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.62 + .04)), y + (h2 * .15)), CIwFVec2(h2 * .02, w2 * .06));
+      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .33), y + (h2 * .38)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .6), y + (h2 * .38)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.337 - .025)), y + (h2 * .5)), CIwFVec2(w2 * .06, h2 * .02));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .48)), CIwFVec2(h2 * .02, w2 * .06));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.599 + .04)), y + (h2 * .5)), CIwFVec2(w2 * .06, h2 * .02));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.62 + .04)), y + (h2 * .48)), CIwFVec2(h2 * .02, w2 * .06));
+      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .33), y + (h2 * .65)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .6), y + (h2 * .65)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.337 - .025)), y + (h2 * .83)), CIwFVec2(w2 * .06, h2 * .02));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .81)), CIwFVec2(h2 * .02, w2 * .06));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.599 + .04)), y + (h2 * .83)), CIwFVec2(w2 * .06, h2 * .02));
+      Iw2DFillRect(CIwFVec2(x + (w2 * (.62 + .04)), y + (h2 * .81)), CIwFVec2(h2 * .02, w2 * .06));
+      asel0 = CIwFVec2(x + (w2 * (.36 - .0225)), y + (h2 * .25));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(asel0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(asel0, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(asel0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      asel1 = CIwFVec2(x + (w2 * .41), y + (h2 * .2));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(asel1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(asel1, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(asel1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aser0 = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .25));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aser0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aser0, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aser0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aser1 = CIwFVec2(x + (w2 * .6), y + (h2 * .2));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aser1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aser1, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aser1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aiyl0 = CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .58));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aiyl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aiyl0, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aiyl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aiyr0 = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .58));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aiyr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aiyr0, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aiyr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aiy = CIwFVec2(x + (w2 * .5), y + (h2 * .45));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aiy, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aiy, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aiy, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizl0 = CIwFVec2(x + (w2 * (.36 - .0225)), y + (h2 * .91));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aizl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aizl0, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aizl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizl1 = CIwFVec2(x + (w2 * .41), y + (h2 * .86));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aizl1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aizl1, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aizl1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizr0 = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .91));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aizr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aizr0, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aizr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizr1 = CIwFVec2(x + (w2 * .6), y + (h2 * .86));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aizr1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aizr1, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aizr1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aiz = CIwFVec2(x + (w2 * .5), y + (h2 * .78));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillArc(aiz, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(aiz, CIwFVec2(r, r), 0, M_PI, 0);
+      Iw2DDrawArc(aiz, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      MotorYPartition = y + h2;
+      MotorYPartition = y + h2;
       getMotorConnectomeGeometry(x, y, w, h);
       for (int i = 0; i < 12; i++)
       {
          Iw2DSetColour(0xffffffff);
-         Iw2DDrawImage(ConnectomeImage, CIwFVec2(x + (w * i), y), CIwFVec2(w, h));
+         Iw2DDrawImage(MotorsImage, CIwFVec2(x, y + (h * (float)i)), CIwFVec2(w, h));
          if (State[i][1] == 1)
          {
             Iw2DSetColour(0xff0000ff);
@@ -1003,8 +1150,8 @@ void AppRender()
          {
             Iw2DSetColour(0xff000000);
          }
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMIN) - (h * .0125)),
-                      CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * XMIN) - (w * .075), y + (h * (float)i) + (h * YMAX) - (h * .0125)),
+                      CIwFVec2(w * .08, h * .04));
          if (State[i][0] == 1)
          {
             Iw2DSetColour(0xff0000ff);
@@ -1013,8 +1160,8 @@ void AppRender()
          {
             Iw2DSetColour(0xff000000);
          }
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMIN) - (w * .075), y + (h * YMAX) - (h * .0125)),
-                      CIwFVec2(w * .15, h * .025));
+         Iw2DFillRect(CIwFVec2(x + (w * XMAX) - (w * .075), y + (h * (float)i) + (h * YMAX) - (h * .0125)),
+                      CIwFVec2(w * .08, h * .04));
          if (State[i][0] == 1)
          {
             Iw2DSetColour(0xff00ff00);
@@ -1023,10 +1170,11 @@ void AppRender()
          {
             Iw2DSetColour(0xff000000);
          }
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMIN) - (h * .0125)),
-                      CIwFVec2(w * .15, h * .025));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMIN) - (w * .075)),
-                      CIwFVec2(h * .025, w * .15));
+         //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w * XMIN) - (w * .085), y + (h * (float)i) + (h * YMIN) - (h * .04)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+         Iw2DFillRect(CIwFVec2(x + (w * XMIN) - (w * .08), y + (h * (float)i) + (h * YMIN) - (h * .0125)),
+                      CIwFVec2(w * .08, h * .04));
+         Iw2DFillRect(CIwFVec2(x + (w * XMIN) - (h * .1), y + (h * (float)i) + (h * YMIN) - (w * .038)),
+                      CIwFVec2(h * .04, w * .08));
          if (State[i][1] == 1)
          {
             Iw2DSetColour(0xff00ff00);
@@ -1035,27 +1183,18 @@ void AppRender()
          {
             Iw2DSetColour(0xff000000);
          }
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (w * .075), y + (h * YMAX) - (h * .0125)),
-                      CIwFVec2(w * .15, h * .025));
-         Iw2DFillRect(CIwFVec2(x + (w * i) + (w * XMAX) - (h * .0125), y + (h * YMAX) - (w * .075)),
-                      CIwFVec2(h * .025, w * .15));
+         //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w * XMAX) - (w * .07), y + (h * (float)i) + (h * YMIN) - (h * .04)), CIwFVec2(w2 / 14.0, h2 / 14.0));
+         Iw2DFillRect(CIwFVec2(x + (w * XMAX) - (w * .065), y + (h * (float)i) + (h * YMIN) - (h * .0125)),
+                      CIwFVec2(w * .08, h * .04));
+         Iw2DFillRect(CIwFVec2(x + (w * XMAX) - (h * .065), y + (h * (float)i) + (h * YMIN) - (w * .038)),
+                      CIwFVec2(h * .04, w * .08));
          if (currentSegment == i)
          {
             Iw2DSetColour(0xffff7777);
-            Iw2DDrawRect(CIwFVec2(x + (w * i), y), CIwFVec2(w - 1, h));
-            Iw2DDrawRect(CIwFVec2(x + (w * i) + 1, y + 1), CIwFVec2(w - 3, h - 2));
+            Iw2DDrawRect(CIwFVec2(x, y + (h * i)), CIwFVec2(w, h - 1));
+            Iw2DDrawRect(CIwFVec2(x + 1, y + (h * i) + 1), CIwFVec2(w - 2, h - 3));
          }
       }
-      Iw2DSetColour(0xffffffff);
-      w = IwGxGetScreenWidth();
-      h = IwGxGetScreenHeight() * MOTOR_PARTITION;
-      float width  = (float)w * .75;
-      float height = (float)h * .75;
-      float xpos   = (float)w / 2.0;
-      xpos -= width / 2.0;
-      float ypos = (float)h / 2.0;
-      ypos -= height / 2.0;
-      Iw2DDrawImage(SteeringImage, CIwFVec2(xpos, ypos), CIwFVec2(width, height));
    }
 
    // Render keys.
@@ -1070,7 +1209,7 @@ void AppRender()
 // Set current connectome segment.
 void setCurrentSegment(int mx, int my)
 {
-   int x, y, w, h;
+   float x, y, w, h;
 
    getMotorConnectomeGeometry(x, y, w, h);
    for (int i = 0; i < 12; i++)
@@ -1087,27 +1226,41 @@ void setCurrentSegment(int mx, int my)
          }
          return;
       }
-      x += w;
+      y += h;
    }
    currentSegment = -1;
 }
 
 
 // Get motor connectome geometry.
-void getMotorConnectomeGeometry(int& x, int& y, int& w, int& h)
+void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h)
 {
-   x = x_off2;
-   y = y_off2;
-   int h2 = IwGxGetScreenHeight() * (1.0 - MOTOR_PARTITION);
-   w = (h2 - 2) * 0.5 * scale2;
-   h = (h2 - 2) * scale2;
+   float w2 = (float)IwGxGetScreenWidth();
+   float h2 = (float)IwGxGetScreenHeight();
+
+   w = w2;
+   h = h2;
+   if (w < h)
+   {
+      w = (w * 2.0) / 3.0;
+      h = w;
+   }
+   else
+   {
+      h = (h * 2.0) / 3.0;
+      w = h;
+   }
+   w = w * scale2;
+   h = h * 0.5 * scale2;
+   x = (w2 / 2.0) - (w / 2.0) + x_off2;
+   y = MotorYPartition;
 }
 
 
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- ***************--------------------------------------------------------------------
+ *******************--------------------------------------------------------------------
  */
 // Neural circuit function
 void update_neurons(realtype timenow)
@@ -1521,7 +1674,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ***************--------------------------------------------------------------------
+ *******************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
