@@ -1,5 +1,6 @@
 /*
  * WormWorx: a simulation of the C. elegans nematode worm.
+ * User tunes the worm's nervous system to allow it to find food.
  *
  * Copyright (c) 2016-2017 Tom Portegys (portegys@openworm.org). All rights reserved.
  *
@@ -45,19 +46,21 @@
 #include <sundials/sundials_math.h>
 #include <errno.h>
 
-// Simulation paramaters
-#define DURATION        10                      //duration of simulation
+// Simulation parameters
+#define DURATION        35                      //duration of simulation
 #define MEDIUM          1.0                     //change in the range 0.0 (water) to 1.0 (agar)
 #define OBJECTS         0                       //set number of objects (>= 0)
 #define LAYOUT          0                       //change between 0 (square) 1 (hex) 2 (random)
 
-// Simulator constants
+// Neuromuscular simulation constants
 #define NSEG            48
 #define NBAR            NSEG + 1
 #define NSEG_MINUS_1    NSEG - 1
 #define NEQ             3 * (NBAR)
-#define DELTAT          0.1
-#define HALFPI          M_PI / 2.0
+#define DELTAT          0.015
+#define MAX_STEERING_RATE .1
+#define STEERING_PIVOT_INDEX ((NBAR) / 8)
+#define SR_W 0.65
 
 // General body constants
 realtype D = 80e-6;
@@ -103,12 +106,18 @@ int                     root_N    = round(sqrt(N_objects));
 std::vector<realtype *> Objects;
 realtype                k_Object = k_PE * 5;
 
+// Variables for total input current to each B-class motorneuron
+const int   N_units = 12;          // Number of neural units
+float I_D[N_units];
+float I_V[N_units];
+
 // Communication variables
 realtype L_SR[NSEG][2];
 realtype I_SR[NSEG][2];
 
 // Neuron and muscle state variables
-int      State[12][2];
+realtype I_on = 0.675;         // AVB input current (makes the model go)
+int      State[N_units][2];
 realtype V_muscle[NSEG][2];
 realtype V_neuron[NSEG][2];
 
@@ -119,6 +128,7 @@ void update_neurons(realtype timenow);
 void update_muscles(realtype timenow);
 void update_SR(realtype timenow);
 static int grob(realtype t, N_Vector yy, N_Vector yp, realtype *gout, void *g_data);
+void rotatePoint(realtype *x, realtype *y, realtype angle);
 
 // Prototypes of private functions (Copied from Sundials examples)
 #ifdef NEVER
@@ -135,6 +145,8 @@ realtype t0, tout, tret;
 int      iout, retval, retvalr;
 #define SIM_UPDATE_FREQUENCY    1 // (ms)
 uint64 updateTimer;
+void SimInitWorm();
+void SimTerminateWorm();
 void SimUpdate();
 
 // Salty food.
@@ -147,6 +159,8 @@ realtype SaltyY_origin;
 realtype SaltyX_off;
 realtype SaltyY_off;
 int      CurrentSalty;
+#define SALT_CONSUMPTION_RANGE             0.3
+float SaltRange;
 
 // Quit.
 CIw2DImage *QuitImage;
@@ -171,29 +185,40 @@ realtype muscleWidthScale;
 CIw2DImage *TouchImage;
 CIw2DImage *BackImage;
 CIw2DImage *MotorsImage;
-//CIw2DImage *ASELimage;
-//CIw2DImage *ASERimage;
-//CIw2DImage *PlusImage;
-//CIw2DImage *MinusImage;
 CIw2DImage *SteeringImage;
-CIwFVec2   asel0;
-CIwFVec2   asel1;
-CIwFVec2   aser0;
-CIwFVec2   aser1;
-CIwFVec2   aiyl0;
-CIwFVec2   aiyr0;
-CIwFVec2   aiy;
-CIwFVec2   aizl0;
-CIwFVec2   aizl1;
-CIwFVec2   aizr0;
-CIwFVec2   aizr1;
-CIwFVec2   aiz;
-bool       connectomeState;
-int        currentSegment;
+float      synapseRadius;
+struct SteeringSynapse
+{
+   float        weight;
+   CIwFVec2     position;
+};
+struct SteeringSynapse asel0;
+struct SteeringSynapse asel1;
+struct SteeringSynapse aser0;
+struct SteeringSynapse aser1;
+struct SteeringSynapse aiyl0;
+struct SteeringSynapse aiyr0;
+struct SteeringSynapse aizl0;
+struct SteeringSynapse aizl1;
+struct SteeringSynapse aizr0;
+struct SteeringSynapse aizr1;
+bool  synapseWeightState;
+float *currentWeight;
+void setSynapseWeighting(int mx, int my);
+float G = 1.0f;
+struct SteeringNeuron
+{
+	float I;
+	float theta;
+	float        activation;
+};
+struct SteeringNeuron asel, aser;
+struct SteeringNeuron aiyl, aiyr;
+struct SteeringNeuron aizl, aizr;
+struct SteeringNeuron smbd, smbv;
+bool connectomeState;
+int  currentSegment;
 void setCurrentSegment(int mx, int my);
-
-float MotorYPartition;
-void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h);
 
 // Touch and rendering.
 #define SCALE        0.5
@@ -204,7 +229,10 @@ realtype x_off, y_off;
 realtype x_off2, y_off2;
 int32    m_x[2], m_y[2];
 int32    m_x2[2], m_y2[2];
+int32    m_x3, m_y3;
 CIwFVec2 verts[(NBAR) * 2];
+float    MotorYPartition;
+void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h);
 
 // Reset.
 void reset()
@@ -212,25 +240,60 @@ void reset()
    scale            = SCALE;
    scale2           = 1.0;
    muscleWidthScale = MUSCLE_WIDTH_SCALE;
-   x_off            = (realtype)IwGxGetScreenWidth() / 2.0;
-   y_off            = (realtype)IwGxGetScreenHeight() / 3.0;
+   realtype w = (realtype)IwGxGetScreenWidth();
+   realtype h = (realtype)IwGxGetScreenHeight();
+   x_off            = w / 2.0;
+   y_off            = h / 3.0;
    x_off2           = 0.0;
    y_off2           = 0.0;
    m_x[0]           = m_y[0] = -1;
    m_x[1]           = m_y[1] = -1;
    m_x2[0]          = m_y2[0] = -1;
    m_x2[1]          = m_y2[1] = -1;
+   m_x3             = m_y3 = -1;
    currentSegment   = -1;
-   SaltyX[0]        = -(realtype)IwGxGetScreenWidth() / 5.0;
-   SaltyY[0]        = -(realtype)IwGxGetScreenHeight() / 7.0;
-   SaltyX[1]        = (realtype)IwGxGetScreenWidth() / 4.0;
-   SaltyY[1]        = (realtype)IwGxGetScreenHeight() / 2.0;
-   SaltyX[2]        = (realtype)IwGxGetScreenWidth() * .75;
-   SaltyY[2]        = -(realtype)IwGxGetScreenHeight() / 2.0;
+   SaltyX[0]        = -w * 1.0;
+   SaltyY[0]        = -h * .1;
+   SaltyX[1]        = w * .25;
+   SaltyY[1]        = h * .75;
+   SaltyX[2]        = -w * .9;
+   SaltyY[2]        = h * 1.25;
    SaltyX_origin    = x_off;
    SaltyY_origin    = y_off;
    SaltyX_off       = SaltyY_off = 0.0;
    CurrentSalty     = 0;
+   SaltRange    = -1.0f;
+   asel.I = 0.5f;
+   asel.theta = -0.5f;
+   asel.activation = 0.0f;
+   aser.I = 0.5f;
+   aser.theta = -0.5f;
+   aser.activation = 0.0f;
+   aiyl.I = 0.5f;
+   aiyl.theta = -0.5f;
+   aiyl.activation = 0.0f;
+   aiyr.I = 0.5f;
+   aiyr.theta = -0.5f;
+   aiyr.activation = 0.0f;
+   aizl.I = 0.5f;
+   aizl.theta = -0.5f;
+   aizl.activation = 0.0f;
+   aizr.I = 0.5f;
+   aizr.theta = -0.5f;
+   aizr.activation = 0.0f;
+   smbd.I = 0.5f;
+   smbd.theta = -0.5f;
+   smbd.activation = 0.0f;
+   smbv.I = 0.5f;
+   smbv.theta = -0.5f;
+   smbv.activation = 0.0f;
+   for (int i = 0; i < N_units; ++i)
+   {
+	   I_D[i] = 0.0f;
+	   I_V[i] = 0.0f;
+      State[i][0] = 0;
+      State[i][1] = 0;
+   }
 }
 
 
@@ -259,19 +322,41 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
                m_x[0]  = mx;
                m_y[0]  = my;
                m_x2[0] = m_y2[0] = -1;
+               m_x3    = m_y3 = -1;
+            }
+            else if (!synapseWeightState)
+            {
+               m_x[0]  = m_y[0] = -1;
+               m_x3    = m_y3 = -1;
+               m_x2[0] = mx;
+               m_y2[0] = my;
+               setCurrentSegment(mx, my);
+               setSynapseWeighting(mx, my);
             }
             else
             {
                m_x[0]  = m_y[0] = -1;
-               m_x2[0] = mx;
-               m_y2[0] = my;
-               setCurrentSegment(mx, my);
+               m_x2[0] = m_y2[0] = -1;
+               m_x3    = -1;
+               m_y3    = -1;
+               float w    = (float)IwGxGetScreenWidth();
+               float h    = (float)IwGxGetScreenHeight();
+               float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
+               float xmax = xmin + (w * .05);
+               float ymin = h * .62;
+               float ymax = ymin + (h * .06);
+               if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
+               {
+                  m_x3 = mx;
+                  m_y3 = my;
+               }
             }
          }
          else
          {
             m_x[0]  = m_y[0] = -1;
             m_x2[0] = m_y2[0] = -1;
+            m_x3    = m_y3 = -1;
             switch (key)
             {
             case QUIT_KEY:
@@ -296,6 +381,7 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
       {
          m_x[0]  = m_y[0] = -1;
          m_x2[0] = m_y2[0] = -1;
+         m_x3    = m_y3 = -1;
       }
    }
    return(0);
@@ -320,7 +406,7 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
          m_y[0]      = my;
       }
    }
-   else
+   else if (!synapseWeightState)
    {
       if (m_x2[0] != -1)
       {
@@ -328,6 +414,31 @@ int32 PointerMotionEventCallback(s3ePointerMotionEvent *pEvent, void *pUserData)
          y_off2 += my - m_y2[0];
          m_x2[0] = mx;
          m_y2[0] = my;
+      }
+   }
+   else
+   {
+      if (m_x3 != -1)
+      {
+         float w   = (float)IwGxGetScreenWidth();
+         int   med = mx;
+         int   min = (int)(w * (.1 + .025));
+         int   max = (int)(w * (.9 - .025));
+         if (med < min)
+         {
+            med = min;
+         }
+         if (med > max)
+         {
+            med = max;
+         }
+         med -= min;
+         int len = (int)(w * (.8 - .05));
+         *currentWeight = (float)med / (float)len;
+         SimTerminateWorm();
+         SimInitWorm();
+         m_x3 = mx;
+         m_y3 = my;
       }
    }
    return(0);
@@ -354,14 +465,37 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
                m_y[t]  = my;
                m_x2[0] = m_y2[0] = -1;
                m_x2[1] = m_y2[1] = -1;
+               m_x3    = m_y3 = -1;
+            }
+            else if (!synapseWeightState)
+            {
+               m_x[0]  = m_y[0] = -1;
+               m_x[1]  = m_y[1] = -1;
+               m_x3    = m_y3 = -1;
+               m_x2[t] = mx;
+               m_y2[t] = my;
+               setCurrentSegment(mx, my);
+               setSynapseWeighting(mx, my);
             }
             else
             {
                m_x[0]  = m_y[0] = -1;
-               m_x[1]  = m_y[1] = -1;
-               m_x2[t] = mx;
-               m_y2[t] = my;
-               setCurrentSegment(mx, my);
+               m_x2[0] = m_y2[0] = -1;
+               m_x[0]  = m_y[0] = -1;
+               m_x2[0] = m_y2[0] = -1;
+               m_x3    = -1;
+               m_y3    = -1;
+               float w    = (float)IwGxGetScreenWidth();
+               float h    = (float)IwGxGetScreenHeight();
+               float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
+               float xmax = xmin + (w * .05);
+               float ymin = h * .62;
+               float ymax = ymin + (h * .06);
+               if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
+               {
+                  m_x3 = mx;
+                  m_y3 = my;
+               }
             }
          }
          else
@@ -370,6 +504,7 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
             m_x[0]  = m_y[0] = -1;
             m_x2[0] = m_y2[0] = -1;
             m_x2[0] = m_y2[0] = -1;
+            m_x3    = m_y3 = -1;
             switch (key)
             {
             case QUIT_KEY:
@@ -394,6 +529,7 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
       {
          m_x[t]  = m_y[t] = -1;
          m_x2[t] = m_y2[t] = -1;
+         m_x3    = m_y3 = -1;
       }
    }
    return(0);
@@ -425,10 +561,10 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
             {
                realtype d0 = sqrt(pow((realtype)m_x[t1] - (realtype)m_x[t2], 2) +
                                   pow((realtype)m_y[t1] - (realtype)m_y[t2], 2));
-               realtype d1 = sqrt(pow((realtype)mx - (realtype)m_x[t2], 2) +
-                                  pow((realtype)my - (realtype)m_y[t2], 2));
                if (d0 > 0)
                {
+                  realtype d1 = sqrt(pow((realtype)mx - (realtype)m_x[t2], 2) +
+                                     pow((realtype)my - (realtype)m_y[t2], 2));
                   scale *= (d1 / d0);
                   if (scale < MIN_SCALE)
                   {
@@ -457,10 +593,10 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
             {
                realtype d0 = sqrt(pow((realtype)m_x2[t1] - (realtype)m_x2[t2], 2) +
                                   pow((realtype)m_y2[t1] - (realtype)m_y2[t2], 2));
-               realtype d1 = sqrt(pow((realtype)mx - (realtype)m_x2[t2], 2) +
-                                  pow((realtype)my - (realtype)m_y2[t2], 2));
                if (d0 > 0)
                {
+                  realtype d1 = sqrt(pow((realtype)mx - (realtype)m_x2[t2], 2) +
+                                     pow((realtype)my - (realtype)m_y2[t2], 2));
                   scale2 *= (d1 / d0);
                   if (scale2 < MIN_SCALE)
                   {
@@ -476,32 +612,40 @@ int32 PointerTouchMotionEventCallback(s3ePointerTouchMotionEvent *pEvent, void *
             m_y2[t1] = my;
          }
       }
+      else if (m_x3 != -1)
+      {
+         if (synapseWeightState)
+         {
+            float w   = (float)IwGxGetScreenWidth();
+            int   med = mx;
+            int   min = (int)(w * (.1 + .025));
+            int   max = (int)(w * (.9 - .025));
+            if (med < min)
+            {
+               med = min;
+            }
+            if (med > max)
+            {
+               med = max;
+            }
+            med -= min;
+            int len = (int)(w * (.8 - .05));
+            *currentWeight = (float)med / (float)len;
+            SimTerminateWorm();
+            SimInitWorm();
+            m_x3 = mx;
+            m_y3 = my;
+         }
+      }
    }
    return(0);
 }
 
 
-void SimInit()
+void SimInitWorm()
 {
    reset();
-
-   SaltyImage   = Iw2DCreateImage("salty.png");
-   QuitImage    = Iw2DCreateImage("quit.png");
-   StartImage   = Iw2DCreateImage("start.png");
-   PauseImage   = Iw2DCreateImage("pause.png");
-   RestartImage = Iw2DCreateImage("restart.png");
-   ScalpelImage = Iw2DCreateImage("scalpel.png");
-   TouchImage   = Iw2DCreateImage("touch.png");
-   BackImage    = Iw2DCreateImage("back.png");
-   MotorsImage  = Iw2DCreateImage("motors.png");
-   //ASELimage   = Iw2DCreateImage("ASEL.png");
-   //ASERimage = Iw2DCreateImage("ASER.png");
-   //PlusImage = Iw2DCreateImage("plus.png");
-   //MinusImage = Iw2DCreateImage("minus.png");
-   SteeringImage   = Iw2DCreateImage("steering.png");
-   runState        = START;
-   skinState       = true;
-   connectomeState = false;
+   runState = START;
 
    mem  = NULL;
    yy   = yp = avtol = NULL;
@@ -686,6 +830,52 @@ void SimInit()
 }
 
 
+void SimInit()
+{
+   SaltyImage   = Iw2DCreateImage("salty.png");
+   QuitImage    = Iw2DCreateImage("quit.png");
+   StartImage   = Iw2DCreateImage("start.png");
+   PauseImage   = Iw2DCreateImage("pause.png");
+   RestartImage = Iw2DCreateImage("restart.png");
+   ScalpelImage = Iw2DCreateImage("scalpel.png");
+   TouchImage   = Iw2DCreateImage("touch.png");
+   BackImage    = Iw2DCreateImage("back.png");
+   MotorsImage  = Iw2DCreateImage("motors.png");
+   SteeringImage      = Iw2DCreateImage("steering.png");
+   skinState          = true;
+   connectomeState    = false;
+   synapseWeightState = false;
+   synapseRadius      = 0.0;
+   asel0.weight       = 0.5;
+   asel1.weight       = 0.5;
+   aser0.weight       = 0.5;
+   aser1.weight       = 0.5;
+   aiyl0.weight       = 0.5;
+   aiyr0.weight       = 0.5;
+   aizl0.weight       = 0.5;
+   aizl1.weight       = 0.5;
+   aizr0.weight       = 0.5;
+   aizr1.weight       = 0.5;
+   FILE *fp = fopen("synapse_weights.txt", "r");
+   if (fp != NULL)
+   {
+      fscanf(fp, "%f", &asel0.weight);
+      fscanf(fp, "%f", &asel1.weight);
+      fscanf(fp, "%f", &aser0.weight);
+      fscanf(fp, "%f", &aser1.weight);
+      fscanf(fp, "%f", &aiyl0.weight);
+      fscanf(fp, "%f", &aiyr0.weight);
+      fscanf(fp, "%f", &aizl0.weight);
+      fscanf(fp, "%f", &aizl1.weight);
+      fscanf(fp, "%f", &aizr0.weight);
+      fscanf(fp, "%f", &aizr1.weight);
+      fclose(fp);
+   }
+
+   SimInitWorm();
+}
+
+
 void AppInit()
 {
    // Initialize.
@@ -708,7 +898,7 @@ void AppInit()
 }
 
 
-void SimTerminate()
+void SimTerminateWorm()
 {
    IDAFree(&mem);
    N_VDestroy_Serial(yy);
@@ -716,8 +906,14 @@ void SimTerminate()
 
    for (int i = 0; i < N_objects; i++)
    {
-      delete [] Objects[i];
+      delete[] Objects[i];
    }
+}
+
+
+void SimTerminate()
+{
+   SimTerminateWorm();
 
    delete SaltyImage;
    delete QuitImage;
@@ -728,11 +924,23 @@ void SimTerminate()
    delete TouchImage;
    delete BackImage;
    delete MotorsImage;
-   //delete ASELimage;
-   //delete ASERimage;
-   //delete PlusImage;
-   //delete MinusImage;
    delete SteeringImage;
+
+   FILE *fp = fopen("synapse_weights.txt", "w");
+   if (fp != NULL)
+   {
+      fprintf(fp, "%f\n", asel0.weight);
+      fprintf(fp, "%f\n", asel1.weight);
+      fprintf(fp, "%f\n", aser0.weight);
+      fprintf(fp, "%f\n", aser1.weight);
+      fprintf(fp, "%f\n", aiyl0.weight);
+      fprintf(fp, "%f\n", aiyr0.weight);
+      fprintf(fp, "%f\n", aizl0.weight);
+      fprintf(fp, "%f\n", aizl1.weight);
+      fprintf(fp, "%f\n", aizr0.weight);
+      fprintf(fp, "%f\n", aizr1.weight);
+      fclose(fp);
+   }
 }
 
 
@@ -777,58 +985,244 @@ void AppSetRunState()
 
    case RUN:
       runState = START;
-      break;
+break;
 
    case RESTART:
-      SimTerminate();
-      SimInit();
-      break;
+	   SimTerminate();
+	   SimInit();
+	   break;
    }
 }
 
 
 int AppGetRunState()
 {
-   return(runState);
+	return(runState);
 }
 
 
 void AppSetSkinState()
 {
-   skinState = !skinState;
+	skinState = !skinState;
 }
 
 
 bool AppGetSkinState()
 {
-   return(skinState);
+	return(skinState);
 }
 
 
 void AppSetConnectomeState()
 {
-   connectomeState = !connectomeState;
+	if (synapseWeightState)
+	{
+		synapseWeightState = false;
+	}
+	else
+	{
+		connectomeState = !connectomeState;
+	}
 }
 
 
 bool AppGetConnectomeState()
 {
-   return(connectomeState);
+	return(connectomeState);
 }
 
+float fittest = -1.0f;
+float asel0weight0;
+float asel1weight0;
+float aser0weight0;
+float aser1weight0;
+float aiyl0weight0;
+float aiyr0weight0;
+float aizl0weight0;
+float aizl1weight0;
+float aizr0weight0;
+float aizr1weight0;
+float I_on0;
+float closest = -1.0f;
+void resetRun()  // flibber
+{
+	printf("fittest=%f, closest=%f, tout=%f, new=%f\n", fittest, closest, tout, closest * tout); // flibber
+		if (fittest < 0.0 || (closest * tout) < fittest)
+		{
+			fittest = closest * tout;
+			asel0weight0 = asel0.weight;;
+			asel1weight0 = asel1.weight;
+			aser0weight0 = aser0.weight;
+			aser1weight0 = aser1.weight;
+			I_on0 = I_on;
+			FILE *fp = fopen("evolve.txt", "a");
+			if (fp != NULL)
+			{
+				fprintf(fp, "fittest=%f, closest=%f, tout=%f\n", fittest, closest, tout);
+				fprintf(fp, "%f\n", asel0.weight);
+				fprintf(fp, "%f\n", asel1.weight);
+				fprintf(fp, "%f\n", aser0.weight);
+				fprintf(fp, "%f\n", aser1.weight);
+				fprintf(fp, "%f\n", aiyl0.weight);
+				fprintf(fp, "%f\n", aiyr0.weight);
+				fprintf(fp, "%f\n", aizl0.weight);
+				fprintf(fp, "%f\n", aizl1.weight);
+				fprintf(fp, "%f\n", aizr0.weight);
+				fprintf(fp, "%f\n", aizr1.weight);
+				fclose(fp);
+			}
+			fp = fopen("synapse_weights.txt", "w");
+			if (fp != NULL)
+			{
+				fprintf(fp, "%f\n", asel0.weight);
+				fprintf(fp, "%f\n", asel1.weight);
+				fprintf(fp, "%f\n", aser0.weight);
+				fprintf(fp, "%f\n", aser1.weight);
+				fprintf(fp, "%f\n", aiyl0.weight);
+				fprintf(fp, "%f\n", aiyr0.weight);
+				fprintf(fp, "%f\n", aizl0.weight);
+				fprintf(fp, "%f\n", aizl1.weight);
+				fprintf(fp, "%f\n", aizr0.weight);
+				fprintf(fp, "%f\n", aizr1.weight);
+				fclose(fp);
+			}
+		}
+		asel0.weight = asel0weight0;
+		asel1.weight = asel1weight0;
+		aser0.weight = aser0weight0;
+		aser1.weight = aser1weight0;
+		I_on = I_on0;
+		if ((rand() % 100) < 10)
+		{
+			asel0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) asel0.weight = -asel0.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) asel0.weight += w; else asel0.weight -= w;
+			if (asel0.weight < 0.0) asel0.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			asel1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) asel1.weight = -asel1.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) asel1.weight += w; else asel1.weight -= w;
+			if (asel1.weight < 0.0) asel1.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			aser0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) aser0.weight = -aser0.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aser0.weight += w; else aser0.weight -= w;
+			if (aser0.weight < 0.0) aser0.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			aser1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) aser1.weight = -aser1.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aser1.weight += w; else aser1.weight -= w;
+			if (aser1.weight < 0.0) aser1.weight = 0.0f;
+		}
+
+		if ((rand() % 100) < 10)
+		{
+			aiyl0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) asel0.weight = -asel0.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aiyl0.weight += w; else aiyl0.weight -= w;
+			if (aiyl0.weight < 0.0) aiyl0.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			aiyr0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) aser0.weight = -aser0.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aiyr0.weight += w; else aiyr0.weight -= w;
+			if (aiyr0.weight < 0.0) aiyr0.weight = 0.0f;
+		}
+
+		if ((rand() % 100) < 10)
+		{
+			aizl0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) asel0.weight = -asel0.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aizl0.weight += w; else aizl0.weight -= w;
+			if (aizl0.weight < 0.0) aizl0.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			aizl1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) asel1.weight = -asel1.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aizl1.weight += w; else aizl1.weight -= w;
+			if (aizl1.weight < 0.0) aizl1.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			aizr0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) aser0.weight = -aser0.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aizr0.weight += w; else aizr0.weight -= w;
+			if (aizr0.weight < 0.0) aizr0.weight = 0.0f;
+		}
+		if ((rand() % 100) < 10)
+		{
+			aizr1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
+			//if ((rand() % 2) == 0) aser1.weight = -aser1.weight;
+		}
+		else if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) aizr1.weight += w; else aizr1.weight -= w;
+			if (aizr1.weight < 0.0) aizr1.weight = 0.0f;
+		}
+
+		if ((rand() % 100) < 10) {
+			float w = ((float)(rand() % 100) / 100.0f);
+			if ((rand() % 2) == 0) I_on += w; else I_on -= w;
+		}
+	SimTerminateWorm();
+	SimInitWorm();
+	closest = -1.0f;
+	runState = RUN;
+}
 
 void SimUpdate()
 {
-   // Must be running.
-   if (runState != RUN)
+   // Must be running and viewable.
+   if (runState != RUN || connectomeState)
    {
       return;
    }
 
    // End once enough simulation time has passed
+   /* flibber
    if (tout > DURATION)
+   flibber */ 
+   if (tout > DURATION || CurrentSalty == -1)
    {
+	   /* flibber
       runState = RESTART;
+	  flibber */
+	  resetRun(); // flibber
       return;
    }
 
@@ -897,50 +1291,67 @@ void AppRender()
       }
 
       // Draw current salty food.
-      if (CurrentSalty != -1)
+	  float w = IwGxGetScreenWidth();
+	  float h = IwGxGetScreenHeight();
+	  float range;
+	  if (w < h)
+	  {
+		  range = w * SALT_CONSUMPTION_RANGE;
+	  }
+	  else
+	  {
+		  range = h * SALT_CONSUMPTION_RANGE;
+	  }
+	  for (int i = 0; i < NUM_SALTY; i++)
       {
-         float w = IwGxGetScreenWidth();
-         float h = IwGxGetScreenHeight();
-         if (w < h)
-         {
-            w *= 0.1;
-            h  = w;
-         }
-         else
-         {
-            h *= 0.1;
-            w  = h;
-         }
+		  if (CurrentSalty != -1 && i > CurrentSalty) break;
          CIwFVec2 d;
-         d.x = w * scale;
-         d.y = h * scale;
+         d.x = range * scale;
+         d.y = range * scale;
          CIwFVec2 p;
-         p.x = (SaltyX[CurrentSalty] * scale) + SaltyX_origin + SaltyX_off - (d.x / 2.0);
-         p.y = (SaltyY[CurrentSalty] * scale) + SaltyY_origin + SaltyY_off - (d.y / 2.0);
+         p.x = (SaltyX[i] * scale) + SaltyX_origin + SaltyX_off - (d.x / 2.0);
+         p.y = (SaltyY[i] * scale) + SaltyY_origin + SaltyY_off - (d.y / 2.0);
          unsigned long c;
-         switch (CurrentSalty)
+         switch (i)
          {
          case 0:
-            c = 0x00ff00ff;
+            c = 0xffff0000;
             break;
 
          case 1:
-            c = 0x0000ff00;
+            c = 0xff00ff00;
             break;
 
          case 2:
-            c = 0x000000ff;
+            c = 0xff0000ff;
             break;
          }
+		 Iw2DSetColour(c);
          float         cx = p.x + (d.x / 2.0);
          float         cy = p.y + (d.y / 2.0);
-         float         r  = sqrt(pow((cx - verts[0].x), 2) + pow((cy - verts[0].y), 2));
-         unsigned long a  = 0xff / (1.0 + (r * .05));
-         c = c | (a << 24);
-         Iw2DSetColour(c);
-         Iw2DFillArc(CIwFVec2(cx, cy), CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+         Iw2DFillArc(CIwFVec2(cx, cy), CIwFVec2(range * scale, range * scale), 0, M_PI * 2.0, 0);
          Iw2DSetColour(0xffffffff);
          Iw2DDrawImage(SaltyImage, p, d);
+		 if (CurrentSalty == -1 || i < CurrentSalty)
+		 {
+			 Iw2DDrawImage(QuitImage, p, d);
+		 }
+		 else if (i == CurrentSalty)
+		 {
+			 float         r = sqrt(pow((cx - verts[0].x), 2) + pow((cy - verts[0].y), 2));
+			 SaltRange = r / scale;
+			 if (closest < 0.0 || SaltRange < closest) closest = SaltRange; // flibber
+			 if (SaltRange <= range)
+			 {
+				 CurrentSalty++;
+				 SaltRange = -1.0f;
+				 if (CurrentSalty == NUM_SALTY)
+				 {
+					 runState = RESTART;
+					 CurrentSalty = -1;
+				 }
+			 }
+		 }
       }
 
       // Draw worm.
@@ -963,38 +1374,38 @@ void AppRender()
                int      k     = j + 4;
                realtype x     = verts[j].x - verts[k].x;
                realtype y     = verts[j].y - verts[k].y;
-               realtype angle = 0.0;
-               if (x == 0.0)
-               {
-                  if (y < 0.0)
-                  {
-                     angle = M_PI;
-                  }
-               }
-               else
-               {
-                  angle = atan(y / x);
-                  if (x > 0.0)
-                  {
-                     if (y > 0.0)
-                     {
-                        angle += M_PI;
-                     }
-                  }
-                  else
-                  {
-                     if (y < 0.0)
-                     {
-                        angle += M_PI;
-                     }
-                  }
-               }
+               realtype a = 0.0;
+			   if (x == 0.0)
+			   {
+				   if (y > 0.0)
+				   {
+					   a = M_PI * .5;
+				   }
+				   else {
+					   a = M_PI * 1.5;
+				   }
+			   }
+			   else
+			   {
+				   a = atan(y / x);
+				   if (x > 0.0)
+				   {
+					   if (y < 0.0)
+					   {
+						   a += M_PI * 2.0;
+					   }
+				   }
+				   else
+				   {
+					   a += M_PI;
+				   }
+			   }
                realtype mx = (verts[j].x + verts[k].x) / 2.0;
                realtype my = (verts[j].y + verts[k].y) / 2.0;
                realtype h  = sqrt(pow(verts[j].x - verts[k].x, 2.0) + pow(verts[j].y - verts[k].y, 2.0)) / 2.0;
                realtype v  = l * muscleWidthScale * (l / h);
                center = CIwFVec2(mx, my);
-               rot.SetRot(angle, center);
+               rot.SetRot(a, center);
                Iw2DSetTransformMatrix(rot);
                Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(h, v), 0, M_PI * 2.0, 0);
             }
@@ -1016,7 +1427,7 @@ void AppRender()
          Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       }
    }
-   else
+   else if (!synapseWeightState)
    {
       // Draw connectome.
       float w = (float)IwGxGetScreenWidth();
@@ -1038,19 +1449,36 @@ void AppRender()
          w2 = h2;
          r  = h2 * .03;
       }
-      w2 *= scale2;
-      h2 *= scale2;
-      r  *= scale2;
+      w2           *= scale2;
+      h2           *= scale2;
+      r            *= scale2;
+      synapseRadius = r;
       float x = (w / 2.0) - (w2 / 2.0) + x_off2;
       float y = ((h * .75) / 2.0) - (h2 / 2.0) + y_off2;
       Iw2DDrawImage(SteeringImage, CIwFVec2(x, y), CIwFVec2(w2, h2));
+	  if (asel.activation > 0.0)
+	  {
+		  Iw2DSetColour(0xff00ff00);
+	  }
+	  else {
+		  Iw2DSetColour(0xff000000);
+	  }
       //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .33), y + (h2 * .12)), CIwFVec2(w2 / 14.0, h2 / 14.0));
-      //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .6), y + (h2 * .12)), CIwFVec2(w2 / 14.0, h2 / 14.0));
-      Iw2DSetColour(0xff000000);
       Iw2DFillRect(CIwFVec2(x + (w2 * (.337 - .025)), y + (h2 * .17)), CIwFVec2(w2 * .06, h2 * .02));
       Iw2DFillRect(CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .15)), CIwFVec2(h2 * .02, w2 * .06));
+	  if (aser.activation > 0.0)
+	  {
+		  uint32 c = (int)(255.0 * (aser.activation / MAX_STEERING_RATE)) << 24;
+		  c |= 0xff00;
+		  Iw2DSetColour(c);
+	  }
+	  else {
+		  Iw2DSetColour(0xff000000);
+	  }
+	  //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .6), y + (h2 * .12)), CIwFVec2(w2 / 14.0, h2 / 14.0));
       Iw2DFillRect(CIwFVec2(x + (w2 * (.599 + .04)), y + (h2 * .17)), CIwFVec2(w2 * .06, h2 * .02));
       Iw2DFillRect(CIwFVec2(x + (w2 * (.62 + .04)), y + (h2 * .15)), CIwFVec2(h2 * .02, w2 * .06));
+	  Iw2DSetColour(0xff000000);
       //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .33), y + (h2 * .38)), CIwFVec2(w2 / 14.0, h2 / 14.0));
       //Iw2DDrawImage(PlusImage, CIwFVec2(x + (w2 * .6), y + (h2 * .38)), CIwFVec2(w2 / 14.0, h2 / 14.0));
       Iw2DFillRect(CIwFVec2(x + (w2 * (.337 - .025)), y + (h2 * .5)), CIwFVec2(w2 * .06, h2 * .02));
@@ -1063,78 +1491,66 @@ void AppRender()
       Iw2DFillRect(CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .81)), CIwFVec2(h2 * .02, w2 * .06));
       Iw2DFillRect(CIwFVec2(x + (w2 * (.599 + .04)), y + (h2 * .83)), CIwFVec2(w2 * .06, h2 * .02));
       Iw2DFillRect(CIwFVec2(x + (w2 * (.62 + .04)), y + (h2 * .81)), CIwFVec2(h2 * .02, w2 * .06));
-      asel0 = CIwFVec2(x + (w2 * (.36 - .0225)), y + (h2 * .25));
+      asel0.position = CIwFVec2(x + (w2 * (.36 - .0225)), y + (h2 * .25));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(asel0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(asel0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(asel0, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(asel0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      asel1 = CIwFVec2(x + (w2 * .41), y + (h2 * .2));
+      Iw2DFillArc(asel0.position, CIwFVec2(r, r), 0, M_PI * 2.0 * asel0.weight, 0);
+      Iw2DDrawArc(asel0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      asel1.position = CIwFVec2(x + (w2 * .41), y + (h2 * .2));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(asel1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(asel1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(asel1, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(asel1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aser0 = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .25));
+      Iw2DFillArc(asel1.position, CIwFVec2(r, r), 0, M_PI * 2.0 * asel1.weight, 0);
+      Iw2DDrawArc(asel1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aser0.position = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .25));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aser0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aser0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aser0, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aser0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aser1 = CIwFVec2(x + (w2 * .6), y + (h2 * .2));
+      Iw2DFillArc(aser0.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aser0.weight, 0);
+      Iw2DDrawArc(aser0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aser1.position = CIwFVec2(x + (w2 * .6), y + (h2 * .2));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aser1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aser1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aser1, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aser1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aiyl0 = CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .58));
+      Iw2DFillArc(aser1.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aser1.weight, 0);
+      Iw2DDrawArc(aser1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aiyl0.position = CIwFVec2(x + (w2 * (.36 - .025)), y + (h2 * .58));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aiyl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aiyl0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aiyl0, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aiyl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aiyr0 = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .58));
+      Iw2DFillArc(aiyl0.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aiyl0.weight, 0);
+      Iw2DDrawArc(aiyl0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aiyr0.position = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .58));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aiyr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aiyr0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aiyr0, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aiyr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aiy = CIwFVec2(x + (w2 * .5), y + (h2 * .45));
+      Iw2DFillArc(aiyr0.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aiyr0.weight, 0);
+      Iw2DDrawArc(aiyr0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizl0.position = CIwFVec2(x + (w2 * (.36 - .0225)), y + (h2 * .91));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aiy, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aizl0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aiy, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aiy, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aizl0 = CIwFVec2(x + (w2 * (.36 - .0225)), y + (h2 * .91));
+      Iw2DFillArc(aizl0.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aizl0.weight, 0);
+      Iw2DDrawArc(aizl0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizl1.position = CIwFVec2(x + (w2 * .41), y + (h2 * .86));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aizl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aizl1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aizl0, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aizl0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aizl1 = CIwFVec2(x + (w2 * .41), y + (h2 * .86));
+      Iw2DFillArc(aizl1.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aizl1.weight, 0);
+      Iw2DDrawArc(aizl1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizr0.position = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .91));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aizl1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aizr0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aizl1, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aizl1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aizr0 = CIwFVec2(x + (w2 * (.62 + .045)), y + (h2 * .91));
+      Iw2DFillArc(aizr0.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aizr0.weight, 0);
+      Iw2DDrawArc(aizr0.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      aizr1.position = CIwFVec2(x + (w2 * .6), y + (h2 * .86));
       Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aizr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aizr1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aizr0, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aizr0, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aizr1 = CIwFVec2(x + (w2 * .6), y + (h2 * .86));
-      Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aizr1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aizr1, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aizr1, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      aiz = CIwFVec2(x + (w2 * .5), y + (h2 * .78));
-      Iw2DSetColour(0xffffffff);
-      Iw2DFillArc(aiz, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
-      Iw2DSetColour(0xff000000);
-      Iw2DFillArc(aiz, CIwFVec2(r, r), 0, M_PI, 0);
-      Iw2DDrawArc(aiz, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillArc(aizr1.position, CIwFVec2(r, r), 0, M_PI * 2.0 * aizr1.weight, 0);
+      Iw2DDrawArc(aizr1.position, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
       MotorYPartition = y + h2;
       MotorYPartition = y + h2;
       getMotorConnectomeGeometry(x, y, w, h);
@@ -1195,6 +1611,37 @@ void AppRender()
             Iw2DDrawRect(CIwFVec2(x + 1, y + (h * i) + 1), CIwFVec2(w - 2, h - 3));
          }
       }
+   }
+   else
+   {
+      // Draw synapse weighting.
+      float w = (float)IwGxGetScreenWidth();
+      float h = (float)IwGxGetScreenHeight();
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillRect(CIwFVec2(0.0, 0.0), CIwFVec2(w, h));
+      Iw2DSetColour(0xff000000);
+      float r;
+      if (w < h)
+      {
+         r = w * .15;
+      }
+      else
+      {
+         r = h * .15;
+      }
+      Iw2DSetColour(0xffffffff);
+      CIwFVec2 weight(w / 2.0, h / 3.0);
+      Iw2DFillArc(weight, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DSetColour(0xff000000);
+      Iw2DFillArc(weight, CIwFVec2(r, r), 0, M_PI * 2.0 * *currentWeight, 0);
+      Iw2DDrawArc(weight, CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      Iw2DFillRect(CIwFVec2(w * .1, h * .65), CIwFVec2(w * .8, h * .01));
+      Iw2DFillRect(CIwFVec2(w * (.1 - .025), h * .62), CIwFVec2(w * .025, h * .06));
+      Iw2DFillRect(CIwFVec2(w * .9, h * .62), CIwFVec2(w * .025, h * .06));
+      Iw2DSetColour(0xffffffff);
+      Iw2DFillRect(CIwFVec2((w * (.8 - .05) * *currentWeight) + (w * .1), h * .62), CIwFVec2(w * .05, h * .06));
+      Iw2DSetColour(0xff000000);
+      Iw2DDrawRect(CIwFVec2((w * (.8 - .05) * *currentWeight) + (w * .1), h * .62), CIwFVec2(w * .05, h * .06));
    }
 
    // Render keys.
@@ -1257,18 +1704,340 @@ void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h)
 }
 
 
+// Set synapse weighting mode.
+void setSynapseWeighting(int mx, int my)
+{
+   synapseWeightState = false;
+   realtype d = sqrt(pow((realtype)mx - (realtype)asel0.position.x, 2) +
+                     pow((realtype)my - (realtype)asel0.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &asel0.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)asel1.position.x, 2) +
+            pow((realtype)my - (realtype)asel1.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &asel1.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aser0.position.x, 2) +
+            pow((realtype)my - (realtype)aser0.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aser0.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aser1.position.x, 2) +
+            pow((realtype)my - (realtype)aser1.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aser1.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aiyl0.position.x, 2) +
+            pow((realtype)my - (realtype)aiyl0.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aiyl0.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aiyr0.position.x, 2) +
+            pow((realtype)my - (realtype)aiyr0.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aiyr0.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aizl0.position.x, 2) +
+            pow((realtype)my - (realtype)aizl0.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aizl0.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aizl1.position.x, 2) +
+            pow((realtype)my - (realtype)aizl1.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aizl1.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aizr0.position.x, 2) +
+            pow((realtype)my - (realtype)aizr0.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aizr0.weight;
+      synapseWeightState = true;
+      return;
+   }
+   d = sqrt(pow((realtype)mx - (realtype)aizr1.position.x, 2) +
+            pow((realtype)my - (realtype)aizr1.position.y, 2));
+   if (d <= synapseRadius)
+   {
+      currentWeight      = &aizr1.weight;
+      synapseWeightState = true;
+      return;
+   }
+}
+
+
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- *******************--------------------------------------------------------------------
+ **********************--------------------------------------------------------------------
  */
+
+// Update steering.
+void update_steering()
+{
+	int i,j;
+	realtype x, y;
+
+	// Activate sensory neurons based on salt concentrations.
+	// ASEL = ON sensory neuron: activated by increasing concentration.
+	// ASER = OFF sensory neuron: activated by decreasing concentration.
+	asel.activation = aser.activation = 0.0f;
+	realtype cx = yval[STEERING_PIVOT_INDEX * 3];
+	realtype cy = yval[STEERING_PIVOT_INDEX * 3 + 1];
+	if (CurrentSalty != -1)
+	{
+		x = yval[0];
+		y = yval[1];
+		x -= cx;
+		y -= cy;
+		realtype d = -MAX_STEERING_RATE;
+		rotatePoint(&x, &y, d);
+		x += cx;
+		y += cy;
+		realtype s = (realtype)IwGxGetScreenWidth() * scale / 0.001;
+		realtype vx = (x * s) + x_off;
+		realtype vy = (y * s) + y_off;
+		float w = IwGxGetScreenWidth();
+		float h = IwGxGetScreenHeight();
+		if (w < h)
+		{
+			w *= 0.1;
+			h = w;
+		}
+		else
+		{
+			h *= 0.1;
+			w = h;
+		}
+		realtype dx = w * scale;
+		realtype dy = h * scale;
+		CIwFVec2 p;
+		p.x = (SaltyX[CurrentSalty] * scale) + SaltyX_origin + SaltyX_off - (dx / 2.0);
+		p.y = (SaltyY[CurrentSalty] * scale) + SaltyY_origin + SaltyY_off - (dy / 2.0);
+		realtype        cx2 = p.x + (dx / 2.0);
+		realtype         cy2 = p.y + (dy / 2.0);
+		realtype l = sqrt(pow((cx2 - vx), 2) + pow((cy2 - vy), 2));
+		x = yval[0];
+		y = yval[1];
+		x -= cx;
+		y -= cy;
+		x = yval[0];
+		y = yval[1];
+		x -= cx;
+		y -= cy;
+		rotatePoint(&x, &y, d * .5);
+		x += cx;
+		y += cy;
+		vx = (x * s) + x_off;
+		vy = (y * s) + y_off;
+		realtype l2 = sqrt(pow((cx2 - vx), 2) + pow((cy2 - vy), 2));
+		if (l > l2)
+		{
+			d *= .5;
+			l = l2;
+		}
+		x = yval[0];
+		y = yval[1];
+		vx = (x * s) + x_off;
+		vy = (y * s) + y_off;
+		l2 = sqrt(pow((cx2 - vx), 2) + pow((cy2 - vy), 2));
+		if (l > l2)
+		{
+			asel.activation = MAX_STEERING_RATE;
+		}
+		else {
+			aser.activation = -d;
+		}
+	}
+
+	// Interneuron activation deltas.
+	float aiyl_delta = -aiyl.activation + aiyl.I;
+	aiyl_delta += asel0.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
+	aiyl_delta += aser1.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
+	aiyl_delta += G * (aiyr.activation - aiyl.activation);
+	float aiyr_delta = -aiyr.activation + aiyr.I;
+	aiyr_delta += aser0.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
+	aiyr_delta += asel1.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
+	aiyr_delta += G * (aiyl.activation - aiyr.activation);
+	float aizl_delta = -aizl.activation + aizl.I;
+	aizl_delta += aiyl0.weight * (1.0 / (1.0 + exp(-(aiyl.activation + aiyl.theta))));
+	aizl_delta += G * (aizr.activation - aizl.activation);
+	float aizr_delta = -aizr.activation + aizr.I;
+	aizr_delta += aiyr0.weight * (1.0 / (1.0 + exp(-(aiyr.activation + aiyr.theta))));
+	aizr_delta += G * (aizl.activation - aizr.activation);
+
+	// Motor neuron activation deltas.
+	smbd.activation = 0.0f;
+	float smbd_delta = -smbd.activation + smbd.I;
+	//smbd_delta += aizl0.weight * (1.0 / (1.0 + exp(-(aizl.activation + aizl.theta))));
+	//smbd_delta += aizr1.weight * (1.0 / (1.0 + exp(-(aizr.activation + aizr.theta))));
+	smbd_delta += asel0.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));  // flibber
+	smbd_delta += aser1.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
+	smbv.activation = 0.0f;
+	float smbv_delta = -smbv.activation + smbv.I;
+	//smbv_delta += aizr0.weight * (1.0 / (1.0 + exp(-(aizr.activation + aizr.theta))));
+	//smbv_delta += aizl1.weight * (1.0 / (1.0 + exp(-(aizl.activation + aizl.theta))));
+	smbv_delta += aser0.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));  // flibber
+	smbv_delta += asel1.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
+
+	// Activate steering and motor neurons.
+	aiyl.activation += aiyl_delta * DELTAT;
+	aiyr.activation += aiyr_delta * DELTAT;
+	aizl.activation += aizl_delta * DELTAT;
+	aizr.activation += aizr_delta * DELTAT;
+	smbd.activation = 0.0f;
+	smbv.activation = 0.0f;
+	realtype d = 0.0;
+	if (asel.activation > 0.0f)
+	{
+		smbd.activation = asel.activation;
+		smbv.activation = asel.activation;
+	}
+	else if (aser.activation > 0.0)
+	{
+		smbd.activation = aser.activation;
+		d = -aser.activation;
+	}
+
+	    // Steer worm.
+		N_Vector yy2 = N_VNew_Serial(NEQ);
+		realtype *yval2 = NV_DATA_S(yy2);
+		yval = NV_DATA_S(yy);
+		for (int i = 0; i < NBAR; ++i)
+		{
+			yval2[i * 3] = yval[i * 3];
+			yval2[i * 3 + 1] = yval[i * 3 + 1];
+			yval2[i * 3 + 2] = yval[i * 3 + 2];
+		}
+		N_Vector yp2 = N_VNew_Serial(NEQ);
+		realtype *ypval2 = NV_DATA_S(yp2);
+		ypval = NV_DATA_S(yp);
+		for (int i = 0; i < NBAR; ++i)
+		{
+			ypval2[i * 3] = ypval[i * 3];
+			ypval2[i * 3 + 1] = ypval[i * 3 + 1];
+			ypval2[i * 3 + 2] = ypval[i * 3 + 2];
+		}
+
+		IDAFree(&mem);
+		N_VDestroy_Serial(yy);
+		N_VDestroy_Serial(yp);
+
+		mem = NULL;
+		yy = yp = avtol = NULL;
+		yval = ypval = atval = NULL;
+
+		yy = N_VNew_Serial(NEQ);
+		yp = N_VNew_Serial(NEQ);
+		avtol = N_VNew_Serial(NEQ);
+
+		yval = NV_DATA_S(yy);
+		ypval = NV_DATA_S(yp);
+		rtol = (MEDIUM < 0.015 ? 0.1 : 1) * RCONST(1.0e-12);
+		atval = NV_DATA_S(avtol);
+
+		for (int i = 0; i < NBAR; ++i)
+		{
+			x = yval2[i * 3];
+			y = yval2[i * 3 + 1];
+			if (i < STEERING_PIVOT_INDEX)
+			{
+				x -= cx;
+				y -= cy;
+				rotatePoint(&x, &y, d);
+				x += cx;
+				y += cy;
+			}
+			yval[i * 3] = x;
+			yval[i * 3 + 1] = y;
+			yval[i * 3 + 2] = yval2[i * 3 + 2] + d;
+
+			ypval[i * 3] = ypval2[i * 3];
+			ypval[i * 3 + 1] = ypval2[i * 3 + 1];
+			ypval[i * 3 + 2] = ypval2[i * 3 + 2];
+
+			atval[i * 3] = (MEDIUM < 0.015 ? 0.1 : 1) * RCONST(1.0e-9);
+			atval[i * 3 + 1] = (MEDIUM < 0.015 ? 0.1 : 1) * RCONST(1.0e-9);
+			atval[i * 3 + 2] = (MEDIUM < 0.015 ? 0.1 : 1) * RCONST(1.0e-5);
+		}
+		N_VDestroy_Serial(yy2);
+		N_VDestroy_Serial(yp2);
+
+		t0 = RCONST(0.0);
+		mem = IDACreate();
+		retval = IDAMalloc(mem, resrob, t0, yy, yp, IDA_SV, rtol, avtol);
+		N_VDestroy_Serial(avtol);
+		retval = IDADense(mem, NEQ);
+}
+
+// Rotate a point by a given angle.
+void rotatePoint(realtype *x, realtype *y, realtype angle)
+{
+	realtype l = sqrt((*x * *x) + (*y * *y));
+			realtype a = 0.0;
+			if (*x == 0.0)
+			{
+				if (*y > 0.0)
+				{
+					a = M_PI * .5;
+				}
+				else {
+					a = M_PI * 1.5;
+				}
+			}
+			else
+			{
+				a = atan(*y / *x);
+				if (*x > 0.0)
+				{
+					if (*y < 0.0)
+					{
+						a += M_PI * 2.0;
+					}
+				}
+				else
+				{
+					a += M_PI;
+				}
+			}
+			a += angle;
+			*x = l * cos(a);
+			*y = l * sin(a);
+}
+
 // Neural circuit function
 void update_neurons(realtype timenow)
 {
+	// Update steering.
+	update_steering();
+
    // Neural paramaters
-   const int   N_units = 12;            // Number of neural units
-   const float Hyst    = 0.5;           // Neural hysteresis
-   const float I_on    = 0.675;         // AVB input current (makes the model go)
+   const float Hyst    = 0.5;         // Neural hysteresis
 
    // GJ coupling strength
    float I_coupling = 0.0;              // Optional gap junction coupling between adjacent neurons (has virtually no effect, not usually used)
@@ -1282,18 +2051,6 @@ void update_neurons(realtype timenow)
    }
    NMJ_weight[0] /= 1.5;                                // Helps to prevent excessive bending of head
 
-   // If this is the first time update_neurons is called, initialize all neurons
-   static bool initialized = false;
-   if (!initialized)
-   {
-      for (int i = 0; i < N_units; ++i)
-      {
-         State[i][0] = 0;
-         State[i][1] = 0;
-      }
-      initialized = true;
-   }
-
    // Stretch receptor variables
    float I_SR_D[N_units];
    float I_SR_V[N_units];
@@ -1305,7 +2062,7 @@ void update_neurons(realtype timenow)
    // SR_weight is a global weighting for each unit, used to get the compensate for curvature gradient induced by the NMJ gradient above
    for (int i = 0; i < N_units; ++i)
    {
-      SR_weight[i] = 0.65 * (0.4 + 0.08 * i) * (N_units / 12.0) * (2.0 / N_seg_per_unit);
+	  SR_weight[i] = SR_W * (0.4 + 0.08 * i) * (N_units / 12.0) * (2.0 / N_seg_per_unit);
    }
 
    // Add up stretch receptor contributions from all body segments in receptive field for each neural unit
@@ -1341,18 +2098,15 @@ void update_neurons(realtype timenow)
       I_SR_V[i] *= sqrt(-(N_SR / (i - N_units)));
    }
 
-   // Variables for total input current to each B-class motorneuron
-   float I_D[N_units];
-   float I_V[N_units];
-
    // Current bias to compensate for the fact that neural inhibition only goes one way
    float I_bias = 0.5;
 
    // Combine AVB current, stretch receptor current, neural inhibition and bias
    for (int i = 0; i < N_units; ++i)
    {
-      I_D[i] = I_on + SR_weight[i] * I_SR_D[i];
-      I_V[i] = (I_bias - State[i][0]) + I_on + SR_weight[i] * I_SR_V[i];
+	  I_D[i] = I_on + SR_weight[i] * I_SR_D[i];
+	  I_V[i] = (I_bias - State[i][0]) + I_on + SR_weight[i] * I_SR_V[i];
+	  //I_V[i] = I_on + SR_weight[i] * I_SR_V[i];  // flibber
    }
 
    // Add gap junction currents if they are being used (typically I_coupling = 0)
@@ -1367,7 +2121,6 @@ void update_neurons(realtype timenow)
 
    I_D[N_units - 1] += (State[N_units - 2][0] - State[N_units - 1][0]) * I_coupling;
    I_V[N_units - 1] += (State[N_units - 2][1] - State[N_units - 1][1]) * I_coupling;
-
 
    // Update state for each bistable B-class neuron
    for (int i = 0; i < N_units; ++i)
@@ -1427,6 +2180,7 @@ void update_muscles(realtype timenow)
    }
 }
 
+#define HALFPI          M_PI / 2.0
 
 // System residual function which implements physical model (Based on Sundials examples)
 int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
@@ -1636,10 +2390,10 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
    {
       realtype cos_thi = cos(CoM[i][2]);
       realtype sin_thi = sin(CoM[i][2]);
-      for (int j = 0; j < 2; ++j)
-      {
-         F_term_rotated[i][j][0] = F_term[i][j][0] * cos_thi + F_term[i][j][1] * sin_thi;                   // This is Fperp
-         F_term_rotated[i][j][1] = F_term[i][j][0] * sin_thi - F_term[i][j][1] * cos_thi;                   // THis is Fparallel
+	  for (int j = 0; j < 2; ++j)
+	  {
+		  F_term_rotated[i][j][0] = F_term[i][j][0] * cos_thi + F_term[i][j][1] * sin_thi;                   // This is Fperp
+		  F_term_rotated[i][j][1] = F_term[i][j][0] * sin_thi - F_term[i][j][1] * cos_thi;                   // THis is Fparallel
       }
 
       V_CoM_rotated[i][0] = (F_term_rotated[i][0][0] + F_term_rotated[i][1][0]) / CN[i];
@@ -1674,7 +2428,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- *******************--------------------------------------------------------------------
+ **********************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
