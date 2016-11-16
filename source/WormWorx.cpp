@@ -46,6 +46,10 @@
 #include <sundials/sundials_math.h>
 #include <errno.h>
 
+// Banner.
+CIw2DImage *BannerImage;
+bool       showBanner;
+
 // Simulation parameters
 #define DURATION                35              //duration of simulation
 #define MEDIUM                  1.0             //change in the range 0.0 (water) to 1.0 (agar)
@@ -187,7 +191,7 @@ CIw2DImage *TouchImage;
 CIw2DImage *BackImage;
 CIw2DImage *MotorsImage;
 CIw2DImage *SteeringImage;
-float      synapseRadius;
+realtype   synapseRadius;
 struct SteeringSynapse
 {
    float    weight;
@@ -207,14 +211,14 @@ bool  synapseWeightState;
 float *currentWeight;
 void setSynapseWeighting(int mx, int my);
 
-float I     = 0.5f;
-float theta = -0.5f;
-float G     = 0.0f;
+realtype I     = 0.5;
+realtype theta = -0.5f;
+realtype G     = 0.0f;
 struct SteeringNeuron
 {
-   float I;
-   float theta;
-   float activation;
+   realtype I;
+   realtype theta;
+   realtype activation;
 };
 struct SteeringNeuron asel, aser;
 struct SteeringNeuron aiyl, aiyr;
@@ -323,6 +327,7 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
 
    if (pEvent->m_Button == S3E_POINTER_BUTTON_SELECT)
    {
+      showBanner = false;
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
       if (pEvent->m_Pressed)
@@ -349,19 +354,19 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
             {
                m_x[0]  = m_y[0] = -1;
                m_x2[0] = m_y2[0] = -1;
-               m_x3    = -1;
-               m_y3    = -1;
-               float w    = (float)IwGxGetScreenWidth();
-               float h    = (float)IwGxGetScreenHeight();
-               float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
-               float xmax = xmin + (w * .05);
-               float ymin = h * .62;
-               float ymax = ymin + (h * .06);
-               if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
-               {
-                  m_x3 = mx;
-                  m_y3 = my;
-               }
+               //m_x3    = -1;
+               //m_y3    = -1;
+               //float w    = (float)IwGxGetScreenWidth();
+               //float h    = (float)IwGxGetScreenHeight();
+               //float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
+               //float xmax = xmin + (w * .05);
+               //float ymin = h * .62;
+               //float ymax = ymin + (h * .06);
+               //if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
+               //{
+               m_x3 = mx;
+               m_y3 = my;
+               //}
             }
          }
          else
@@ -463,6 +468,11 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
    int key;
    int t = pEvent->m_TouchID;
 
+   if (pEvent->m_Pressed)
+   {
+      showBanner = false;
+   }
+
    if ((t == 0) || (t == 1))
    {
       if (pEvent->m_Pressed)
@@ -495,19 +505,19 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
                m_x2[0] = m_y2[0] = -1;
                m_x[0]  = m_y[0] = -1;
                m_x2[0] = m_y2[0] = -1;
-               m_x3    = -1;
-               m_y3    = -1;
-               float w    = (float)IwGxGetScreenWidth();
-               float h    = (float)IwGxGetScreenHeight();
-               float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
-               float xmax = xmin + (w * .05);
-               float ymin = h * .62;
-               float ymax = ymin + (h * .06);
-               if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
-               {
-                  m_x3 = mx;
-                  m_y3 = my;
-               }
+               //m_x3    = -1;
+               //m_y3    = -1;
+               //float w    = (float)IwGxGetScreenWidth();
+               //float h    = (float)IwGxGetScreenHeight();
+               //float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
+               //float xmax = xmin + (w * .05);
+               //float ymin = h * .62;
+               //float ymax = ymin + (h * .06);
+               //if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
+               //{
+               m_x3 = mx;
+               m_y3 = my;
+               //}
             }
          }
          else
@@ -844,6 +854,7 @@ void SimInitWorm()
 
 void SimInit()
 {
+   BannerImage        = Iw2DCreateImage("banner.png");
    SaltyImage         = Iw2DCreateImage("salty.png");
    QuitImage          = Iw2DCreateImage("quit.png");
    StartImage         = Iw2DCreateImage("start.png");
@@ -854,6 +865,7 @@ void SimInit()
    BackImage          = Iw2DCreateImage("back.png");
    MotorsImage        = Iw2DCreateImage("motors.png");
    SteeringImage      = Iw2DCreateImage("steering.png");
+   showBanner         = true;
    skinState          = true;
    connectomeState    = false;
    synapseWeightState = false;
@@ -927,6 +939,7 @@ void SimTerminate()
 {
    SimTerminateWorm();
 
+   delete BannerImage;
    delete SaltyImage;
    delete QuitImage;
    delete StartImage;
@@ -1044,283 +1057,6 @@ bool AppGetConnectomeState()
 }
 
 
-float fittest = -1.0f;
-float asel0weight0;
-float asel1weight0;
-float aser0weight0;
-float aser1weight0;
-float aiyl0weight0;
-float aiyr0weight0;
-float aizl0weight0;
-float aizl1weight0;
-float aizr0weight0;
-float aizr1weight0;
-float closest = -1.0f;
-void resetRun()                                                                                 // flibber
-{
-   printf("fittest=%f, closest=%f, tout=%f, new=%f\n", fittest, closest, tout, closest * tout); // flibber
-   if ((fittest < 0.0) || ((closest * tout) < fittest))
-   {
-      fittest      = closest * tout;
-      asel0weight0 = asel0.weight;
-      asel1weight0 = asel1.weight;
-      aser0weight0 = aser0.weight;
-      aser1weight0 = aser1.weight;
-      FILE *fp = fopen("evolve.txt", "a");
-      if (fp != NULL)
-      {
-         fprintf(fp, "fittest=%f, closest=%f, tout=%f\n", fittest, closest, tout);
-         fprintf(fp, "%f\n", asel0.weight);
-         fprintf(fp, "%f\n", asel1.weight);
-         fprintf(fp, "%f\n", aser0.weight);
-         fprintf(fp, "%f\n", aser1.weight);
-         fprintf(fp, "%f\n", aiyl0.weight);
-         fprintf(fp, "%f\n", aiyr0.weight);
-         fprintf(fp, "%f\n", aizl0.weight);
-         fprintf(fp, "%f\n", aizl1.weight);
-         fprintf(fp, "%f\n", aizr0.weight);
-         fprintf(fp, "%f\n", aizr1.weight);
-         fclose(fp);
-      }
-      fp = fopen("synapse_weights.txt", "w");
-      if (fp != NULL)
-      {
-         fprintf(fp, "%f\n", asel0.weight);
-         fprintf(fp, "%f\n", asel1.weight);
-         fprintf(fp, "%f\n", aser0.weight);
-         fprintf(fp, "%f\n", aser1.weight);
-         fprintf(fp, "%f\n", aiyl0.weight);
-         fprintf(fp, "%f\n", aiyr0.weight);
-         fprintf(fp, "%f\n", aizl0.weight);
-         fprintf(fp, "%f\n", aizl1.weight);
-         fprintf(fp, "%f\n", aizr0.weight);
-         fprintf(fp, "%f\n", aizr1.weight);
-         fclose(fp);
-      }
-   }
-   asel0.weight = asel0weight0;
-   asel1.weight = asel1weight0;
-   aser0.weight = aser0weight0;
-   aser1.weight = aser1weight0;
-   if ((rand() % 100) < 10)
-   {
-      asel0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) asel0.weight = -asel0.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         asel0.weight += w;
-      }
-      else
-      {
-         asel0.weight -= w;
-      }
-      if (asel0.weight < 0.0)
-      {
-         asel0.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      asel1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) asel1.weight = -asel1.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         asel1.weight += w;
-      }
-      else
-      {
-         asel1.weight -= w;
-      }
-      if (asel1.weight < 0.0)
-      {
-         asel1.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      aser0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) aser0.weight = -aser0.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aser0.weight += w;
-      }
-      else
-      {
-         aser0.weight -= w;
-      }
-      if (aser0.weight < 0.0)
-      {
-         aser0.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      aser1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) aser1.weight = -aser1.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aser1.weight += w;
-      }
-      else
-      {
-         aser1.weight -= w;
-      }
-      if (aser1.weight < 0.0)
-      {
-         aser1.weight = 0.0f;
-      }
-   }
-
-   if ((rand() % 100) < 10)
-   {
-      aiyl0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) asel0.weight = -asel0.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aiyl0.weight += w;
-      }
-      else
-      {
-         aiyl0.weight -= w;
-      }
-      if (aiyl0.weight < 0.0)
-      {
-         aiyl0.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      aiyr0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) aser0.weight = -aser0.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aiyr0.weight += w;
-      }
-      else
-      {
-         aiyr0.weight -= w;
-      }
-      if (aiyr0.weight < 0.0)
-      {
-         aiyr0.weight = 0.0f;
-      }
-   }
-
-   if ((rand() % 100) < 10)
-   {
-      aizl0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) asel0.weight = -asel0.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aizl0.weight += w;
-      }
-      else
-      {
-         aizl0.weight -= w;
-      }
-      if (aizl0.weight < 0.0)
-      {
-         aizl0.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      aizl1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) asel1.weight = -asel1.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aizl1.weight += w;
-      }
-      else
-      {
-         aizl1.weight -= w;
-      }
-      if (aizl1.weight < 0.0)
-      {
-         aizl1.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      aizr0.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) aser0.weight = -aser0.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aizr0.weight += w;
-      }
-      else
-      {
-         aizr0.weight -= w;
-      }
-      if (aizr0.weight < 0.0)
-      {
-         aizr0.weight = 0.0f;
-      }
-   }
-   if ((rand() % 100) < 10)
-   {
-      aizr1.weight = ((float)(rand() % 100) / 100.0f) * 15.0f;
-      //if ((rand() % 2) == 0) aser1.weight = -aser1.weight;
-   }
-   else if ((rand() % 100) < 10)
-   {
-      float w = ((float)(rand() % 100) / 100.0f);
-      if ((rand() % 2) == 0)
-      {
-         aizr1.weight += w;
-      }
-      else
-      {
-         aizr1.weight -= w;
-      }
-      if (aizr1.weight < 0.0)
-      {
-         aizr1.weight = 0.0f;
-      }
-   }
-   SimTerminateWorm();
-   SimInitWorm();
-   closest  = -1.0f;
-   runState = RUN;
-}
-
-
 void SimUpdate()
 {
    // Must be running and viewable.
@@ -1329,17 +1065,10 @@ void SimUpdate()
       return;
    }
 
-   // End once enough simulation time has passed
-
-   /* flibber
-   *  if (tout > DURATION)
-   *  flibber */
+   // End once enough simulation time has passed or all food obtained
    if ((tout > DURATION) || (CurrentSalty == -1))
    {
-      /* flibber
-      *  runState = RESTART;
-      *  flibber */
-      resetRun();     // flibber
+      runState = RESTART;
       return;
    }
 
@@ -1460,10 +1189,6 @@ void AppRender()
          {
             float r = sqrt(pow((cx - verts[0].x), 2) + pow((cy - verts[0].y), 2));
             r /= scale;
-            if ((closest < 0.0) || (r < closest))
-            {
-               closest = r;                                             // flibber
-            }
             if (r <= range)
             {
                CurrentSalty++;
@@ -1549,6 +1274,26 @@ void AppRender()
          realtype r = ((R[j] + R[k]) / 2.0) * s * 2.0;
          Iw2DSetColour(0x77ff7777);
          Iw2DFillArc(CIwFVec2(mx, my), CIwFVec2(r, r), 0, M_PI * 2.0, 0);
+      }
+
+      // Show banner?
+      if (showBanner)
+      {
+         Iw2DSetColour(0xffffffff);
+         float w2 = w;
+         float h2 = h;
+         if (w < h)
+         {
+            w2 = w2 * .75;
+         }
+         else
+         {
+            w2 = w2 * .25;
+         }
+         h2 = h * .05;
+         float x = (w / 2.0) - (w2 / 2.0);
+         float y = h * .5;
+         Iw2DDrawImage(BannerImage, CIwFVec2(x, y), CIwFVec2(w2, h2));
       }
    }
    else if (!synapseWeightState)
@@ -1950,7 +1695,7 @@ void setSynapseWeighting(int mx, int my)
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- ***********************--------------------------------------------------------------------
+ *************************--------------------------------------------------------------------
  */
 
 // Update steering.
@@ -2030,50 +1775,73 @@ void update_steering()
       }
    }
 
-   // Interneuron activation deltas.
-   float aiyl_delta = -aiyl.activation + aiyl.I;
-   aiyl_delta += asel0.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
-   aiyl_delta += aser1.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
-   aiyl_delta += G * (aiyr.activation - aiyl.activation);
-   float aiyr_delta = -aiyr.activation + aiyr.I;
-   aiyr_delta += aser0.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
-   aiyr_delta += asel1.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
-   aiyr_delta += G * (aiyl.activation - aiyr.activation);
-   float aizl_delta = -aizl.activation + aizl.I;
-   aizl_delta += aiyl0.weight * (1.0 / (1.0 + exp(-(aiyl.activation + aiyl.theta))));
-   aizl_delta += G * (aizr.activation - aizl.activation);
-   float aizr_delta = -aizr.activation + aizr.I;
-   aizr_delta += aiyr0.weight * (1.0 / (1.0 + exp(-(aiyr.activation + aiyr.theta))));
-   aizr_delta += G * (aizl.activation - aizr.activation);
+   // Interneuron activation.
+   //float aiyl_delta = -aiyl.activation + aiyl.I;
+   //aiyl_delta += asel0.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
+   //aiyl_delta += aser1.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
+   //aiyl_delta += G * (aiyr.activation - aiyl.activation);
+   //float aiyr_delta = -aiyr.activation + aiyr.I;
+   //aiyr_delta += aser0.weight * (1.0 / (1.0 + exp(-(aser.activation + aser.theta))));
+   //aiyr_delta += asel1.weight * (1.0 / (1.0 + exp(-(asel.activation + asel.theta))));
+   //aiyr_delta += G * (aiyl.activation - aiyr.activation);
+   //float aizl_delta = -aizl.activation + aizl.I;
+   //aizl_delta += aiyl0.weight * (1.0 / (1.0 + exp(-(aiyl.activation + aiyl.theta))));
+   //aizl_delta += G * (aizr.activation - aizl.activation);
+   //float aizr_delta = -aizr.activation + aizr.I;
+   //aizr_delta += aiyr0.weight * (1.0 / (1.0 + exp(-(aiyr.activation + aiyr.theta))));
+   //aizr_delta += G * (aizl.activation - aizr.activation);
+   aiyl.activation  = asel0.weight * asel.activation;
+   aiyl.activation += aser1.weight * aser.activation;
+   aiyr.activation  = aser0.weight * aser.activation;
+   aiyr.activation += asel1.weight * asel.activation;
+   aizl.activation  = aiyl0.weight * aiyl.activation;
+   aizr.activation  = aiyr0.weight * aiyr.activation;
 
-   // Motor neuron activation deltas.
-   smbd.activation = 0.0f;
-   float smbd_delta = -smbd.activation + smbd.I;
-   smbd_delta     += aizl0.weight * (1.0 / (1.0 + exp(-(aizl.activation + aizl.theta))));
-   smbd_delta     += aizr1.weight * (1.0 / (1.0 + exp(-(aizr.activation + aizr.theta))));
-   smbv.activation = 0.0f;
-   float smbv_delta = -smbv.activation + smbv.I;
-   smbv_delta += aizr0.weight * (1.0 / (1.0 + exp(-(aizr.activation + aizr.theta))));
-   smbv_delta += aizl1.weight * (1.0 / (1.0 + exp(-(aizl.activation + aizl.theta))));
+   // Motor neuron activation.
+   //smbd.activation = 0.0f;
+   //float smbd_delta = -smbd.activation + smbd.I;
+   //smbd_delta     += aizl0.weight * (1.0 / (1.0 + exp(-(aizl.activation + aizl.theta))));
+   //smbd_delta     += aizr1.weight * (1.0 / (1.0 + exp(-(aizr.activation + aizr.theta))));
+   //smbv.activation = 0.0f;
+   //float smbv_delta = -smbv.activation + smbv.I;
+   //smbv_delta += aizr0.weight * (1.0 / (1.0 + exp(-(aizr.activation + aizr.theta))));
+   //smbv_delta += aizl1.weight * (1.0 / (1.0 + exp(-(aizl.activation + aizl.theta))));
+   smbd.activation  = aizl0.weight * aizl.activation;
+   smbd.activation += aizr1.weight * aizr.activation;
+   smbv.activation  = aizr0.weight * aizr.activation;
+   smbv.activation += aizl1.weight * aizl.activation;
 
-   // Activate steering and motor neurons.
-   aiyl.activation += aiyl_delta * DELTAT;
-   aiyr.activation += aiyr_delta * DELTAT;
-   aizl.activation += aizl_delta * DELTAT;
-   aizr.activation += aizr_delta * DELTAT;
-   smbd.activation  = 0.0f;
-   smbv.activation  = 0.0f;
+   // Activate motor neurons.
+   //aiyl.activation += aiyl_delta * DELTAT;
+   //aiyr.activation += aiyr_delta * DELTAT;
+   //aizl.activation += aizl_delta * DELTAT;
+   //aizr.activation += aizr_delta * DELTAT;
+   //smbd.activation  = 0.0f;
+   //smbv.activation  = 0.0f;
+   //realtype d = 0.0;
+   //if (asel.activation > 0.0f)
+   //{
+   //   smbd.activation = asel.activation;
+   //   smbv.activation = asel.activation;
+   //   d = STEERING_CORRECTION;
+   //}
+   //else if (aser.activation > 0.0)
+   //{
+   //   smbd.activation = aser.activation;
+   //   d = -aser.activation;
+   //}
    realtype d = 0.0;
-   if (asel.activation > 0.0f)
+   if ((smbd.activation > 0.0f) && (smbv.activation > 0.0))
    {
-      smbd.activation = asel.activation;
-      smbv.activation = asel.activation;
       d = STEERING_CORRECTION;
    }
-   else if (aser.activation > 0.0)
+   else if (smbd.activation > 0.0)
    {
-      smbd.activation = aser.activation;
-      d = -aser.activation;
+      d = -smbd.activation;
+   }
+   if (tout < DELTAT * 20)
+   {
+      d = 0.0;
    }
 
    // Steer worm.
@@ -2584,7 +2352,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- ***********************--------------------------------------------------------------------
+ *************************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
