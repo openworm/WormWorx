@@ -489,7 +489,9 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
 
    if (pEvent->m_Pressed)
    {
-      if (showBanner && !connectomeState && s3eOSExecAvailable())
+      bool checkBanner = showBanner;
+      showBanner = false;
+      if (checkBanner && !connectomeState && s3eOSExecAvailable())
       {
          int   mx = pEvent->m_x;
          int   my = pEvent->m_y;
@@ -517,7 +519,6 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
             }
          }
       }
-      showBanner = false;
    }
 
    if ((t == 0) || (t == 1))
@@ -1731,7 +1732,7 @@ void setSynapseWeighting(int mx, int my)
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- **************************--------------------------------------------------------------------
+ ***************************--------------------------------------------------------------------
  */
 
 // Update steering.
@@ -2388,7 +2389,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- **************************--------------------------------------------------------------------
+ ***************************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
