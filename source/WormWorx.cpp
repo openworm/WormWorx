@@ -243,7 +243,7 @@ CIwFVec2 verts[(NBAR) * 2];
 float    MotorYPartition;
 void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h);
 
-static const char *URL = "http://tom.portegys.com/WormWorx/WormWorx.html";
+static const char *URL = "http://wormworx.portegys.com/index.html";
 
 // Reset.
 void reset()
