@@ -32,6 +32,7 @@
 #define SUNDIALS_DOUBLE_PRECISION    1
 
 #include "s3e.h"
+#include "s3eOSExec.h"
 #include "IwGx.h"
 #include "IwResManager.h"
 #include "Iw2D.h"
@@ -242,6 +243,8 @@ CIwFVec2 verts[(NBAR) * 2];
 float    MotorYPartition;
 void getMotorConnectomeGeometry(float& x, float& y, float& w, float& h);
 
+static const char *URL = "http://tom.portegys.com/WormWorx/WormWorx.html";
+
 // Reset.
 void reset()
 {
@@ -327,15 +330,42 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
 
    if (pEvent->m_Button == S3E_POINTER_BUTTON_SELECT)
    {
-      showBanner = false;
       int mx = pEvent->m_x;
       int my = pEvent->m_y;
       if (pEvent->m_Pressed)
       {
+         bool checkBanner = showBanner;
+         showBanner = false;
          if ((key = TestKey(mx, my)) == -1)
          {
             if (!connectomeState)
             {
+               if (checkBanner && s3eOSExecAvailable())
+               {
+                  float w  = (float)IwGxGetScreenWidth();
+                  float h  = (float)IwGxGetScreenHeight();
+                  float w2 = w;
+                  float h2 = h;
+                  if (w < h)
+                  {
+                     w2 = w2 * .75;
+                  }
+                  else
+                  {
+                     w2 = w2 * .25;
+                  }
+                  h2 = h * .05;
+                  float x = (w / 2.0) - (w2 / 2.0);
+                  float y = h * .5;
+                  Iw2DDrawImage(BannerImage, CIwFVec2(x, y), CIwFVec2(w2, h2));
+                  if ((mx >= x) && (mx <= x + w2) && (my >= y) && (my <= y + h2))
+                  {
+                     if (s3eOSExecExecute(URL, S3E_FALSE) == S3E_RESULT_SUCCESS)
+                     {
+                        return(0);
+                     }
+                  }
+               }
                m_x[0]  = mx;
                m_y[0]  = my;
                m_x2[0] = m_y2[0] = -1;
@@ -354,19 +384,8 @@ int32 PointerButtonEventCallback(s3ePointerEvent *pEvent, void *pUserData)
             {
                m_x[0]  = m_y[0] = -1;
                m_x2[0] = m_y2[0] = -1;
-               //m_x3    = -1;
-               //m_y3    = -1;
-               //float w    = (float)IwGxGetScreenWidth();
-               //float h    = (float)IwGxGetScreenHeight();
-               //float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
-               //float xmax = xmin + (w * .05);
-               //float ymin = h * .62;
-               //float ymax = ymin + (h * .06);
-               //if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
-               //{
-               m_x3 = mx;
-               m_y3 = my;
-               //}
+               m_x3    = mx;
+               m_y3    = my;
             }
          }
          else
@@ -470,6 +489,34 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
 
    if (pEvent->m_Pressed)
    {
+      if (showBanner && !connectomeState && s3eOSExecAvailable())
+      {
+         int   mx = pEvent->m_x;
+         int   my = pEvent->m_y;
+         float w  = (float)IwGxGetScreenWidth();
+         float h  = (float)IwGxGetScreenHeight();
+         float w2 = w;
+         float h2 = h;
+         if (w < h)
+         {
+            w2 = w2 * .75;
+         }
+         else
+         {
+            w2 = w2 * .25;
+         }
+         h2 = h * .05;
+         float x = (w / 2.0) - (w2 / 2.0);
+         float y = h * .5;
+         Iw2DDrawImage(BannerImage, CIwFVec2(x, y), CIwFVec2(w2, h2));
+         if ((mx >= x) && (mx <= x + w2) && (my >= y) && (my <= y + h2))
+         {
+            if (s3eOSExecExecute(URL, S3E_FALSE) == S3E_RESULT_SUCCESS)
+            {
+               return(0);
+            }
+         }
+      }
       showBanner = false;
    }
 
@@ -505,19 +552,8 @@ int32 PointerTouchEventCallback(s3ePointerTouchEvent *pEvent, void *pUserData)
                m_x2[0] = m_y2[0] = -1;
                m_x[0]  = m_y[0] = -1;
                m_x2[0] = m_y2[0] = -1;
-               //m_x3    = -1;
-               //m_y3    = -1;
-               //float w    = (float)IwGxGetScreenWidth();
-               //float h    = (float)IwGxGetScreenHeight();
-               //float xmin = (w * (.8 - .05) * *currentWeight) + (w * .1);
-               //float xmax = xmin + (w * .05);
-               //float ymin = h * .62;
-               //float ymax = ymin + (h * .06);
-               //if ((mx >= xmin) && (mx <= xmax) && (my >= ymin) && (my <= ymax))
-               //{
-               m_x3 = mx;
-               m_y3 = my;
-               //}
+               m_x3    = mx;
+               m_y3    = my;
             }
          }
          else
@@ -1695,7 +1731,7 @@ void setSynapseWeighting(int mx, int my)
 /*
  * **--------------------------------------------------------------------
  * Model Functions
- *************************--------------------------------------------------------------------
+ **************************--------------------------------------------------------------------
  */
 
 // Update steering.
@@ -2352,7 +2388,7 @@ int resrob(realtype tres, N_Vector yy, N_Vector yp, N_Vector rr, void *rdata)
 /*
  * *--------------------------------------------------------------------
  * Private functions
- *************************--------------------------------------------------------------------
+ **************************--------------------------------------------------------------------
  */
 double randn(double mu, double sigma)
 {
