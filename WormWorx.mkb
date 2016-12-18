@@ -66,6 +66,15 @@ deployments
     symbian7-uid=0x10700001
     symbian8-uid=0x10800001
     brew-clsid=0x10900001
+    
+    # Android app self-signing for Google Play.
+    # Create wormworx key:
+    # keytool -keystore wormworx.keystore -genkey -alias wormworx -validity 36500
+    #android-aliasname="wormworx"
+    #android-keypass="password"
+    #android-keystore="./wormworx.keystore"
+    #android-storepass="password"
+    #android-pkgname="org.openworm.wormworx"
 }
 
 assets
