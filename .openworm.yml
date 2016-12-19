@@ -1,0 +1,14 @@
+repo: openworm/wormworx
+shortDescription: "Mobile device-based C. elegans simulator"
+coordinator: portegys@openworm.org
+documentation: "https://github.com/openworm/WormWorx/blob/master/readme.txt"
+keywords: 
+  - mobile
+  - physics
+  - neurons
+  - simulation
+  - 2D
+languages: 
+  - c++
+parent: 
+  - openworm/OpenWorm
