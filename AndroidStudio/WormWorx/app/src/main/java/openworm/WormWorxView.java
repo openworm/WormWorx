@@ -1234,7 +1234,6 @@ public class WormWorxView extends SurfaceView
       {
       case QUIT_KEY:
          terminate();
-         wormworx.finishAndRemoveTask();
          break;
 
       case RUN_KEY:

@@ -272,7 +272,8 @@ public class WormWorx extends Activity implements OnClickListener
       if (v.getId() == quitKeyId)
       {
          view.onClick(QUIT_KEY);
-         return;
+         finishAndRemoveTask();
+         System.exit(0);
       }
       if (v.getId() == runKeyId)
       {
