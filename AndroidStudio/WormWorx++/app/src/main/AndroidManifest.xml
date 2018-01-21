@@ -5,7 +5,7 @@
       android:allowBackup="false"
       android:fullBackupContent="false"
       android:icon="@mipmap/ic_launcher"
-      android:label="WormWorx">
+      android:label="WormWorx++">
     <activity android:name="WormWorx"
               android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
               android:launchMode="singleTask"

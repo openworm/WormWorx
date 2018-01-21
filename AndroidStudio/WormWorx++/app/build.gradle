@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.1'
     defaultConfig {
         applicationId 'openworm.wormworx'
         minSdkVersion 23
@@ -14,7 +13,7 @@ android {
             cmake {
                 // Available argumetns are inside ${SDK}/cmake/.../android.toolchain.cmake file
                 arguments '-DANDROID_PLATFORM=android-14',
-                          '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+                        '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
             }
         }
     }
@@ -23,7 +22,7 @@ android {
         release {
             minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'),
-                          'proguard-rules.pro'
+                    'proguard-rules.pro'
         }
     }
     externalNativeBuild {
@@ -31,5 +30,11 @@ android {
             path 'src/main/cpp/CMakeLists.txt'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
+dependencies {
+}
