@@ -2,123 +2,143 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958dbd16-0aa8-4582-bbbf-8a7db9e53918" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/Readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/WormWorx.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/app.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/CMakeLists.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/wormsim.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/wormsim.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/cpp/wormworx.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/java/openworm/WormWorx.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/java/openworm/WormWorxLib.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/java/openworm/WormWorxView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/back_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/motors.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/pause_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/quit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/quit_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/restart.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/restart_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/salty.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/scalpel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/scalpel_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/start.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/start_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/steering.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/touch.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/drawable/touch_bordered.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/app/src/main/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/gradlew" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/local.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../WormWorx/settings.gradle" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WormWorx++.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileChanges/last-build.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileChanges/last-build.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/back.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/back.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/back_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/back_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/banner.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/banner.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/minus.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/minus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/motors.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/motors.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pause.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pause.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pause_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pause_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/plus.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/plus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/quit.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/quit.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/quit_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/quit_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/restart.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/restart.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/restart_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/restart_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/salty.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/salty.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/scalpel.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/scalpel.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/scalpel_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/scalpel_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/start.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/start.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/start_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/start_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/steering.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/steering.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/touch.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/touch.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/touch_bordered.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/touch_bordered.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WormWorx++.iml" afterPath="$PROJECT_DIR$/.idea/WormWorx++.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.txt" afterPath="$PROJECT_DIR$/Readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WormWorx.iml" afterPath="$PROJECT_DIR$/WormWorx.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" afterPath="$PROJECT_DIR$/app/src/main/cpp/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/README" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/README" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" afterPath="$PROJECT_DIR$/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/wormsim.cpp" afterPath="$PROJECT_DIR$/app/src/main/cpp/wormsim.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/wormsim.h" afterPath="$PROJECT_DIR$/app/src/main/cpp/wormsim.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/wormworx.cpp" afterPath="$PROJECT_DIR$/app/src/main/cpp/wormworx.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/openworm/WormWorx.java" afterPath="$PROJECT_DIR$/app/src/main/java/openworm/WormWorx.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/openworm/WormWorxLib.java" afterPath="$PROJECT_DIR$/app/src/main/java/openworm/WormWorxLib.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/openworm/WormWorxView.java" afterPath="$PROJECT_DIR$/app/src/main/java/openworm/WormWorxView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew.bat" afterPath="$PROJECT_DIR$/gradlew.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Readme.txt" afterPath="$PROJECT_DIR$/../../Readme.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,15 +162,25 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-manifest">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            <state relative-caret-position="153">
+              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -158,13 +188,18 @@
       </file>
     </leaf>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\tompo_000\.keystore" />
+    <option name="KEY_ALIAS" value="wormworx" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\porteto\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew\gradle-4.1" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\tompo_000\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew\gradle-4.1" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -1967,13 +2002,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="width" value="1924" />
-    <option name="height" value="1030" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1991,6 +2028,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2013,26 +2051,11 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WormWorx++" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidManifestsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2041,6 +2064,12 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="05157df5ccd63f1b" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.keystore" />
+    <property name="ExportApk.ApkPath" value="C:\Users\tompo_000\Documents\education\OpenWorm\WormWorx\AndroidStudio\WormWorx++\app" />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2125,7 +2154,55 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516519806414" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516526615783" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+      </Profilers>
+      <method>
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516526615783" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2140,6 +2217,89 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="WormWorx++" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
       <envs />
       <method />
     </configuration>
@@ -2225,7 +2385,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516519806414" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516526615785" />
       </method>
     </configuration>
     <list size="1">
@@ -2267,38 +2427,38 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="0" width="1924" height="1030" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2310,12 +2470,28 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="153">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
         </state>
       </provider>
