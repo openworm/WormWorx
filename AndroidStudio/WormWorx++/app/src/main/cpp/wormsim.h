@@ -28,7 +28,7 @@ int init();
 // Set steering neuron synapse weight.
 void set_steering_synapse_weight(int synapse, double weight);
 
-// Step simulation with salt sensor stimulu.
+// Step simulation with salt sensor stimulus.
 void step(double salt_stimulus);
 
 // Get neuron activations.
