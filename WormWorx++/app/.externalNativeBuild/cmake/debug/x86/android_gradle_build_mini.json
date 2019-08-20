@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\AndroidStudio\\cmake\\3.6.4111459\\bin\\cmake.exe --build \"C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.externalNativeBuild\\cmake\\debug\\x86\" --target clean"
+  ],
+  "libraries": {
+    "wormworx_jni-Debug-x86": {
+      "artifactName": "wormworx_jni",
+      "buildCommand": "C:\\AndroidStudio\\cmake\\3.6.4111459\\bin\\cmake.exe --build \"C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.externalNativeBuild\\cmake\\debug\\x86\" --target wormworx_jni",
+      "abi": "x86",
+      "output": "C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libwormworx_jni.so"
+    }
+  }
+}

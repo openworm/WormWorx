@@ -1,0 +1,17 @@
+Executable : C:\AndroidStudio\cmake\3.6.4111459\bin\cmake.exe
+arguments : 
+-HC:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp
+-BC:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\.externalNativeBuild\cmake\release\arm64-v8a
+-DANDROID_ABI=arm64-v8a
+-DANDROID_PLATFORM=android-23
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\cmake\release\obj\arm64-v8a
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=C:\AndroidStudio\ndk-bundle
+-DCMAKE_TOOLCHAIN_FILE=C:\AndroidStudio\ndk-bundle\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=C:\AndroidStudio\cmake\3.6.4111459\bin\ninja.exe
+-GAndroid Gradle - Ninja
+-DANDROID_PLATFORM=android-16
+-DANDROID_TOOLCHAIN=clang
+-DANDROID_STL=c++_static
+jvmArgs : 
+

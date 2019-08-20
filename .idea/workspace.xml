@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dd5f3563-ec2e-4c45-8654-c2487a42cde3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.gradle/vcsWorkingDirs/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/WormWorx++.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/release/app-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/release/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/wormsim.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/wormsim.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/wormworx.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/java/openworm/WormWorx.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/java/openworm/WormWorxLib.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/java/openworm/WormWorxView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/back_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/motors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/pause_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/quit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/quit_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/restart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/restart_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/salty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/scalpel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/scalpel_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/start_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/steering.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/touch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/touch_bordered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/.openworm.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/WormWorx.mkb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/WormWorx_deployment.mkf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/WormWorx_deployment.mkf.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/Anonymous.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/IwGxFontTTF.group" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/app.icf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/checkmark.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/development.icf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/ident.free" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/motors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/quit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/restart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/salty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/scalpel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/splashscreen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/steering.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/steering1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/data/touch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/deployments/WormWorx.1.aarch64/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/deployments/WormWorx.1.aarch64/WormWorx.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/icons/icon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/AppMain.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/WormWorx.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/WormWorx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_band.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_bbdpre.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_dense.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_spbcgs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_spgmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_spils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_sptfqmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/nvector/nvector_parallel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/nvector/nvector_serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_band.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_dense.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_fnvector.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_iterative.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_math.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_nvector.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_smalldense.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_spbcgs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_spgmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fida.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fida.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaband.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidabbd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidabbd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidadense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaewt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidapreco.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaroot.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaroot.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_band.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_band_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_bbdpre.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_dense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_dense_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_ic.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_io.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spbcgs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spgmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spils_impl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_sptfqmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/nvector_serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/Makefile.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_band.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_config.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_dense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_iterative.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_math.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_nvector.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_smalldense.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_spbcgs.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_spgmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/colorschememapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/colorschememapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/filelist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/filelist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image001.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image002.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image002.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image002.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image002.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image003.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image003.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image004.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image004.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image004.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image004.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image005.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image005.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/themedata.thmx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/themedata.thmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WormWorx" type="1abcf292:AndroidViewProjectNode" />
+              <item name="WormWorx" type="e9137016:NonAndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="C:/AndroidStudio" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="All Tests" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="WormWorx" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android Instrumented Tests.All Tests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd5f3563-ec2e-4c45-8654-c2487a42cde3" name="Default Changelist" comment="" />
+      <created>1565043459615</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565043459615</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33484164" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="5" visible="true" weight="0.32977098" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+    </layout>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Android</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>WormWorx</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
