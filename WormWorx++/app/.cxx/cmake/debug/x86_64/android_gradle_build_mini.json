@@ -1,0 +1,21 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\AndroidStudio\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "C:\\AndroidStudio\\ndk-bundle\\build\\cmake\\platforms.cmake",
+    "C:\\AndroidStudio\\ndk-bundle\\build\\cmake\\compiler_id.cmake"
+  ],
+  "cleanCommands": [
+    "C:\\AndroidStudio\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\cmake\\debug\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "C:\\AndroidStudio\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "wormworx_jni-Debug-x86_64": {
+      "artifactName": "wormworx_jni",
+      "buildCommand": "C:\\AndroidStudio\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\cmake\\debug\\x86_64\" wormworx_jni",
+      "abi": "x86_64",
+      "output": "C:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\cmake\\debug\\x86_64\\libwormworx_jni.so",
+      "runtimeFiles": []
+    }
+  }
+}

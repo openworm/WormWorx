@@ -1,0 +1,7 @@
+Executable : C:\AndroidStudio\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\.cxx\cmake\debug\x86
+wormworx_jni
+jvmArgs : 
+

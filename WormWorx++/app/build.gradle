@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 23
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 31
+    buildToolsVersion '29.0.2'
+    ndkVersion '22.1.7171670'
     defaultConfig {
         applicationId 'openworm.wormworx'
         minSdkVersion 23
-        targetSdkVersion 25
+        targetSdkVersion 31
         versionCode 2
         versionName "1.0"
         ndk {
@@ -13,7 +14,7 @@ android {
         }
         externalNativeBuild {
             cmake {
-                // Available argumetns are inside ${SDK}/cmake/.../android.toolchain.cmake file
+                // Available arguments are inside ${SDK}/cmake/.../android.toolchain.cmake file
                 arguments '-DANDROID_PLATFORM=android-16',
                         '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=c++_static'
             }

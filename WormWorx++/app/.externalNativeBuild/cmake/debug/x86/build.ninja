@@ -35,7 +35,7 @@ include rules.ninja
 build CMakeFiles/wormworx_jni.dir/wormworx.cpp.o: CXX_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormworx.cpp
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\wormworx.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11 -Wall -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=c++11 -Wall -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\wormworx.cpp"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -43,7 +43,7 @@ build CMakeFiles/wormworx_jni.dir/wormworx.cpp.o: CXX_COMPILER__wormworx_jni C$:
 build CMakeFiles/wormworx_jni.dir/wormsim.cpp.o: CXX_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\wormsim.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11 -Wall -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=c++11 -Wall -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\wormsim.cpp"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -51,7 +51,7 @@ build CMakeFiles/wormworx_jni.dir/wormsim.cpp.o: CXX_COMPILER__wormworx_jni C$:/
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -59,7 +59,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o: C_COMPILER__wo
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_band.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_band.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -67,7 +67,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o: C_COMPILE
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_bbdpre.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_bbdpre.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -75,7 +75,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o: C_COMPI
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_dense.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_dense.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -83,7 +83,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o: C_COMPIL
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_ic.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_ic.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -91,7 +91,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o: C_COMPILER_
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_io.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_io.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -99,7 +99,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o: C_COMPILER_
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_spbcgs.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_spbcgs.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -107,7 +107,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o: C_COMPI
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_spgmr.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_spgmr.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -115,7 +115,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o: C_COMPIL
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_spils.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_spils.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -123,7 +123,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o: C_COMPIL
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\ida\ida_sptfqmr.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\ida\ida_sptfqmr.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -131,7 +131,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o: C_COMP
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\nvec_ser\fnvector_serial.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\nvec_ser\fnvector_serial.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -139,7 +139,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\nvec_ser\nvector_serial.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\nvec_ser\nvector_serial.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -147,7 +147,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_band.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_band.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -155,7 +155,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o:
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_dense.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_dense.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -163,7 +163,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_iterative.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_iterative.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -171,7 +171,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_math.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_math.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -179,7 +179,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o:
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_nvector.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_nvector.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -187,7 +187,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_smalldense.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_smalldense.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -195,7 +195,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldens
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_spbcgs.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_spbcgs.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -203,7 +203,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_spgmr.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_spgmr.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -211,7 +211,7 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o
 build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o: C_COMPILER__wormworx_jni C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c
   DEFINES = -Dwormworx_jni_EXPORTS
   DEP_FILE = CMakeFiles\wormworx_jni.dir\sundials-2.3.0\src\sundials\sundials_sptfqmr.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC
   INCLUDES = -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/include" -I"C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/sundials-2.3.0/src"
   IN_ABS = "C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp\sundials-2.3.0\src\sundials\sundials_sptfqmr.c"
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
@@ -225,8 +225,8 @@ build CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c
 # Link the shared library C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\cmake\debug\obj\x86\libwormworx_jni.so
 
 build C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/build/intermediates/cmake/debug/obj/x86/libwormworx_jni.so: CXX_SHARED_LIBRARY_LINKER__wormworx_jni CMakeFiles/wormworx_jni.dir/wormworx.cpp.o CMakeFiles/wormworx_jni.dir/wormsim.cpp.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o
-  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11 -Wall -O0 -fno-limit-debug-info
-  LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack
+  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=c++11 -Wall -O0 -fno-limit-debug-info
+  LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -landroid -llog -lEGL -lGLESv2 -latomic -lm
   OBJECT_DIR = CMakeFiles\wormworx_jni.dir
   POST_BUILD = cd .
@@ -280,13 +280,13 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCCompiler.cmake.in C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCCompilerABI.c C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXCompiler.cmake.in C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCommonLanguageInclude.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCXXCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCompileFeatures.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCompilerABI.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineSystem.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeFindBinUtils.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeGenericSystem.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeLanguageInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeParseImplicitLinkInfo.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystem.cmake.in C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInitialize.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeTestCCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeTestCXXCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeTestCompilerCommon.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-C-FeatureTests.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-C.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX-FeatureTests.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX-TestableFeatures.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/GNU.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Internal/FeatureTesting.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Android.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Linux.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/UnixPaths.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/android.toolchain.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/platforms.cmake C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/CMakeLists.txt CMakeCache.txt CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeSystem.cmake CMakeFiles/feature_tests.c CMakeFiles/feature_tests.cxx
+build build.ninja: RERUN_CMAKE | C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCommonLanguageInclude.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeGenericSystem.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeLanguageInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInitialize.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-C.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/GNU.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Android.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Linux.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/UnixPaths.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/android.toolchain.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/platforms.cmake C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/CMakeLists.txt CMakeCache.txt CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeSystem.cmake
   pool = console
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCCompiler.cmake.in C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCCompilerABI.c C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXCompiler.cmake.in C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCommonLanguageInclude.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCXXCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCompileFeatures.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineCompilerABI.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeDetermineSystem.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeFindBinUtils.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeGenericSystem.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeLanguageInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeParseImplicitLinkInfo.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystem.cmake.in C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInitialize.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeTestCCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeTestCXXCompiler.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeTestCompilerCommon.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-C-FeatureTests.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-C.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX-FeatureTests.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX-TestableFeatures.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/GNU.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Internal/FeatureTesting.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Android.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Linux.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/UnixPaths.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/android.toolchain.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/platforms.cmake C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/CMakeLists.txt CMakeCache.txt CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeSystem.cmake CMakeFiles/feature_tests.c CMakeFiles/feature_tests.cxx: phony
+build C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCXXInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeCommonLanguageInclude.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeGenericSystem.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeLanguageInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInformation.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/CMakeSystemSpecificInitialize.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-C.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang-CXX.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/Clang.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Compiler/GNU.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Android.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/Linux.cmake C$:/AndroidStudio/cmake/3.6.4111459/share/cmake-3.6/Modules/Platform/UnixPaths.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/android.toolchain.cmake C$:/AndroidStudio/ndk-bundle/build/cmake/platforms.cmake C$:/Users/Tom$ Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/CMakeLists.txt CMakeCache.txt CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/3.6.0-rc2/CMakeSystem.cmake: phony
 
 #############################################
 # Clean all the built files.

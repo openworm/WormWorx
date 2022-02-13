@@ -1,0 +1,3 @@
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/.cxx/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir

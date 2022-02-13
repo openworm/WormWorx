@@ -1,0 +1,59 @@
+ninja: Entering directory `C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\.cxx\cmake\debug\x86'
+[1/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o
+[2/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o
+[3/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o
+[4/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o
+[5/24] Building CXX object CMakeFiles/wormworx_jni.dir/wormworx.cpp.o
+[6/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o
+[7/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o
+[8/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o
+[9/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o
+[10/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o
+[11/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o
+[12/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o
+[13/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o
+[14/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o
+[15/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o
+[16/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o
+[17/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o
+[18/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o
+[19/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o
+[20/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o
+[21/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o
+[22/24] Building C object CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o
+[23/24] Building CXX object CMakeFiles/wormworx_jni.dir/wormsim.cpp.o
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:284:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        if(check_flag((void *)yy, "N_VNew_Serial", 0)) return(0);
+                                  ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:286:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        if(check_flag((void *)yp, "N_VNew_Serial", 0)) return(0);
+                                  ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:288:31: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        if(check_flag((void *)avtol, "N_VNew_Serial", 0)) return(0);
+                                     ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:363:29: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        if(check_flag((void *)mem, "IDACreate", 0)) return(0);
+                                   ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:366:25: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        if(check_flag(&retval, "IDAMalloc", 1)) return(0);
+                               ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:373:25: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+        if(check_flag(&retval, "IDADense", 1)) return(0);
+                               ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:412:28: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+    if(check_flag(&retval, "IDASolve", 1)) return;
+                           ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:792:11: warning: unused variable 'F_EXT' [-Wunused-variable]
+        realtype F_EXT[2];
+                 ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:791:11: warning: unused variable 'L_EXT' [-Wunused-variable]
+        realtype L_EXT;
+                 ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:787:18: warning: unused variable 'T' [-Wunused-variable]
+        realtype L0_AE, T, F_AE, F_PE, F_PD;
+                        ^
+C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/src/main/cpp/wormsim.cpp:155:12: warning: unused function 'grob' [-Wunused-function]
+static int grob(realtype t, N_Vector yy, N_Vector yp, realtype *gout, void *g_data);
+           ^
+11 warnings generated.
+[24/24] Linking CXX shared library libwormworx_jni.so

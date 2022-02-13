@@ -2,235 +2,545 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd5f3563-ec2e-4c45-8654-c2487a42cde3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.gradle/vcsWorkingDirs/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/caches/build_file_checksums.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/WormWorx++.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/release/app-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/release/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/wormsim.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/wormsim.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/cpp/wormworx.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/java/openworm/WormWorx.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/java/openworm/WormWorxLib.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/java/openworm/WormWorxView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/back_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/motors.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/pause_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/quit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/quit_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/restart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/restart_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/salty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/scalpel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/scalpel_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/start_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/steering.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/touch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/drawable/touch_bordered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/local.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidStudio/WormWorx++/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/.openworm.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/WormWorx.mkb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/WormWorx_deployment.mkf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/WormWorx_deployment.mkf.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/Anonymous.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/IwGxFontTTF.group" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/app.icf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/checkmark.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/development.icf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/ident.free" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/light.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/motors.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/quit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/restart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/salty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/scalpel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/splashscreen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/steering.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/steering1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/data/touch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/deployments/WormWorx.1.aarch64/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/deployments/WormWorx.1.aarch64/WormWorx.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/icons/icon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/AppMain.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/WormWorx.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/WormWorx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_band.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_bbdpre.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_dense.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_spbcgs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_spgmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_spils.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/ida/ida_sptfqmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/nvector/nvector_parallel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/nvector/nvector_serial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_band.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_dense.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_fnvector.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_iterative.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_math.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_nvector.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_smalldense.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_spbcgs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_spgmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/include/sundials/sundials_types.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fida.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fida.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaband.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidabbd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidabbd.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidadense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaewt.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidapreco.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaroot.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/fcmix/fidaroot.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_band.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_band_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_bbdpre.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_dense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_dense_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_ic.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_io.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spbcgs.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spgmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spils.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_spils_impl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/ida/ida_sptfqmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/nvec_ser/nvector_serial.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/Makefile.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_band.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_config.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_dense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_iterative.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_math.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_nvector.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_smalldense.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_spbcgs.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_spgmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marmalade/source/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WormWorx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WormWorx.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/4.6/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/4.6/fileChanges/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileChanges/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.gradle/vcsWorkingDirs/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.gradle/vcsWorkingDirs/gc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/WormWorx++.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/WormWorx++.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_wormworx_jni_arm64-v8a.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_wormworx_jni_arm64-v8a.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_wormworx_jni_arm64-v8a.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_wormworx_jni_arm64-v8a.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_wormworx_jni_arm64-v8a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_build_wormworx_jni_arm64-v8a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/arm64-v8a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_wormworx_jni_armeabi-v7a.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_wormworx_jni_armeabi-v7a.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_wormworx_jni_armeabi-v7a.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_wormworx_jni_armeabi-v7a.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_wormworx_jni_armeabi-v7a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_build_wormworx_jni_armeabi-v7a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/armeabi-v7a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_wormworx_jni_x86.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_wormworx_jni_x86.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_wormworx_jni_x86.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_wormworx_jni_x86.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_wormworx_jni_x86.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_build_wormworx_jni_x86.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_generate_cmake_ninja_json_x86.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_generate_cmake_ninja_json_x86.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_generate_cmake_ninja_json_x86.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_generate_cmake_ninja_json_x86.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_generate_cmake_ninja_json_x86.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/android_gradle_generate_cmake_ninja_json_x86.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/wormsim.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/wormworx_jni.dir/wormworx.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_wormworx_jni_x86_64.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_wormworx_jni_x86_64.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_wormworx_jni_x86_64.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_wormworx_jni_x86_64.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_wormworx_jni_x86_64.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_build_wormworx_jni_x86_64.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/debug/x86_64/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/android_gradle_generate_cmake_ninja_json_arm64-v8a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/arm64-v8a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/android_gradle_generate_cmake_ninja_json_armeabi-v7a.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/armeabi-v7a/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/android_gradle_generate_cmake_ninja_json_x86.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stderr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stderr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/android_gradle_generate_cmake_ninja_json_x86_64.stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/cmake_build_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/cmake_build_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/cmake_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/cmake_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/.externalNativeBuild/cmake/release/x86_64/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/release/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_band.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_bbdpre.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_dense.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spbcgs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spgmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_spils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/ida/ida_sptfqmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_parallel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/nvector/nvector_serial.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_band.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_dense.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_fnvector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_iterative.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_nvector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_smalldense.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spbcgs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_spgmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/include/sundials/sundials_types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/README" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fida.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaband.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidabbd.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidadense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaewt.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidapreco.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/fcmix/fidaroot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_band_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_dense_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_ic.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_io.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spbcgs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spgmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_spils_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/ida/ida_sptfqmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/nvec_ser/nvector_serial.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/README" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_band.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_config.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_dense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_iterative.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_math.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_nvector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_smalldense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spbcgs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_spgmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/wormsim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/wormsim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/wormsim.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/wormsim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/wormworx.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/cpp/wormworx.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/java/openworm/WormWorx.java" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/java/openworm/WormWorx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/java/openworm/WormWorxLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/java/openworm/WormWorxLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/java/openworm/WormWorxView.java" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/java/openworm/WormWorxView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/back_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/back_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/minus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/motors.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/motors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/pause.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/pause.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/pause_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/pause_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/quit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/quit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/quit_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/quit_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/restart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/restart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/restart_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/restart_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/salty.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/salty.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/scalpel.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/scalpel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/scalpel_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/scalpel_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/start.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/start_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/start_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/steering.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/steering.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/touch.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/touch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/touch_bordered.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/drawable/touch_bordered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx++/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx++/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/.openworm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/.openworm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/WormWorx.mkb" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/WormWorx.mkb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/WormWorx_deployment.mkf" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/WormWorx_deployment.mkf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/WormWorx_deployment.mkf.bak" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/WormWorx_deployment.mkf.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/Anonymous.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/Anonymous.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/IwGxFontTTF.group" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/IwGxFontTTF.group" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/app.icf" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/app.icf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/checkmark.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/checkmark.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/development.icf" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/development.icf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/ident.free" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/ident.free" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/light.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/light.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/minus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/motors.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/motors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/pause.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/pause.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/quit.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/quit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/restart.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/restart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/salty.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/salty.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/scalpel.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/scalpel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/splashscreen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/splashscreen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/start.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/steering.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/steering.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/steering1.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/steering1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/data/touch.png" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/data/touch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/deployments/WormWorx.1.aarch64/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/deployments/WormWorx.1.aarch64/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/deployments/WormWorx.1.aarch64/WormWorx.apk" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/deployments/WormWorx.1.aarch64/WormWorx.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/icons/icon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/icons/icon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/AppMain.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/AppMain.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/WormWorx.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/WormWorx.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/WormWorx.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/WormWorx.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_band.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_band.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_bbdpre.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_bbdpre.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_dense.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_dense.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_spbcgs.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_spbcgs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_spgmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_spgmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_spils.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_spils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_sptfqmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/ida/ida_sptfqmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/nvector/nvector_parallel.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/nvector/nvector_parallel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/nvector/nvector_serial.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/nvector/nvector_serial.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_band.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_band.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_dense.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_dense.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_fnvector.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_fnvector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_iterative.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_iterative.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_math.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_nvector.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_nvector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_smalldense.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_smalldense.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_spbcgs.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_spbcgs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_spgmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_spgmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_sptfqmr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_types.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/include/sundials/sundials_types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/README" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fida.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fida.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fida.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fida.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaband.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaband.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidabbd.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidabbd.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidabbd.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidabbd.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidadense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidadense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaewt.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaewt.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidajtimes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidapreco.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidapreco.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaroot.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaroot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaroot.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/fcmix/fidaroot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_band.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_band.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_band_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_band_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_bbdpre.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_bbdpre.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_bbdpre_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_dense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_dense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_dense_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_dense_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_ic.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_ic.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_io.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_io.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spbcgs.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spbcgs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spgmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spgmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spils.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spils_impl.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_spils_impl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_sptfqmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/ida/ida_sptfqmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/README" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/fnvector_serial.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/nvector_serial.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/nvec_ser/nvector_serial.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/README" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_band.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_band.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_config.in" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_config.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_dense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_dense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_iterative.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_iterative.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_math.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_math.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_nvector.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_nvector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_smalldense.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_smalldense.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_spbcgs.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_spbcgs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_spgmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_spgmr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" beforeDir="false" afterPath="$PROJECT_DIR$/WormWorx/source/sundials-2.3.0/src/sundials/sundials_sptfqmr.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/colorschememapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/colorschememapping.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/filelist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/filelist.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/image001.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/image001.png" afterDir="false" />
@@ -243,7 +553,6 @@
       <change beforePath="$PROJECT_DIR$/docs/WormWorx_files/themedata.thmx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WormWorx_files/themedata.thmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -252,68 +561,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WormWorx" type="1abcf292:AndroidViewProjectNode" />
-              <item name="WormWorx" type="e9137016:NonAndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1l1HmzPJqnJIvBxGH87Rc3em0Ux" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="C:/AndroidStudio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="All Tests" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="WormWorx" />
       <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -366,31 +643,6 @@
       <updated>1565043459615</updated>
     </task>
     <servers />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
-    <layout>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33484164" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Build Variants" order="4" side_tool="true" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info id="Resources Explorer" order="7" />
-      <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" />
-      <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="5" visible="true" weight="0.32977098" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-    </layout>
   </component>
   <component name="masterDetails">
     <states>
