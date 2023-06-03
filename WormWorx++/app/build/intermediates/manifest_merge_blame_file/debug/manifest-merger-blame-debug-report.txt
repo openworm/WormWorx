@@ -15,7 +15,7 @@
 11-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:3:17-49
 12
 13    <application
-13-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:4:3-18:17
+13-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:4:3-19:17
 14        android:allowBackup="false"
 14-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:5:7-34
 15        android:debuggable="true"
@@ -27,26 +27,28 @@
 19        android:label="WormWorx++" >
 19-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:8:7-33
 20        <activity
-20-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:9:5-17:16
+20-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:9:5-18:16
 21            android:name="openworm.WormWorx"
 21-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:9:15-38
 22            android:configChanges="orientation|keyboardHidden"
 22-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:12:15-65
-23            android:launchMode="singleTask"
-23-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:11:15-46
-24            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-24-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:10:15-73
-25            <intent-filter>
-25-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:13:7-16:23
-26                <action android:name="android.intent.action.MAIN" />
-26-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:14:9-61
-26-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:14:17-58
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:15:9-69
-28-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:15:19-66
-29            </intent-filter>
-30        </activity>
-31    </application>
-32
-33</manifest>
+23            android:exported="true"
+23-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:13:15-38
+24            android:launchMode="singleTask"
+24-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:11:15-46
+25            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+25-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:10:15-73
+26            <intent-filter>
+26-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:14:7-17:23
+27                <action android:name="android.intent.action.MAIN" />
+27-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:15:9-61
+27-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:15:17-58
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:16:9-69
+29-->C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:16:19-66
+30            </intent-filter>
+31        </activity>
+32    </application>
+33
+34</manifest>

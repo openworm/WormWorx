@@ -1,4 +1,4 @@
-                Executable : C:\AndroidStudio\cmake\3.10.2.4988404\bin\cmake.exe
+                    Executable : C:\AndroidStudio\cmake\3.10.2.4988404\bin\cmake.exe
 arguments : 
 -HC:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\cpp
 -DCMAKE_FIND_ROOT_PATH=C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\.cxx\cmake\debug\prefab\x86_64\prefab
@@ -10,6 +10,7 @@ arguments :
 -DCMAKE_ANDROID_NDK=C:\AndroidStudio\ndk-bundle
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\cmake\debug\obj\x86_64
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\cmake\debug\obj\x86_64
 -DCMAKE_MAKE_PROGRAM=C:\AndroidStudio\cmake\3.10.2.4988404\bin\ninja.exe
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=23
@@ -20,4 +21,6 @@ arguments :
 -GNinja
 jvmArgs : 
 
-Build command args:
+
+                    Build command args: []
+                    Version: 1

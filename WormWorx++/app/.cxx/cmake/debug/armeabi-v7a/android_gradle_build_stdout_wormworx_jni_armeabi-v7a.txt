@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\.cxx\cmake\debug\armeabi-v7a'
+ninja: no work to do.

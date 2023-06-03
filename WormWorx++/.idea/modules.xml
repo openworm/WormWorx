@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/WormWorx++.iml" filepath="$PROJECT_DIR$/WormWorx++.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WormWorx++.app.unitTest.iml" />
     </modules>
   </component>
 </project>

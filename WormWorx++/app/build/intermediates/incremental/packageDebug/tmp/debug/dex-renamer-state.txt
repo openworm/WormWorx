@@ -1,4 +1,7 @@
-#Sat Feb 12 21:15:39 CST 2022
-base.0=C\:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+#Fri Jun 02 22:00:30 CDT 2023
+base.1=C\:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+path.1=14/classes.dex
+base.0=C\:\\Users\\Tom Portegys\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
-path.0=classes.dex
+path.0=0/classes.dex

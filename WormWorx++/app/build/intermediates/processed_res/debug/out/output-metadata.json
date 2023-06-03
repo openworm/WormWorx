@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "openworm.wormworx",
-  "variantName": "processDebugResources",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
