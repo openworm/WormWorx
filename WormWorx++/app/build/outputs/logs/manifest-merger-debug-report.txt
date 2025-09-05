@@ -4,20 +4,11 @@ ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx+
 INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
 INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
 INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
-INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
-INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
-INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
 	package
-		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:70-88
-		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
-		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:1-20:12
 		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:2:11-69
@@ -27,6 +18,9 @@ ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx+
 		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:3:17-49
 application
 ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:4:3-19:17
+INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:4:3-19:17
+	android:extractNativeLibs
+		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 	android:label
 		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:8:7-33
 	android:fullBackupContent
@@ -40,7 +34,7 @@ ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx+
 	android:launchMode
 		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:11:15-46
 	android:exported
-		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:13:15-38
+		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:13:15-39
 	android:configChanges
 		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml:12:15-65
 	android:theme
@@ -61,13 +55,7 @@ uses-sdk
 INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
 		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\AndroidManifest.xml

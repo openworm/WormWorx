@@ -1,0 +1,4 @@
+openworm.test.app-androidTest-0 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\generated\res\resValues\androidTest\debug
+openworm.test.app-mergeDebugAndroidTestResources-1 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+openworm.test.app-mergeDebugAndroidTestResources-2 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+openworm.test.app-debugAndroidTest-3 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

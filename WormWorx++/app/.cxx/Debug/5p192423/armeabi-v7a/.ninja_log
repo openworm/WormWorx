@@ -1,0 +1,25 @@
+# ninja log v5
+60	486	7787407065083349	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_ic.c.o	ea0c498ca0708633
+44	500	7787407065705240	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_band.c.o	a3de19989f583ce6
+36	560	7787407066106055	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_bbdpre.c.o	4d330507450a0a88
+18	780	7787407068333055	CMakeFiles/wormworx_jni.dir/wormworx.cpp.o	7896c93a04acbb85
+489	795	7787407068553788	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_dense.c.o	ba10b4ff45fc4dd4
+52	807	7787407068733798	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida.c.o	993a6707f6dee9a6
+500	925	7787407069898187	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spbcgs.c.o	7e5d1ad2c810c80b
+561	1020	7787407071022020	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_io.c.o	634ff3300c0e601b
+807	1045	7787407071141923	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/fnvector_serial.c.o	fa3adb71cff4ca22
+795	1088	7787407071643602	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_sptfqmr.c.o	3cc4dca66f44a319
+783	1135	7787407071924252	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spgmr.c.o	29ba986d9d0177
+925	1302	7787407073609011	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/ida/ida_spils.c.o	58f86caf758f62c
+1021	1352	7787407074230796	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_band.c.o	6532e22209d50f70
+1088	1391	7787407074732286	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_dense.c.o	c83ad18f3b134a7d
+1136	1492	7787407075373115	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_math.c.o	727249e4226bc2b3
+1046	1589	7787407075975565	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/nvec_ser/nvector_serial.c.o	67d7dc025673fb71
+1391	1686	7787407077278767	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spbcgs.c.o	9fecd6025244c2a9
+1352	1701	7787407077559585	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_iterative.c.o	ea32177c3649bf0f
+1303	1783	7787407077720506	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_nvector.c.o	1cfe7481a4a0b597
+1590	1862	7787407079585552	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_smalldense.c.o	d3bae7fb502aeeb6
+1493	1887	7787407079806244	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_spgmr.c.o	fffe45f78f363c39
+1687	1952	7787407080427620	CMakeFiles/wormworx_jni.dir/sundials-2.3.0/src/sundials/sundials_sptfqmr.c.o	6c6954d860a4fd96
+2	2783	7787407088641531	CMakeFiles/wormworx_jni.dir/wormsim.cpp.o	d525de700a41fd41
+2791	3002	7787407090949412	C:/Users/Tom Portegys/Documents/education/OpenWorm/WormWorx/WormWorx++/app/build/intermediates/cxx/Debug/5p192423/obj/armeabi-v7a/libwormworx_jni.so	a6b6492e003a8667

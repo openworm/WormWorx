@@ -1,0 +1,37 @@
+[
+  {
+    "level": "INFO",
+    "message": "android.ndkVersion from module build.gradle is [22.1.7171670]",
+    "diagnosticCode": "UNKNOWN"
+  },
+  {
+    "level": "INFO",
+    "message": "android.ndkPath from module build.gradle is not set",
+    "diagnosticCode": "UNKNOWN"
+  },
+  {
+    "level": "INFO",
+    "message": "ndk.dir in local.properties is C:\\AndroidStudio\\ndk-bundle",
+    "diagnosticCode": "UNKNOWN"
+  },
+  {
+    "level": "INFO",
+    "message": "Not considering ANDROID_NDK_HOME because support was removed after deprecation period.",
+    "diagnosticCode": "UNKNOWN"
+  },
+  {
+    "level": "INFO",
+    "message": "sdkFolder is C:\\AndroidStudio",
+    "diagnosticCode": "UNKNOWN"
+  },
+  {
+    "level": "INFO",
+    "message": "Folder C:\\AndroidStudio\\ndk-bundle does not exist. Ignoring.",
+    "diagnosticCode": "UNKNOWN"
+  },
+  {
+    "level": "ERROR",
+    "message": "Location specified by ndk.dir (C:\\AndroidStudio\\ndk-bundle) did not contain a valid NDK and couldn\u0027t be used",
+    "diagnosticCode": "UNKNOWN"
+  }
+]

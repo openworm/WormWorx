@@ -1,0 +1,7 @@
+openworm.app-pngs-0 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\generated\res\pngs\debug
+openworm.app-resValues-1 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\generated\res\resValues\debug
+openworm.app-mergeDebugResources-2 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+openworm.app-mergeDebugResources-3 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+openworm.app-debug-4 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\merged_res\debug\mergeDebugResources
+openworm.app-debug-5 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\debug\res
+openworm.app-main-6 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\res
