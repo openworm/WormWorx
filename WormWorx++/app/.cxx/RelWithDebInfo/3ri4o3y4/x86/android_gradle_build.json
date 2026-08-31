@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\tompo\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\RelWithDebInfo\\3ri4o3y4\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\tompo\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\RelWithDebInfo\\3ri4o3y4\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "wormworx_jni::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "wormworx_jni",
+      "output": "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\build\\intermediates\\cxx\\RelWithDebInfo\\3ri4o3y4\\obj\\x86\\libwormworx_jni.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "C:\\Users\\tompo\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\tompo\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

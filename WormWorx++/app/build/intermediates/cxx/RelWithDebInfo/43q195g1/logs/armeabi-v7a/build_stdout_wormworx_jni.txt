@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\.cxx\RelWithDebInfo\43q195g1\armeabi-v7a'
-ninja: no work to do.

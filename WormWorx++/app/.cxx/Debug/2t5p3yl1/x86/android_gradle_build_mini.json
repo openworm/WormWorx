@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\tompo\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\Debug\\2t5p3yl1\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\tompo\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\.cxx\\Debug\\2t5p3yl1\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "wormworx_jni::@6890427a1f51a3e7e1df": {
+      "artifactName": "wormworx_jni",
+      "abi": "x86",
+      "output": "C:\\Users\\tompo\\Documents\\education\\OpenWorm\\WormWorx\\WormWorx++\\app\\build\\intermediates\\cxx\\Debug\\2t5p3yl1\\obj\\x86\\libwormworx_jni.so",
+      "runtimeFiles": []
+    }
+  }
+}

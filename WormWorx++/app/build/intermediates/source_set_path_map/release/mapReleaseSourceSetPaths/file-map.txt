@@ -1,7 +1,0 @@
-openworm.app-pngs-0 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\generated\res\pngs\release
-openworm.app-resValues-1 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\generated\res\resValues\release
-openworm.app-mergeReleaseResources-2 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
-openworm.app-mergeReleaseResources-3 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-openworm.app-release-4 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\build\intermediates\merged_res\release\mergeReleaseResources
-openworm.app-main-5 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\main\res
-openworm.app-release-6 C:\Users\Tom Portegys\Documents\education\OpenWorm\WormWorx\WormWorx++\app\src\release\res

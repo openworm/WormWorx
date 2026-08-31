@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 include_directories(sundials-2.3.0/include sundials-2.3.0/src)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384")
 
 set(HEADER_FILES
             wormsim.h

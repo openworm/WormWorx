@@ -1,0 +1,3 @@
+C:/Users/tompo/Documents/education/OpenWorm/WormWorx/WormWorx++/app/.cxx/RelWithDebInfo/286z5d28/x86_64/CMakeFiles/wormworx_jni.dir
+C:/Users/tompo/Documents/education/OpenWorm/WormWorx/WormWorx++/app/.cxx/RelWithDebInfo/286z5d28/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/tompo/Documents/education/OpenWorm/WormWorx/WormWorx++/app/.cxx/RelWithDebInfo/286z5d28/x86_64/CMakeFiles/rebuild_cache.dir
