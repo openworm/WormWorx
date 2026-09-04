@@ -37,12 +37,11 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Display;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.MotionEvent;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
-import android.view.WindowMetrics;
 import android.widget.ImageButton;
 import android.widget.FrameLayout;
 import android.widget.AbsoluteLayout;
@@ -81,12 +80,10 @@ public class WormWorx extends Activity implements OnClickListener
       super.onCreate(savedInstanceState);
 
       // Get screen dimensions.
-      Display screen = this.getDisplay();
-      WindowManager windowManager = getSystemService(WindowManager.class);
-      WindowMetrics windowMetrics = windowManager.getCurrentWindowMetrics();
-      Rect screenBounds  = windowMetrics.getBounds();
-      screenWidth = screenBounds.width();
-      screenHeight = screenBounds.height();
+      DisplayMetrics displayMetrics = new DisplayMetrics();
+      getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+      screenWidth = displayMetrics.widthPixels;
+      screenHeight = displayMetrics.heightPixels;
       if (screenWidth < screenHeight)
       {
          int d = screenWidth;
